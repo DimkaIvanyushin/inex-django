@@ -1,0 +1,15 @@
+mixin breadcrumbs(title, desc, list_path)
+    section.breadcrumbs
+        .container
+            .row.content.d-flex.align-items-center
+                .col-12
+                    .wow-outer
+                        h6.wow.fadeInDown=title
+                    .wow-outer
+                        h1.wow.fadeInDown(data-wow-delay="0.4s")=desc
+            .row
+                .col-12.wow-outer
+                    ul.wow.fadeInDown(data-wow-delay="0.8s")
+                        each val in list_path
+                            li 
+                                a(href="./services-list.html")=val

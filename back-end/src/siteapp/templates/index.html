@@ -13,38 +13,14 @@
   <link href=".././static/css/index.css" rel="stylesheet">
 </head>
 
-<body>{% cms_toolbar %}
+<body>
+
+  {% cms_toolbar %}
+
   <header>
+
     {% placeholder "Menu Bar" %}
-    <!-- <div class="container top-menu d-none d-md-block">
-      <div class="row d-flex align-items-center">
-        <div class="col-sm-12 col-lg-3"><a href="#"><img src="/static/images/logo.svg" height="39"></a></div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="contact d-flex align-items-center">
-            <div class="icon"><i class="fas fa-phone icon-md"></i></div>
-            <div class="info ml-3">
-              <ul>
-                <li><a class="link-default" href="tel:#">0-000-0000-000</a></li>
-                <li><a class="link-default" href="tel:#">1-800-1234-567</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="contact d-flex">
-            <div class="icon"><i class="fas fa-map-marker-alt icon-md"></i></div>
-            <div class="info ml-3">
-              <ul>
-                <li><a class="link-default" href="#">Улица Правды 30, Витебск 210029</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-3 d-flex justify-content-end">
-          <button class="button button-primar">Заказать звонок</button>
-        </div>
-      </div>
-    </div> -->
+
     <div class="navbar navbar-expand-md main-menu">
       <div class="container">
         <div class="container-mobile-menu">
@@ -181,174 +157,22 @@
     </div>
     <div class="bg-black"></div>
   </header>
-  <section class="slider">
-    <div class="carousel slide" id="slider-top" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="item d-flex align-items-center bg1">
-            <div class="container">
-              <div class="row description">
-                <div class="col-12">
-                  <h1>
-                    <div class="wow-outer"><span class="font-weight-bold d-flex wow slideInDown"
-                        data-wow-delay="0.2s">Энергетика. Умнее.</span></div>
-                    <div class="wow-outer"><span class="font-weight-light d-flex wow slideInDown"
-                        data-wow-delay="0.2s">Опыт самых ответственных инженеров для решения ваших задач.</span></span>
-                    </div>
-                  </h1>
-                  <div class="wow-outer">
-                    <button class="button button-winona wow slideInDown" data-wow-delay="0.2s"
-                      href="#">Консультация</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="item d-flex align-items-center bg2">
-            <div class="container">
-              <div class="row description">
-                <div class="col-12">
-                  <h1>
-                    <div class="wow-outer"><span class="font-weight-bold d-flex wow slideInDown"
-                        data-wow-delay="0.2s">Технологичный минимализм.</span></div>
-                    <div class="wow-outer"><span class="font-weight-light d-flex wow slideInDown"
-                        data-wow-delay="0.2s">Качество функций всегда важнее их количества</span></span></div>
-                  </h1>
-                  <div class="wow-outer">
-                    <button class="button button-winona wow slideInDown" data-wow-delay="0.2s"
-                      href="#">Консультация</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="item d-flex align-items-center bg3">
-            <div class="container">
-              <div class="row description">
-                <div class="col-12">
-                  <h1>
-                    <div class="wow-outer"><span class="font-weight-bold d-flex wow slideInDown"
-                        data-wow-delay="0.2s">Энергетика. Умнее.</span></div>
-                    <div class="wow-outer"><span class="font-weight-light d-flex wow slideInDown"
-                        data-wow-delay="0.2s">Опыт самых ответственных инженеров для решения ваших задач.</span></span>
-                    </div>
-                  </h1>
-                  <div class="wow-outer">
-                    <button class="button button-winona wow slideInDown" data-wow-delay="0.2s"
-                      href="#">Консультация</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="carousel-indicators"><span class="active" data-target="#slider-top"
-                data-slide-to="0">01</span><span data-target="#slider-top" data-slide-to="1">02</span><span
-                data-target="#slider-top" data-slide-to="2">03</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+
+  {% placeholder "Slider header" %}
 
   {% placeholder "About Us" %}
 
-  <!-- <section class="aboutUs padding-lg">
-    <div class="container">
-      <div class="row d-flex justify-content-between">
-        <div class="col-sm-12 col-lg-6 overflow-hidden"><img class="w-100 wow slideInLeft" src="/static/images/work.jpg"
-            alt="img"></div>
-        <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer text-justify">
-          <h3 class="wow slideInDown">Почему он используется?</h3>
-          <div class="wow-outer">
-            <p class="mt-30 wow slideInDown">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
-              сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
-              заполнение шаблона."</p>
-          </div>
-          <div class="wow-outer">
-            <p class="wow slideInDown">Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в
-              качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много
-              веб-страниц всё ещё дожидаются своего настоящего рождения.</p>
-          </div>
-          <div class="wow-outer">
-            <button class="button button-winona mt-3 wow slideInDown" href="#">Узнать больше</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
   <section class="smallFeatures bg-gray padding-lg">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <div class="box d-flex">
-            <div class="icon"><i class="far fa-user"></i></div>
-            <div class="main ml-3">
-              <div class="wow-outer">
-                <h4 class="wow slideInDown">Сотрудники</h4>
-              </div>
-              <div class="wow-outer">
-                <p class="wow slideInDown">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
-                  сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
-                  заполнение шаблона.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-4">
-          <div class="box d-flex">
-            <div class="icon"><i class="far fa-comment-alt"></i></div>
-            <div class="main ml-3">
-              <div class="wow-outer">
-                <h4 class="wow slideInDown" data-wow-delay="0.15s">Консультации</h4>
-              </div>
-              <div class="wow-outer">
-                <p class="wow slideInDown" data-wow-delay="0.15s">Давно выяснено, что при оценке дизайна и композиции
-                  читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или
-                  менее стандартное заполнение шаблона.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-4">
-          <div class="box d-flex">
-            <div class="icon"><i class="fas fa-check"></i></div>
-            <div class="main ml-3">
-              <div class="wow-outer">
-                <h4 class="wow slideInDown" data-wow-delay="0.3s">100% Гарантии</h4>
-              </div>
-              <div class="wow-outer">
-                <p class="wow slideInDown" data-wow-delay="0.3s">Давно выяснено, что при оценке дизайна и композиции
-                  читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или
-                  менее стандартное заполнение шаблона.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% placeholder "Small Features" %}
       </div>
     </div>
   </section>
-  <section class="alert-cta bg-primary-darker padding-xs">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-8 d-flex justify-content-center align-items-center wow-outer">
-          <h4 class="text-white text-center wow slideInRight"> <span>Узнайте </span><span
-              class="font-weight-bold">стоимость </span><span>прямо сейчас!</span></h4>
-        </div>
-        <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center mr-t-20 wow-outer">
-          <button class="button button-winona wow slideInLeft" href="#">Бесплатная консультация</button>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  {% placeholder "Alert Cta"%}
+
   <section class="services padding-lg">
     <div class="container">
       <div class="row d-flex justify-content-center">

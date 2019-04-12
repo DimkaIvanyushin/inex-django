@@ -1,0 +1,26 @@
+{% load thumbnail %}
+<div class="carousel-item active">
+    <div class="item d-flex align-items-center"
+        style="background-image: url('{% thumbnail instance.img 1920x776 crop %}')">
+        <div class="container">
+            <div class="row description">
+                <div class="col-12">
+                    <h1>
+                        <div class="wow-outer">
+                            <span class="font-weight-bold d-flex wow slideInDown"
+                                data-wow-delay="0.2s">{{ instance.text_bold }}
+                            </span>
+                        </div>
+                        <div class="wow-outer"><span class="font-weight-light d-flex wow slideInDown"
+                                data-wow-delay="0.2s">{{ instance.text }}</span>
+                        </div>
+                    </h1>
+                    <div class="wow-outer">
+                        <button class="button button-winona wow slideInDown" data-wow-delay="0.2s"
+                            href="#">Консультация</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

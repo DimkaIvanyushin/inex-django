@@ -6,7 +6,7 @@ RUN pip install -r /iNex/requirements.txt
 ADD /src/siteapp /iNex/src/siteapp
 ADD /src/inex_page_home /iNex/src/inex_page_home
 
-ADD manage.py /iNex/src
+ADD src/manage.py /iNex/src
 
 WORKDIR /iNex/src
 

@@ -1,0 +1,20 @@
+{% load thumbnail %}
+
+<section class="aboutUs padding-lg">
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <div class="col-sm-12 col-lg-6 overflow-hidden">
+                <img class="wow slideInLeft" src="{% thumbnail instance.img 540x360 crop %} " alt="img">
+            </div>
+            <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer text-justify">
+                <h3 class="wow slideInDown">{{ instance.title }}</h3>
+                <div class="wow-outer">
+                    <p class="mt-30 wow slideInDown">{{ instance.description }}</p>
+                </div>
+                <div class="wow-outer">
+                    <button class="button button-winona mt-3 wow slideInDown" href="#">Узнать больше</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

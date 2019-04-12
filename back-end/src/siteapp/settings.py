@@ -109,7 +109,8 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'siteapp',
-    'inex_page_home'
+    'inex_page_home',
+    'colorful',
 ]
 
 LANGUAGES = (

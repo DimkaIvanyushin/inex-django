@@ -1,0 +1,25 @@
+{% load cms_tags %}
+<section class="slider">
+    <div class="carousel slide" id="slider-top" data-ride="carousel">
+        <div class="carousel-inner">
+
+            {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="carousel-indicators">
+
+                        {% for x in slides_count %}
+                            <span class="{%  if x == 0 %} active {% endif %}" data-target="#slider-top" data-slide-to="{{ x }}">0{{ x }}</span>
+                        {% endfor %}
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

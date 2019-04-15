@@ -1,0 +1,75 @@
+{% load cms_tags %}
+{% load thumbnail %}
+
+<section class="services padding-lg">
+    <div class="container">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-12">
+                <div class="wow-outer">
+                    <h3 class="text-center wow slideInDown">{{ instance.title }}</h3>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8">
+                <div class="wow-outer">
+                    <p class="text-center mt-3 wow slideInDown">{{ instance.text }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center mt-45">
+
+
+            {% for product in groupProduct %}
+                
+                <div class="col-sm-6 col-lg-3">
+                    <div class="item">
+                        <a class="blackout wow-outer" href="{{ product.get_absolute_url }}"><img class="wow slideInLeft" src="{% thumbnail product.img 255x300 crop %} " alt="{{ product.title }}"></a>
+                        <h5 class="d-flex wow-outer"><a class="wow slideInLeft" href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
+                    </div>
+                </div>
+
+            {% empty %}
+                <h3>Пусто!</h3>
+            {% endfor %}
+
+               
+<!-- 
+            <div class="col-sm-6 col-lg-3">
+                <div class="item"><a class="blackout wow-outer" href="#"><img class="wow slideInLeft"
+                            src="https://livedemo00.template-help.com/wt_67881/images/service-thumbnail-1-270x300.jpg"
+                            width="270" alt="#"></a>
+                    <h5 class="d-flex wow-outer"><a class="wow slideInLeft" href="#">Продукция</a></h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="item"><a class="blackout wow-outer" href="#"><img class="wow slideInLeft"
+                            src="https://livedemo00.template-help.com/wt_67881/images/service-thumbnail-2-270x300.jpg"
+                            width="270" alt="#"></a>
+                    <h5 class="d-flex wow-outer"><a class="wow slideInLeft" href="#">Продукция</a></h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="item"><a class="blackout wow-outer" href="#"><img class="wow slideInLeft"
+                            src="https://livedemo00.template-help.com/wt_67881/images/service-thumbnail-2-270x300.jpg"
+                            width="270" alt="#"></a>
+                    <h5 class="d-flex wow-outer"><a class="wow slideInLeft" href="#">Продукция</a></h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="item"><a class="blackout wow-outer" href="#"><img class="wow slideInLeft"
+                            src="https://livedemo00.template-help.com/wt_67881/images/service-thumbnail-2-270x300.jpg"
+                            width="270" alt="#"></a>
+                    <h5 class="d-flex wow-outer"><a class="wow slideInLeft" href="#">Продукция</a></h5>
+                </div>
+            </div> -->
+
+        </div>
+
+        <div class="row d-flex justify-content-center mt-45">
+            <div class="col-12 d-flex justify-content-center wow-outer">
+                <button class="button button-primar wow slideInUp">Показать все</button>
+            </div>
+        </div>
+    </div>
+</section>

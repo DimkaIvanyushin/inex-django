@@ -1,0 +1,20 @@
+{% load cms_tags %}
+<section class="prices bg-gray padding-lg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 wow-outer">
+                <h3 class="text-center wow slideInUp">{{ instance.title }}</h3>
+            </div>
+        </div>
+
+        <div class="row mt-75">
+
+            {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% empty %}
+                <h3>Пусто!</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

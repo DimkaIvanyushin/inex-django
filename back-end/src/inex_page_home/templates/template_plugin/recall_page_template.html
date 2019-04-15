@@ -1,0 +1,11 @@
+{% load cms_tags %}
+
+<div class="carousel-item {{ instance.active }}">
+    <div class="row d-flex justify-content-center">
+        {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+        {% empty %}
+            <h3>Пусто!</h3>
+        {% endfor %}
+    </div>
+</div>

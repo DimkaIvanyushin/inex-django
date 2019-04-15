@@ -1,0 +1,13 @@
+{% load thumbnail %}
+
+<div class="col-12 col-lg-4 mr-b-20">
+    <div class="team">
+        <div class="title d-flex">
+            <div class="avatar"><img class="rounded-circle" src="{% thumbnail instance.avatar 50x50 crop %} " alt="{{ instance.name }}"></div>
+            <div class="team_info ml-3"><span class="name">{{ instance.name }}</span>
+                <p class="dev">{{ instance.post }}</p>
+            </div>
+        </div>
+        <p>{{ instance.text }}</p>
+    </div>
+</div>

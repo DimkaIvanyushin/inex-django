@@ -1,0 +1,28 @@
+<section class="contact padding-xs">
+    <div class="container">
+        <div class="row">
+            <ul class="items">
+                <li class="wow-outer">
+                    <div class="d-flex flex-column wow fadeInUp">
+                        <div class="icon mb-3"><i class="fas fa-phone icon-md"></i></div>
+                        <a class="link-default" href="tel:{{ item.phone_number }}">{{ item.phone_number }}</a>
+                        <a class="link-default"
+                            href="tel:{{ item.phone_number_2 }}">{{ item.phone_number_2 }}</a>
+                    </div>
+                </li>
+                <li class="wow-outer">
+                    <div class="wow fadeInUp">
+                        <div class="icon mb-3"><i class="fas fa-envelope icon-md"></i></div>
+                        <a class="link-default" href="#">{{ item.email }}</a>
+                    </div>
+                </li>
+                <li class="wow-outer">
+                    <div class="wow fadeInUp">
+                        <div class="icon mb-3"><i class="fas fa-map-marker-alt icon-md"></i></div><a
+                            class="link-default" href="#">{{ item.locations }}</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

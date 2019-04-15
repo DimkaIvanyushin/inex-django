@@ -18,11 +18,14 @@ urlpatterns = [
 ]
 
 urlpatterns += (
-    url(r'^admin/', admin.site.urls),  # NOQA
+    url(r'^admin/', admin.site.urls), 
     url(r'^', include('cms.urls')),
 )
 
-# This is only needed when using runserver.
+urlpatterns += (
+    url('products/', include('product.urls')),
+)
+
 if settings.DEBUG:
     urlpatterns = [
         url(r'^media/(?P<path>.*)$', serve,

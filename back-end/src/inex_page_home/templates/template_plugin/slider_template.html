@@ -1,22 +1,24 @@
 {% load cms_tags %}
+{% load main_filter_extras %}
 <section class="slider">
     <div class="carousel slide" id="slider-top" data-ride="carousel">
         <div class="carousel-inner">
-
             {% for plugin in instance.child_plugin_instances %}
                 {% render_plugin plugin %}
             {% endfor %}
-
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="carousel-indicators">
+                        {% for x in slider_paginate %}
 
-                        {% for x in slides_count %}
-                            <span class="{%  if x == 0 %} active {% endif %}" data-target="#slider-top" data-slide-to="{{ x }}">0{{ x }}</span>
+                            {% if forloop.first %}
+                                <span class="active" data-target="#slider-top" data-slide-to="{{ x }}">{{ x|inc }}</span>
+                            {% else %}
+                                <span data-target="#slider-top" data-slide-to="{{ x }}">{{ x|inc }}</span>
+                            {% endif %}
                         {% endfor %}
-                     
                     </div>
                 </div>
             </div>

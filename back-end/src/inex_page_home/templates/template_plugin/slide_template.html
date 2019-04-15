@@ -1,5 +1,6 @@
 {% load thumbnail %}
-<div class="carousel-item active">
+
+<div class="carousel-item {{ instance.active }}">
     <div class="item d-flex align-items-center"
         style="background-image: url('{% thumbnail instance.img 1920x776 crop %}')">
         <div class="container">
@@ -17,7 +18,7 @@
                     </h1>
                     <div class="wow-outer">
                         <button class="button button-winona wow slideInDown" data-wow-delay="0.2s"
-                            href="#">Консультация</button>
+                            href="#">{{ instance.text_button }}</button>
                     </div>
                 </div>
             </div>

@@ -110,7 +110,7 @@ INSTALLED_APPS = [
     'djangocms_video',
     'siteapp',
     'inex_page_home',
-    'colorful',
+    'product',
 ]
 
 LANGUAGES = (

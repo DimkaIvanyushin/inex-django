@@ -36,7 +36,6 @@ class SliderPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
 
-        # TODO Переделать 
         len_slider = len(instance.child_plugin_instances)
         slider_paginate = range(len_slider)
         
@@ -156,6 +155,7 @@ class LastBlogPlugin(CMSPluginBase):
 
 @plugin_pool.register_plugin  
 class ContactUsPlugin(CMSPluginBase):
+    model = ContactUsModel
     module = _("Inex Plugin")
     name = _('Contact Us Plugin')
     render_template = 'template_plugin/contact_us_template.html'
@@ -215,6 +215,28 @@ class RecallBoxPlugin(CMSPluginBase):
     name = _('Recall Box Plugin')
     render_template = 'template_plugin/recall_box_template.html'
     parent_classes = ['RecallPagePlugin']
+
+    def render(self, context, instance, placeholder):
+        context.update({'instance': instance})
+        return context
+
+@plugin_pool.register_plugin 
+class FooterPlugin(CMSPluginBase):
+    model = FooterModel
+    module = _("Inex Plugin")
+    name = _('Footer Plugin')
+    render_template = 'template_plugin/footer_template.html'
+
+    def render(self, context, instance, placeholder):
+        context.update({'instance': instance})
+        return context
+
+
+@plugin_pool.register_plugin 
+class NavBarPlugin(CMSPluginBase):
+    module = _("Inex Plugin")
+    name = _('Nav Bar Plugin')
+    render_template = 'template_plugin/nav_bar_template.html'
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance})

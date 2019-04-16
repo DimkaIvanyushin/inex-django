@@ -5,13 +5,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0, width=device-width">
-  <link href="https://fonts.googleapis.com/css?family=Cuprum|Exo+2:100,100i,200,200i,300,300i,400|PT+Sans|PT+Sans+Narrow&amp;amp;subset=cyrillic" rel="stylesheet">{% render_block "css" %}
-    
-<title>{% block title %}This is my new project home page{% endblock title %}</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Cuprum|Exo+2:100,100i,200,200i,300,300i,400|PT+Sans|PT+Sans+Narrow&amp;amp;subset=cyrillic"
+    rel="stylesheet">{% render_block "css" %}
+
+  <title>{% block title %}This is my new project home page{% endblock title %}</title>
 
   <link href="{{ BASE_DIR }}/static/css/common.css" rel="stylesheet">
-  <link href="{{ BASE_DIR }}/static/css/index.css" rel="stylesheet">
-  <link href="{{ BASE_DIR }}/static/css/services-list.css" rel="stylesheet">
+
+  {% block style_link %} This link css {% endblock style_link %}
 
 </head>
 
@@ -21,88 +23,9 @@
 
   {% block content %}{% endblock content %}
 
-  
-  <footer class="padding-lg">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-4">
-          <h4>Давно выяснено</h4>
-          <p class="mt-30">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
-            Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также
-            реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации.</p>
-        </div>
-        <div class="col-12 col-lg-4">
-          <h4>Где его взять?</h4>
-          <p class="mt-30 mb-1"><a href="#">Есть много вариантов Lorem Ipsum, но большинство из них имеет не
-              всегда</a></a></p>
-          <ul class="d-flex">
-            <li>Гарольд Барнетт</li>
-            <li> <a class="ml-3" href="#">2 дня назад</a></li>
-          </ul>
-          <p class="mb-1 mt-30"><a href="#">Есть много вариантов Lorem Ipsum, но большинство из них имеет не
-              всегда</a></a></p>
-          <ul class="d-flex">
-            <li>Гарольд Барнетт</li>
-            <li> <a class="ml-3" href="#">2 дня назад</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-lg-4">
-          <h4>Галерея</h4>
-          <div class="container mt-30">
-            <div class="row">
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-              <div class="col-3 gallery-item"><a href="#"><img
-                    src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row d-flex align-items-center">
-        <div class="col-12 col-lg-10">
-          <ul class="bottom-menu">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Продукция</a></li>
-            <li><a href="#">Решения</a></li>
-            <li><a href="#">О бренде</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-lg-2">
-          <ul class="social-icon d-flex justify-content-between">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-google"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="footer-advanced"><a class="mr-t-20" href="#"><img src="{{ BASE_DIR }}/static/images/logo_white.svg"
-              height="39"></a><span class="mr-t-20">© 2019 Все права защищены.</span></div>
-      </div>
-    </div>
-  </footer>{% render_block "js" %}
+  {% static_placeholder "Footer " %}  
+
+  {% render_block "js" %}
   <script type="text/javascript" src="{{ BASE_DIR }}/static/js/common.js"></script>
   <script type="text/javascript" src="{{ BASE_DIR }}/static/js/index.js"></script>
 </body>

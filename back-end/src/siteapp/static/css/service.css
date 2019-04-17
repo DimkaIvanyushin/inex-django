@@ -209,6 +209,7 @@ section.solutions .solutions-box {
   display: flex;
   position: relative;
   height: 256px;
+  margin-bottom: 30px;
 }
 section.solutions .solutions-box:hover img {
   transform: scale(1.3);

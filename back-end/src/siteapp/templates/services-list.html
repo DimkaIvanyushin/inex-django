@@ -28,8 +28,8 @@
         <div class="col-12 wow-outer">
           <ul class="wow fadeInDown" data-wow-delay="0.8s">
             <li> <a href="./services-list.html">Главная</a></li>
-            <li> <a href="./services-list.html">Продукция</a></li>
-            <li> <a href="./services-list.html">{{ group_product.title }}</a></li>
+            <li> <a href="{% url 'product-all' %}">Продукция</a></li>
+            <li> <a href="{{ group_product.get_absolute_url }}">{{ group_product.title }}</a></li>
           </ul>
         </div>
       </div>

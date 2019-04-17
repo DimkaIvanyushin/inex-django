@@ -8,3 +8,12 @@ class MyApphook(CMSApp):
 
     def get_urls(self, page=None, language=None, **kwargs):
         return ["product.urls"]
+
+
+@apphook_pool.register
+class SolutionsApphook(CMSApp):
+    app_name = "solutions"
+    name = "Solutions Apphook"
+
+    def get_urls(self, page=None, language=None, **kwargs):
+        return ["solutions.urls"]

@@ -1,0 +1,25 @@
+{% load thumbnail %}
+
+<section class="breadcrumbs"
+    style="background-image: url({% thumbnail instance.img 1920x395 crop='center center' %})">
+    <div class="container">
+        <div class="row content d-flex align-items-center">
+            <div class="col-12">
+                <div class="wow-outer">
+                    <h6 class="wow fadeInDown">{{ instance.title }}</h6>
+                </div>
+                <div class="wow-outer">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.4s">{{ instance.title_bold }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 wow-outer">
+                <ul class="wow fadeInDown" data-wow-delay="0.8s">
+                    <li> <a href="./services-list.html">Главная</a></li>
+                    <li> <a href="./services-list.html">Решения</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

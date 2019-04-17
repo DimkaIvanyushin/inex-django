@@ -41,87 +41,41 @@
                 </div>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"><a class="logo-box" href="./index.html"><img
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"><a class="logo-box" href="./"><img
                     class="logo-dt d-none d-md-block hide" src="/static/images/logo.svg" height="20" alt="logo"></a>
             <ul class="navbar-nav mr-auto hide">
-                <li class="nav-item"><a class="nav-link" href="{% url 'solution-all' %}">Решения</a></li>
-                <li class="nav-item dropdown position-static"><a class="nav-link dropdown-toggle" id="navbarDropdown"
-                        href="#">Продукция<span class="chevron"><i
-                                class="fas fa-chevron-down"></i></span></a>
+                <li class="nav-item"><a class="nav-link" href="{% url 'solutions' %}">Решения</a></li>
+                <li class="nav-item dropdown position-static">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'product-all' %}"> Продукция
+                        <span class="chevron"> <i class="fas fa-chevron-down"></i></span></a>
                     <div class="dropdown-menu">
                         <div class="mega-menu-container">
                             <div class="container">
                                 <div class="row">
+                                    {% for groupProduct in groupProducts %}
                                     <div class="col-12 col-md-3">
                                         <div class="mega-menu-box">
-                                            <h5> <a href="./service.html">Контроллеры</a></h5>
+                                            <h5> <a
+                                                    href="{{ groupProduct.get_absolute_url }}">{{ groupProduct.title }}</a>
+                                            </h5>
                                             <ul>
-                                                <li> <span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">UlC-02</a></li>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">UlC-03</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <div class="mega-menu-box">
-                                            <h5> <a href="./service.html">Устройства связи</a></h5>
-                                            <ul>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">3G-модем</a></li>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">3П-роутер</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <div class="mega-menu-box">
-                                            <h5> <a href="./service.html">Диспетчерскаие щиты</a></h5>
-                                            <ul>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">Диспетчерский щит</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <div class="mega-menu-box">
-                                            <h5> <a href="./service.html">Оборудование АУ</a></h5>
-                                            <ul>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">Реклоузеры</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <div class="mega-menu-box">
-                                            <h5> <a href="./service.html">Светильники</a></h5>
-                                            <ul>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">Светильники уличного освещения</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <div class="mega-menu-box">
-                                            <h5> <a href="./service.html">Контрольно-измерительные приборы</a></h5>
-                                            <ul>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">Счётчик 1Ф электрической энергии</a></li>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">Счётчик 1Ф технического учёта</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <div class="mega-menu-box">
-                                            <h5> <a href="./service.html">Аналогово-цифровые преобразователи</a></h5>
-                                            <ul>
-                                                <li><span class="icon"><i class="fas fa-angle-right"></i></span><a
-                                                        href="./service.html">Аналогово-цифровые преобразователи</a>
+                                                {% for product in groupProduct.product_set.all %}
+                                                <li>
+                                                    <span class="icon">
+                                                        <i class="fas fa-angle-right"></i>
+                                                    </span>
+                                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
                                                 </li>
+                                                {% empty %}
+                                                <span>Пусто!</span>
+                                                {% endfor %}
+
                                             </ul>
                                         </div>
                                     </div>
+                                    {% empty %}
+                                    <span>Пусто!</span>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>

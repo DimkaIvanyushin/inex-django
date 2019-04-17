@@ -2,15 +2,30 @@ from .models import *
 from django.shortcuts import render
 
 
+def showProducts(request):
+
+    group_products = GroupProduct.objects.all()
+
+    return render(
+        request,
+        'products.html',
+        context={
+            'group_products': group_products
+        }
+    )
+
+
 def showProduct(request, id):
 
     product = Product.objects.get(pk=id)
+    solutions = product.solutions_set.all()
 
     return render(
         request,
         'service.html',
         context={
-            'product': product
+            'product': product,
+            'solutions': solutions
         }
     )
 

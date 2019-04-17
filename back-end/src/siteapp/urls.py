@@ -22,10 +22,11 @@ urlpatterns += (
 )
 
 urlpatterns += (
-    url('products/', include('product.urls')),
-    url('solutions/', include('solutions.urls')),
+    url(r'^solutions/', include('solutions.urls')),
+    url(r'^products/', include('product.urls')),
 )
 
+        
 if settings.DEBUG:
     urlpatterns = [
         url(r'^media/(?P<path>.*)$', serve,

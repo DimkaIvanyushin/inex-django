@@ -1,410 +1,132 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <link href="https://fonts.googleapis.com/css?family=Cuprum|Exo+2:100,100i,200,200i,300,300i,400|PT+Sans|PT+Sans+Narrow&amp;amp;subset=cyrillic" rel="stylesheet">
-    <title>Services-list page
-    </title>
-  <link href="./css/common.css" rel="stylesheet"><link href="./css/solution.css" rel="stylesheet"></head>
-  <body>
-    <header>
-            <div class="navbar navbar-expand-md main-menu fixed-top">
-              <div class="container">
-                <div class="container-mobile-menu">
-                  <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars icon-md"></i></button><img class="d-md-none" src="images/logo.svg" height="25" alt="logo">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-top-mobile" aria-controls="menu-top-mobile" aria-expanded="false" aria-label="Toggle navigation 2"><i class="fas fa-ellipsis-v icon-md"></i></button>
-                </div>
-                <div class="d-md-none d-xs-none">
-                  <div class="collapse navbar-collapse" id="menu-top-mobile">
-                    <div class="container pb-3">
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="contact d-flex align-items-center">
-                            <div class="icon"><i class="fas fa-phone icon-md"></i></div>
-                            <div class="info ml-3">
-                              <ul>
-                                <li><a class="link-default" href="tel:#">1-800-1234-567</a></li>
-                                <li><a class="link-default" href="tel:#">1-800-1234-567</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="contact d-flex align-items-center">
-                            <div class="icon"><i class="fas fa-map-marker-alt icon-md"></i></div>
-                            <div class="info ml-3">
-                              <ul>
-                                <li><a class="link-default" href="#">Улица Правды 30, Витебск 210029</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12 d-flex justify-content-center">
-                          <button class="button button-primar">Заказать звонок</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent"><a class="logo-box" href="./index.html"><img class="logo-dt d-none d-md-block show" src="images/logo.svg" height="20" alt="logo"></a>
-                  <ul class="navbar-nav mr-auto show none-animation">
-                    <li class="nav-item"><a class="nav-link" href="#">Решения</a></li>
-                    <li class="nav-item dropdown position-static"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="./services-list.html">Продукция<span class="chevron"><i class="fas fa-chevron-down"></i></span></a>
-                      <div class="dropdown-menu">
-                        <div class="mega-menu-container">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-12 col-md-3">
-                                <div class="mega-menu-box">
-                                  <h5> <a href="./service.html">Контроллеры</a></h5>
-                                  <ul>
-                                    <li> <span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">UlC-02</a></li>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">UlC-03</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-12 col-md-3">
-                                <div class="mega-menu-box">
-                                  <h5> <a href="./service.html">Устройства связи</a></h5>
-                                  <ul>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">3G-модем</a></li>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">3П-роутер</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-12 col-md-3">
-                                <div class="mega-menu-box">
-                                  <h5> <a href="./service.html">Диспетчерскаие щиты</a></h5>
-                                  <ul>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">Диспетчерский щит</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-12 col-md-3">
-                                <div class="mega-menu-box">
-                                  <h5> <a href="./service.html">Оборудование АУ</a></h5>
-                                  <ul>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">Реклоузеры</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-12 col-md-3">
-                                <div class="mega-menu-box">
-                                  <h5> <a href="./service.html">Светильники</a></h5>
-                                  <ul>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">Светильники уличного освещения</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-12 col-md-3">
-                                <div class="mega-menu-box">
-                                  <h5> <a href="./service.html">Контрольно-измерительные приборы</a></h5>
-                                  <ul>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">Счётчик 1Ф электрической энергии</a></li>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">Счётчик 1Ф технического учёта</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-12 col-md-3">
-                                <div class="mega-menu-box">
-                                  <h5> <a href="./service.html">Аналогово-цифровые преобразователи</a></h5>
-                                  <ul>
-                                    <li><span class="icon"><i class="fas fa-angle-right"></i></span><a href="./service.html">Аналогово-цифровые преобразователи</a></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">О бренде</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
-                  </ul><span class="nav-item search d-none d-md-block"><i class="fas fa-search"></i></span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-black"></div>
-    </header>
-        <section class="breadcrumbs">
-          <div class="container">
-            <div class="row content d-flex align-items-center">
-              <div class="col-12">
-                <div class="wow-outer">
-                  <h6 class="wow fadeInDown">Продукция</h6>
-                </div>
-                <div class="wow-outer">
-                  <h1 class="wow fadeInDown" data-wow-delay="0.4s">Контроллеры</h1>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 wow-outer">
-                <ul class="wow fadeInDown" data-wow-delay="0.8s">
-                  <li> <a href="./services-list.html">Главная</a></li>
-                  <li> <a href="./services-list.html">Продукция</a></li>
-                </ul>
-              </div>
-            </div>
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load thumbnail %}
+{% load main_filter_extras %}
+
+{% block title %} Тест {% endblock title %}
+{% block style_link %}
+<link href="{{ BASE_DIR }}/static/css/solution.css" rel="stylesheet"> {% endblock style_link %}
+
+{% block content %}
+
+<body>
+  <header>
+    {% static_placeholder "NavBar" %}
+  </header>
+
+  <section class="breadcrumbs"
+    style="background-image: url('{% thumbnail solution.img 1920x395 crop='center center' %}')">
+    <div class="container">
+      <div class="row content d-flex align-items-center">
+        <div class="col-12">
+          <div class="wow-outer">
+            <h6 class="wow fadeInDown">Решения</h6>
           </div>
-        </section>
-    <section class="description-solution padding-lg bg-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-3 wow-outer">
-            <div class="wow fadeInDown" data-wow-delay="">
-              <h4>Cusstomer</h4>
-              <p>wqwqrwq qwr qw rwq qwr wqr wq r</p>
-            </div>
-          </div>
-          <div class="col-3 wow-outer">
-            <div class="wow fadeInDown" data-wow-delay="0.5s">
-              <h4>Cusstomer</h4>
-              <p>SEO Online Advertising Research Branding Marketing Strategy Design SMM Accounting Customer Support</p>
-            </div>
-          </div>
-          <div class="col-3 wow-outer">
-            <div class="wow fadeInDown" data-wow-delay="1s">
-              <h4>Cusstomer</h4>
-              <p>SEO Online Advertising Research Branding Marketing Strategy Design SMM Accounting Customer Support</p>
-            </div>
-          </div>
-          <div class="col-3 wow-outer">
-            <div class="wow fadeInDown" data-wow-delay="1.5s">
-              <h4>Cusstomer</h4>
-              <p>SEO Online Advertising Research Branding Marketing Strategy Design SMM Accounting Customer Support</p>
-            </div>
+          <div class="wow-outer">
+            <h1 class="wow fadeInDown" data-wow-delay="0.4s">{{ solution.industry }}</h1>
           </div>
         </div>
       </div>
-    </section>
-        <section class="aboutUs padding-lg bg-white">
-          <div class="container">
-            <div class="row d-flex justify-content-between">
-              <div class="col-sm-12 col-lg-6 overflow-hidden"><img class="w-100 wow slideInLeft" src="images/work.jpg" alt="img"></div>
-              <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer text-justify">
-                <h3 class="wow slideInDown">Почему он используется?</h3>
-                <div class="wow-outer">
-                  <p class="mt-30 wow slideInDown">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона."</p>
-                </div>
-                <div class="wow-outer">
-                  <p class="wow slideInDown">Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения.</p>
-                </div>
-                <div class="wow-outer">
-                  <button class="button button-winona mt-3 wow slideInDown" href="#">Узнать больше</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-    <section class="composition padding-lg">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 wow-outer">
-            <h3 class="text-center wow slideInUp">Состав решения</h3>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-6 composition-box wow-outer"><img class="wow fadeInLeft" src="images/ava-1.jpg" width="174px" alt="">
-            <div class="desc wow fadeInRight">
-              <h5> <a href="#">Счётчик</a></h5><span>Серия: uks-12</span>
-              <P>Mr. Porter founded our company in 1995 with a vision to help companies in the US achieve more. Today he manages the most important processes of COST Accountant.</P>
-            </div>
-          </div>
-          <div class="col-6 composition-box wow-outer"><img class="wow fadeInLeft" src="images/ava-1.jpg" width="174px" alt="">
-            <div class="desc wow fadeInRight">
-              <h5> <a href="#">Счётчик</a></h5><span>Серия: uks-12</span>
-              <P>Mr. Porter founded our company in 1995 with a vision to help companies in the US achieve more. Today he manages the most important processes of COST Accountant.</P>
-            </div>
-          </div>
-          <div class="col-6 composition-box wow-outer"><img class="wow fadeInLeft" src="images/ava-1.jpg" width="174px" alt="">
-            <div class="desc wow fadeInRight">
-              <h5> <a href="#">Счётчик</a></h5><span>Серия: uks-12</span>
-              <P>Mr. Porter founded our company in 1995 with a vision to help companies in the US achieve more. Today he manages the most important processes of COST Accountant.</P>
-            </div>
-          </div>
-          <div class="col-6 composition-box wow-outer"><img class="wow fadeInLeft" src="images/ava-1.jpg" width="174px" alt="">
-            <div class="desc wow fadeInRight">
-              <h5> <a href="#">Счётчик</a></h5><span>Серия: uks-12</span>
-              <P>Mr. Porter founded our company in 1995 with a vision to help companies in the US achieve more. Today he manages the most important processes of COST Accountant.</P>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-        <section class="recall padding-lg">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 wow-outer">
-                <h3 class="text-center wow slideInUp">Отзывы</h3>
-              </div>
-            </div>
-            <div class="carousel slide" id="slider-team" data-ride="carousel">
-              <div class="carousel-inner mt-75">
-                <div class="carousel-item active">
-                  <div class="row d-flex justify-content-center">
-                    <div class="col-12 col-lg-4 mr-b-20">
-                      <div class="team">
-                        <div class="title d-flex">
-                          <div class="avatar"><img class="rounded-circle" src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-5-96x96.jpg" width="50" alt=""></div>
-                          <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
-                            <p class="dev">Региональный управляющий</p>
-                          </div>
-                        </div>
-                        <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mr-b-20">
-                      <div class="team">
-                        <div class="team_box">
-                          <div class="title d-flex">
-                            <div class="avatar"><img class="rounded-circle" src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-5-96x96.jpg" width="50" alt=""></div>
-                            <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
-                              <p class="dev">Региональный управляющий</p>
-                            </div>
-                          </div>
-                          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mr-b-20">
-                      <div class="team">
-                        <div class="team_box">
-                          <div class="title d-flex">
-                            <div class="avatar"><img class="rounded-circle" src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-5-96x96.jpg" width="50" alt=""></div>
-                            <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
-                              <p class="dev">Региональный управляющий</p>
-                            </div>
-                          </div>
-                          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row d-flex justify-content-center">
-                    <div class="col-12 col-lg-4 mr-b-20">
-                      <div class="team">
-                        <div class="team_box">
-                          <div class="title d-flex">
-                            <div class="avatar"><img class="rounded-circle" src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-5-96x96.jpg" width="50" alt=""></div>
-                            <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
-                              <p class="dev">Региональный управляющий</p>
-                            </div>
-                          </div>
-                          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mr-b-20">
-                      <div class="team">
-                        <div class="team_box">
-                          <div class="title d-flex">
-                            <div class="avatar"><img class="rounded-circle" src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-5-96x96.jpg" width="50" alt=""></div>
-                            <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
-                              <p class="dev">Региональный управляющий</p>
-                            </div>
-                          </div>
-                          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-4 mr-b-20">
-                      <div class="team">
-                        <div class="team_box">
-                          <div class="title d-flex">
-                            <div class="avatar"><img class="rounded-circle" src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-5-96x96.jpg" width="50" alt=""></div>
-                            <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
-                              <p class="dev">Региональный управляющий</p>
-                            </div>
-                          </div>
-                          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <ul class="carousel-indicators">
-                <li class="active" data-target="#slider-team" data-slide-to="0"></li>
-                <li data-target="#slider-team" data-slide-to="1"></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-<section class="alert-cta bg-primary-darker padding-xs"> 
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-lg-8 d-flex justify-content-center align-items-center wow-outer">
-        <h4 class="text-white text-center wow slideInRight"> <span>Узнайте </span><span class="font-weight-bold">стоимость </span><span>прямо сейчас!</span></h4>
-      </div>
-      <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center mr-t-20 wow-outer">
-        <button class="button button-winona wow slideInLeft" href="#">Бесплатная консультация</button>
-      </div>
-    </div>
-  </div>
-</section>
-    <footer class="padding-lg">
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-lg-4">
-      <h4>Давно выяснено</h4>
-      <p class="mt-30">Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации.</p>
-    </div>
-    <div class="col-12 col-lg-4">
-      <h4>Где его взять?</h4>
-      <p class="mt-30 mb-1"><a href="#">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда</a></a></p>
-      <ul class="d-flex">
-        <li>Гарольд Барнетт</li>
-        <li> <a class="ml-3" href="#">2 дня назад</a></li>
-      </ul>
-      <p class="mb-1 mt-30"><a href="#">Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда</a></a></p>
-      <ul class="d-flex">
-        <li>Гарольд Барнетт</li>
-        <li> <a class="ml-3" href="#">2 дня назад</a></li>
-      </ul>
-    </div>
-    <div class="col-12 col-lg-4">
-      <h4>Галерея</h4>
-      <div class="container mt-30">
-        <div class="row">
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
-          <div class="col-3 gallery-item"><a href="#"><img src="https://livedemo00.template-help.com/wt_67881/images/galley-footer-1-150x150.jpg" alt="#"></a></div>
+      <div class="row">
+        <div class="col-12 wow-outer">
+          <ul class="wow fadeInDown" data-wow-delay="0.8s">
+            <li> <a href="./services-list.html">Главная</a></li>
+            <li> <a href="./services-list.html">Решения</a></li>
+            <li> <a href="./services-list.html">{{ solution.industry }}</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row d-flex align-items-center">
-    <div class="col-12 col-lg-10">
-      <ul class="bottom-menu">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Продукция</a></li>
-        <li><a href="#">Решения</a></li>
-        <li><a href="#">О бренде</a></li>
-      </ul>
+  </section>
+
+  <section class="description-solution padding-xs bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-3 wow-outer">
+          <div class="wow fadeInDown" data-wow-delay="">
+            <h4>Отрасль:</h4>
+            <p>
+              <a href="{{ solution.get_absolute_url }}">{{ solution.industry }} </a>
+            </p>
+          </div>
+        </div>
+        <div class="col-3 wow-outer">
+          <div class="wow fadeInDown" data-wow-delay="0.5s">
+            <h4>Продукты:</h4>
+            <p>
+
+              {% for product in products %}
+
+                {% if forloop.last %}
+                  <a href="{{ product.get_absolute_url }}"> {{ product.title }}</a>
+                {% else %}
+                  <a href="{{ product.get_absolute_url }}"> {{ product.title }}</a>,
+                {% endif %}
+
+              {% empty %}
+                <span>Пусто!</span>
+              {% endfor %}
+
+            </p>
+          </div>
+        </div>
+        <div class="col-3 wow-outer">
+          <div class="wow fadeInDown" data-wow-delay="1s">
+            <h4>Краткое описание:</h4>
+            <p>
+              {{ solution.short_description }}
+            </p>
+          </div>
+        </div>
+        <div class="col-3 wow-outer">
+          <div class="wow fadeInDown" data-wow-delay="1.5s">
+            <h4>Срок реализации:</h4>
+            <p>
+              {{ solution.implement_period }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-12 col-lg-2">
-      <ul class="social-icon d-flex justify-content-between">
-        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-google"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-      </ul>
+  </section>
+
+  {% static_placeholder "About Us Solution" %}
+
+  {% static_placeholder "Slider Solution" %}
+
+  <section class="composition padding-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 wow-outer">
+          <h3 class="text-center wow slideInUp">Состав решения</h3>
+        </div>
+      </div>
+      <div class="row mt-5">
+
+
+        {% for product in products %}
+        <div class="col-6 composition-box wow-outer">
+          <img class="wow fadeInLeft" src="{% thumbnail product.img 174x174 crop='center center' %}" width="174px"
+            alt="{{ product.title }}">
+          <div class="desc wow fadeInRight">
+            <h5>
+              <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+            </h5>
+            <span>Серия: {{ product.series }}</span>
+            <P class="text-justify">{{ product.description|cut }}</P>
+          </div>
+        </div>
+
+        {% empty %}
+        <h3>Пусто!</h3>
+        {% endfor %}
+
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="footer-advanced"><a class="mr-t-20" href="#"><img src="images/logo_white.svg" height="39"></a><span class="mr-t-20">© 2019 Все права защищены.</span></div>
-  </div>
-</div>
-    </footer>
-  <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/solution.js"></script></body>
-</html>
+  </section>
+
+  {% static_placeholder "Recoll Solution" %}
+
+  {% static_placeholder "Alert CTA Solution" %}
+
+  {% endblock content %}

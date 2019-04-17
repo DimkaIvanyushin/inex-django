@@ -38,7 +38,7 @@ class SmallFeaturesModel(CMSPlugin):
     bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])
 
 class AlertCtaModel(CMSPlugin):
-    text = models.CharField(max_length=30, default="default")
+    text = models.CharField(max_length=100, default="default")
     text_button = models.CharField(max_length=30, default="default.")
     bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])
 
@@ -57,7 +57,7 @@ class PriceBoxModel(CMSPlugin):
     descriptoin = models.TextField(default="default")
 
 class AlertMdlModel(CMSPlugin):
-    title = models.CharField(max_length=30, default="default")
+    title = models.CharField(max_length=100, default="default")
     title_bold = models.CharField(max_length=30, default="default")
     descriptoin = models.TextField(default="default")
     button_title = models.CharField(max_length=30, default="default")

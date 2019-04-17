@@ -13,7 +13,8 @@
     {% static_placeholder "NavBar" %}
   </header>
 
-  <section class="breadcrumbs" style="background-image: url('{% thumbnail product.group.img 1920x395 crop='center center' %}')">
+  <section class="breadcrumbs"
+    style="background-image: url('{% thumbnail product.group.img 1920x395 crop='center center' %}')">
     <div class="container">
       <div class="row content d-flex align-items-center">
         <div class="col-12">
@@ -29,7 +30,7 @@
         <div class="col-12 wow-outer">
           <ul class="wow fadeInDown" data-wow-delay="0.8s">
             <li> <a href="./services-list.html">Главная</a></li>
-            <li> <a href="./services-list.html">Продукция</a></li>
+            <li> <a href="{% url 'product-all' %}">Продукция</a></li>
             <li> <a href="{{ product.group.get_absolute_url }}">{{ product.group.title }}</a></li>
             <li> <a href="{{ product.get_absolute_url }}">{{ product.title }}</a></li>
           </ul>
@@ -85,24 +86,22 @@
         </div>
       </div>
       <div class="row mt-5 justify-content-center">
+
+        {% for solution in solutions %}
         <div class="col-12 col-md-4 wow-outer">
-          <div class="solutions-box wow fadeInLeft"><img src="images/service-1.jpg" alt="#">
-            <div class="solutions-caption"><a href="#"><span class="solutions-caption-title">Энергетика</span></a><a
-                href="#"><span class="solutions-caption-text">Система телемеханики</span></a></div>
+          <div class="solutions-box wow fadeInLeft"><img src="{% thumbnail solution.img 350x256 crop='center center' %}"
+              alt="{{ solution.industry }}">
+            <div class="solutions-caption">
+              <a href="{{ solution.get_absolute_url }}">
+                <span class="solutions-caption-title">{{ solution.industry }}</span>
+              </a>
+              <!-- <a href="#"><span class="solutions-caption-text">Система телемеханики</span></a> -->
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 wow-outer">
-          <div class="solutions-box wow fadeInLeft"><img src="images/service-2.jpg" alt="#">
-            <div class="solutions-caption"><a href="#"><span class="solutions-caption-title">Промышленность</span></a><a
-                href="#"><span class="solutions-caption-text">Промышленность</span></a></div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 wow-outer">
-          <div class="solutions-box wow fadeInLeft"><img src="images/service-3.jpg" alt="#">
-            <div class="solutions-caption"><a href="#"><span class="solutions-caption-title">Офисы и административные
-                  здания</span></a><a href="#"><span class="solutions-caption-text">Умное здание</span></a></div>
-          </div>
-        </div>
+        {% empty %}
+        <h3>Пусто!</h3>
+        {% endfor %}
       </div>
     </div>
   </section>

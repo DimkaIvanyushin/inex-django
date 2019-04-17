@@ -177,7 +177,6 @@ class ContactPlugin(CMSPluginBase):
         context.update({'instance': instance, 'item': item})
         return context
 
-
 @plugin_pool.register_plugin  
 class RecallPlugin(CMSPluginBase):
     model = RecallModel
@@ -194,7 +193,6 @@ class RecallPlugin(CMSPluginBase):
 
         context.update({'instance': instance, 'slider_paginate': slider_paginate})
         return context
-
 
 @plugin_pool.register_plugin  
 class RecallPagePlugin(CMSPluginBase):
@@ -239,5 +237,8 @@ class NavBarPlugin(CMSPluginBase):
     render_template = 'template_plugin/nav_bar_template.html'
 
     def render(self, context, instance, placeholder):
-        context.update({'instance': instance})
+
+        groupProducts = GroupProduct.objects.all()
+
+        context.update({'instance': instance, 'groupProducts': groupProducts})
         return context

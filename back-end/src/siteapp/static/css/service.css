@@ -262,7 +262,7 @@ section.solutions .solutions-box .solutions-caption span.solutions-caption-title
   line-height: 0.1em;
 }
 section.tabs {
-  
+  display: none;
 }
 section.tabs .tab-content {
   padding: 20px 0;
@@ -342,6 +342,7 @@ section.tabs ul.nav.nav-tabs li.nav-item a.nav-link.active {
   }
 }
 section.breadcrumbs {
+  background-image: url(../images/bg-1.jpg);
   background-size: cover;
   background-position-x: center;
   padding: 60px 0;

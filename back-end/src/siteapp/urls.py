@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import absolute_import, print_function, unicode_literals
 
 from cms.sitemaps import CMSSitemap
@@ -24,6 +23,7 @@ urlpatterns += (
 
 urlpatterns += (
     url('products/', include('product.urls')),
+    url('solutions/', include('solutions.urls')),
 )
 
 if settings.DEBUG:

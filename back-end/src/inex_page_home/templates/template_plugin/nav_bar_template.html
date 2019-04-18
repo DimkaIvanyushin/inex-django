@@ -3,8 +3,8 @@
         <div class="container-mobile-menu">
             <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" data-toggle="collapse" aria-expanded="false"
-                aria-label="Toggle navigation"><i class="fas fa-bars icon-md"></i></button><img class="d-md-none"
-                src="/static/images/logo.svg" height="25" alt="logo">
+                aria-label="Toggle navigation"><i class="fas fa-bars icon-md"></i></button>
+                <img class="d-md-none" src="/static/images/logo.svg" height="25" alt="logo">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-top-mobile"
                 aria-controls="menu-top-mobile" aria-expanded="false" aria-label="Toggle navigation 2"><i
                     class="fas fa-ellipsis-v icon-md"></i></button>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"><a class="logo-box" href="./"><img
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"><a class="logo-box" href="/"><img
                     class="logo-dt d-none d-md-block hide" src="/static/images/logo.svg" height="20" alt="logo"></a>
             <ul class="navbar-nav mr-auto hide">
                 <li class="nav-item"><a class="nav-link" href="{% url 'solutions' %}">Решения</a></li>
@@ -61,9 +61,9 @@
                                             <ul>
                                                 {% for product in groupProduct.product_set.all %}
                                                 <li>
-                                                    <span class="icon">
-                                                        <i class="fas fa-angle-right"></i>
-                                                    </span>
+                                                    <!-- <span class="icon">
+                                                        <i class="far fa-dot-circle"></i>
+                                                    </span> -->
                                                     <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
                                                 </li>
                                                 {% empty %}

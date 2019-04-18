@@ -23,7 +23,7 @@ urlpatterns += (
 
 urlpatterns += (
     url(r'^solutions/', include('solutions.urls')),
-    url(r'^products/', include('product.urls')),
+    url(r'^services/', include('product.urls')),
 )
 
         

@@ -52,7 +52,6 @@ h6 {
   border-radius: 0;
   font-weight: 500;
   letter-spacing: 0.2em;
-  font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
@@ -141,15 +140,6 @@ header .top-menu .contact .icon {
   justify-content: center;
   align-items: center;
 }
-section.slider .bg1 {
-  background-image: url(../images/1.jpg);
-}
-section.slider .bg2 {
-  background-image: url(../images/2.jpeg);
-}
-section.slider .bg3 {
-  background-image: url(../images/3.jpg);
-}
 section.slider .item {
   height: 750px;
   background-size: cover;
@@ -235,7 +225,7 @@ section.slider .pagination ul li.active {
   }
 }
 section.smallFeatures .box p {
-  margin-top: 16px;
+  margin-top: 10px;
 }
 section.smallFeatures .box .icon {
   font-size: 36px;

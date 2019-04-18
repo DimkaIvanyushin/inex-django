@@ -13,7 +13,7 @@
 
   <link href="{{ BASE_DIR }}/static/css/common.css" rel="stylesheet">
 
-  {% block style_link %} This link css {% endblock style_link %}
+  {% block style_link %} {% endblock style_link %}
 
 </head>
 
@@ -28,6 +28,9 @@
   {% render_block "js" %}
   <script type="text/javascript" src="{{ BASE_DIR }}/static/js/common.js"></script>
   <script type="text/javascript" src="{{ BASE_DIR }}/static/js/index.js"></script>
+
+  {% block js_link %}{% endblock js_link %}
+
 </body>
 
 </html>

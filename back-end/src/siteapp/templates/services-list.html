@@ -27,7 +27,7 @@
       <div class="row">
         <div class="col-12 wow-outer">
           <ul class="wow fadeInDown" data-wow-delay="0.8s">
-            <li> <a href="./services-list.html">Главная</a></li>
+            <li> <a href="/">Главная</a></li>
             <li> <a href="{% url 'product-all' %}">Продукция</a></li>
             <li> <a href="{{ group_product.get_absolute_url }}">{{ group_product.title }}</a></li>
           </ul>
@@ -117,3 +117,5 @@
   </section>
 
   {% endblock content %}
+
+  {% block js_link %} <script type="text/javascript" src="{{ BASE_DIR }}/static/js/services-list.js"></script>{% endblock js_link %}

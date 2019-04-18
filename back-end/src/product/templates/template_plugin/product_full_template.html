@@ -19,8 +19,12 @@
             {% for product in products %}
 
             <div class="col-sm-6 col-lg-3 wow-outer">
-                <div class="item wow fadeInLeft"><img src="{% thumbnail product.img 255x250 crop='center center' %}" alt="{{ product.title }}">
-                    <div class="solutions-caption"><a class="solutions-caption-title" href="{{ product.get_absolute_url }}">{{ product.title }}</a></div>
+                <div class="item wow fadeInLeft">
+                    <img src="{% thumbnail product.img 255x250 crop='center center' %}" alt="{{ product.title }}">
+                    
+                    <div class="solutions-caption">
+                        <a class="solutions-caption-title" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                    </div>
                 </div>
             </div>
 

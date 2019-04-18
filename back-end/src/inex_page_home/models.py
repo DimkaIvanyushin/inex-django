@@ -1,5 +1,6 @@
 from django.db import models
 from cms.models import CMSPlugin
+from djangocms_text_ckeditor.fields import HTMLField
 
 BG_CHOICES = (
     ('bg-gray', 'Gray'),
@@ -16,7 +17,7 @@ class MenuBarModel(CMSPlugin):
 
 class AboutUsModel(CMSPlugin):
     title = models.CharField(max_length=30, default="default")
-    description = models.TextField(default="default")
+    description = HTMLField( default="default")
     text_button = models.CharField(max_length=30, default="default")
     img = models.ImageField(upload_to = 'images/about-us', default = 'images/def/def.jpg')
     
@@ -38,7 +39,7 @@ class SmallFeaturesModel(CMSPlugin):
     bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])
 
 class AlertCtaModel(CMSPlugin):
-    text = models.CharField(max_length=100, default="default")
+    text = HTMLField(default="default")
     text_button = models.CharField(max_length=30, default="default.")
     bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])
 

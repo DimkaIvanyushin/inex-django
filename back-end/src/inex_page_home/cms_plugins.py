@@ -3,6 +3,8 @@ from cms.plugin_pool import plugin_pool
 from .models import *
 from product.models import GroupProduct, Product
 from django.utils.translation import ugettext as _
+from django.contrib.sites.models import Site
+
 
 @plugin_pool.register_plugin  
 class MenuBarPlugin(CMSPluginBase):
@@ -240,5 +242,5 @@ class NavBarPlugin(CMSPluginBase):
 
         groupProducts = GroupProduct.objects.all()
 
-        context.update({'instance': instance, 'groupProducts': groupProducts})
+        context.update({'instance': instance, 'groupProducts': groupProducts })
         return context

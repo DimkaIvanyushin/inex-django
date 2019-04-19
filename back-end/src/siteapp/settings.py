@@ -139,7 +139,11 @@ CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
-    ('index.html', 'Home page')
+    ('index.html', 'Home page'),
+    ('product.html', 'Product page'),
+    ('products-group.html', 'Product-group page'),
+    ('solution-list.html', 'Solution-List page'),
+    ('solution.html', 'Solution page'),
 )
 
 CMS_PERMISSION = True

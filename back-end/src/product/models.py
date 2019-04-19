@@ -17,6 +17,14 @@ class GroupProduct(models.Model):
     title = models.CharField(max_length=100)
     img = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
 
+    title_us = models.CharField(max_length=100, default = 'text')
+    img_us = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
+    description_us = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', default = 'text')
+    button_text_us = models.CharField(max_length=100, default = 'text')
+
+    title_product = models.CharField(max_length=100, default = 'text')
+    description_product = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', default = 'text')
+
     def __str__(self):
         return str(self.title)
 

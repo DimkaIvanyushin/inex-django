@@ -21,7 +21,7 @@ def showProduct(request, id):
 
     return render(
         request,
-        'service.html',
+        'product.html',
         context={
             'product': product,
             'solutions': solutions,
@@ -36,7 +36,7 @@ def showGroupProduct(request, id):
 
     return render(
         request,
-        'services-list.html',
+        'products-group.html',
         context={
             'group_product': group_product,
             'products': products

@@ -57,14 +57,14 @@
 
               {% for product in products %}
 
-                {% if forloop.last %}
-                  <a href="{{ product.get_absolute_url }}"> {{ product.title }}</a>
-                {% else %}
-                  <a href="{{ product.get_absolute_url }}"> {{ product.title }}</a>,
-                {% endif %}
+              {% if forloop.last %}
+              <a href="{{ product.get_absolute_url }}"> {{ product.title }}</a>
+              {% else %}
+              <a href="{{ product.get_absolute_url }}"> {{ product.title }}</a>,
+              {% endif %}
 
               {% empty %}
-                <span>Пусто!</span>
+              <span>Пусто!</span>
               {% endfor %}
 
             </p>
@@ -90,9 +90,25 @@
     </div>
   </section>
 
-  {% static_placeholder "About Us Solution" %}
-
-  {% static_placeholder "Slider Solution" %}
+  <section class="aboutUs padding-lg {{ instance.bg_color }}">
+    <div class="container">
+      <div class="row d-flex justify-content-between">
+        <div class="col-sm-12 col-lg-6 overflow-hidden d-flex align-items-center">
+          <img class="wow slideInLeft" src="{% thumbnail solution.img_us 540x360 crop %} " height="360" alt="img">
+        </div>
+        <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer">
+          <h3 class="wow slideInDown" data-wow-duration="1.2s">{{ solution.title_us }}</h3>
+          <div class="mt-3 wow-outer">
+            {{ solution.description_us }}
+          </div>
+          <div class="wow-outer">
+            <button class="button button-winona mt-3 wow slideInLeft" data-wow-delay="1.2s"
+              href="#">{{ solution.text_button_us }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="composition padding-lg">
     <div class="container">
@@ -102,7 +118,6 @@
         </div>
       </div>
       <div class="row mt-5">
-
 
         {% for product in products %}
         <div class="col-6 composition-box wow-outer">
@@ -130,4 +145,6 @@
   {% static_placeholder "Alert CTA Solution" %}
 
   {% endblock content %}
-  {% block js_link %} <script type="text/javascript" src="{{ BASE_DIR }}/static/js/services-list.js"></script>{% endblock js_link %}
+
+  {% block js_link %}
+  <script type="text/javascript" src="{{ BASE_DIR }}/static/js/solution.js"></script> {% endblock js_link %}

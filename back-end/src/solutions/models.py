@@ -12,6 +12,12 @@ class Solutions(models.Model):
 
     products = models.ManyToManyField(Product)
 
+    title_us = models.CharField(max_length=100, default="default")
+    description_us = models.TextField(default="default")
+    text_button_us = models.CharField(max_length=100, default="default")
+    img_us = models.ImageField(upload_to = 'images/solutions', default = 'images/def/def.jpg')
+
+
     def get_absolute_url(self):
         return reverse('solution-detail', args=[str(self.id)])
 
@@ -21,7 +27,6 @@ class Solutions(models.Model):
 class SolutionsPluginModel(CMSPlugin):
     title = models.CharField(max_length=30, default="default")
     descriptoin = models.TextField(default="default")
-
 
 class BreadcrumbsSolution(CMSPlugin):
     title = models.CharField(max_length=100, default="default")

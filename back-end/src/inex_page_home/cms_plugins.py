@@ -228,7 +228,9 @@ class FooterPlugin(CMSPluginBase):
     render_template = 'template_plugin/footer_template.html'
 
     def render(self, context, instance, placeholder):
-        context.update({'instance': instance})
+        contact = MenuBarModel.objects.latest('cmsplugin_ptr_id')
+        
+        context.update({'instance': instance, 'contact': contact})
         return context
 
 

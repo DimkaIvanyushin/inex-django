@@ -2,6 +2,7 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from .models import *
 from product.models import GroupProduct, Product
+from solutions.models import Solutions
 from django.utils.translation import ugettext as _
 from django.contrib.sites.models import Site
 
@@ -108,7 +109,20 @@ class ProductSectionPlugin(CMSPluginBase):
         groupProduct = GroupProduct.objects.all()
         context.update({'instance': instance, 'groupProduct': groupProduct})
         return context
-    
+
+@plugin_pool.register_plugin  
+class SolutionSectionPlugin(CMSPluginBase):
+    model = SolutionSectionModel
+    module = _("Inex Plugin")
+    name = _('Solution Section Plugin')
+    render_template = 'template_plugin/solution_section_template.html'
+ 
+    def render(self, context, instance, placeholder):
+
+        solutions = Solutions.objects.all()
+        context.update({'instance': instance, 'solutions': solutions})
+        return context
+
 @plugin_pool.register_plugin  
 class PricePlugin(CMSPluginBase):
     model = PriceModel

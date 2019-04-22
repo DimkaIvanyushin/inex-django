@@ -5,6 +5,30 @@ from inex_page_home.models import AboutUsModel, ProductSectionModel
 from django.utils.translation import ugettext as _
 
 @plugin_pool.register_plugin  
+class BreadcrumbsProductPlugin(CMSPluginBase):
+    model = BreadcrumbsProductModel  
+    module = _("Inex Product Plugin")
+    name = _("Breadcrumbs Product Plugin") 
+    render_template = "template_plugin/breadcrumbs_template.html"
+
+    def render(self, context, instance, placeholder):
+        context.update({'instance': instance})
+        return context
+
+@plugin_pool.register_plugin  
+class AllProductPlugin(CMSPluginBase):
+    model = ProductSectionModel  
+    module = _("Inex Product Plugin")
+    name = _("All Product Plugin") 
+    render_template = "template_plugin/all_product_template.html"
+
+    def render(self, context, instance, placeholder):
+        group_products = GroupProduct.objects.all()
+
+        context.update({'instance': instance, 'group_products': group_products})
+        return context
+
+@plugin_pool.register_plugin  
 class AboutUsRevercePlugin(CMSPluginBase):
     model = AboutUsModel  
     module = _("Inex Product Plugin")

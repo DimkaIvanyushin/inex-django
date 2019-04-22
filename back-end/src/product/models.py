@@ -3,27 +3,14 @@ from cms.models import CMSPlugin
 from django.urls import reverse
 from djangocms_text_ckeditor.fields import HTMLField
 
-
-CKEDITOR_SETTINGS_MODEL = {
-    'toolbar_HTMLField': [
-        ['Undo', 'Redo'],
-        ['ShowBlocks'],
-        ['Format', 'Styles'],
-        ['Bold', 'Italic', 'Underline', '-', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
-    ]
-}
-
 class GroupProduct(models.Model):
-    title = models.CharField(max_length=100)
-    img = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
+    title = models.CharField(max_length=255, verbose_name="Наименование", null=True, blank=True)
+    img = models.ImageField(upload_to = 'images/product', verbose_name="Изображение", default = 'images/def/def.jpg', null=True, blank=True)
+    title_full = models.CharField(max_length=255, verbose_name="Полное наименование", null=True, blank=True)
+    description = HTMLField(verbose_name="Описание", null=True, blank=True)
 
-    title_us = models.CharField(max_length=100, default = 'text')
-    img_us = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
-    description_us = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', default = 'text')
-    button_text_us = models.CharField(max_length=100, default = 'text')
-
-    title_product = models.CharField(max_length=100, default = 'text')
-    description_product = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', default = 'text')
+    title_product = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True)
+    description_product = HTMLField(verbose_name="Текст описания", null=True, blank=True)
 
     def __str__(self):
         return str(self.title)
@@ -35,10 +22,10 @@ class Product(models.Model):
     group = models.ForeignKey(GroupProduct, on_delete = models.CASCADE)
     title = models.CharField(max_length=100)
     series = models.CharField(max_length=100)
-    description = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', null=True, blank=True)
-    description_specification = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', null=True, blank=True)
-    spec_specification = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', null=True, blank=True)
-    legend_specification = HTMLField(configuration='CKEDITOR_SETTINGS_MODEL', null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    description_specification = HTMLField( null=True, blank=True)
+    spec_specification = HTMLField( null=True, blank=True)
+    legend_specification = HTMLField( null=True, blank=True)
 
     img = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
     
@@ -69,3 +56,8 @@ class ThProductModel(CMSPlugin):
 
 class DescProductModel(CMSPlugin):
     text = models.CharField(max_length=100)
+
+class BreadcrumbsProductModel(CMSPlugin):
+    text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True)
+    text_bold = models.CharField(max_length=255, verbose_name="Жирный текст", null=True, blank=True)
+    img = models.ImageField(upload_to = 'images/product', verbose_name="Изображение", default = 'images/def/def.jpg', null=True, blank=True)

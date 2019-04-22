@@ -8,7 +8,7 @@ class SolutionsGridPlugin(CMSPluginBase):
     model = SolutionsPluginModel  
     module = _("Inex Solution Plugin")
     name = _("Solutions Plugin") 
-    render_template = "solution_template.html"
+    render_template = "plugin/solution_template.html"
 
     def render(self, context, instance, placeholder):
 
@@ -21,7 +21,7 @@ class BreadcrumbsSolPlugin(CMSPluginBase):
     model = BreadcrumbsSolution  
     module = _("Inex Solution Plugin")
     name = _("Breadcrumbs Solutions Plugin") 
-    render_template = "breadcrumbs_sol_template.html"
+    render_template = "plugin/breadcrumbs_sol_template.html"
 
     def render(self, context, instance, placeholder):
 

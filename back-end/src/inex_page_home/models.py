@@ -48,6 +48,10 @@ class ProductSectionModel(CMSPlugin):
     text = models.TextField(default="default")
     bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])
 
+class SolutionSectionModel(CMSPlugin):
+    title = models.CharField(max_length=30, default="default")
+    bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])
+
 class PriceModel(CMSPlugin):
     title = models.CharField(max_length=30, default="default")
     bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])

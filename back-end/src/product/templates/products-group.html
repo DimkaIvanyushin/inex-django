@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load thumbnail %}
+
+{% block title %} {{ group_product.title }} {% endblock title %}
+{% block style_link %}<link href="{{ BASE_DIR }}/static/common/css/product-list.css" rel="stylesheet"> {% endblock style_link %}
+
+{% block content %}
+
+<body>
+  <header>
+    {% static_placeholder "NavBar" %}
+  </header>
+
+  <section class="breadcrumbs"
+    style="background-image: url({% thumbnail group_product.img 1920x395 crop='center center' %} )">
+    <div class="container">
+      <div class="row content d-flex align-items-center">
+        <div class="col-12">
+          <div class="wow-outer">
+            <h6 class="wow fadeInDown">Продукция</h6>
+          </div>
+          <div class="wow-outer">
+            <h1 class="wow fadeInDown" data-wow-delay="0.4s">{{ group_product.title }}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 wow-outer">
+          <ul class="wow fadeInDown" data-wow-delay="0.8s">
+            <li> <a href="/">Главная</a></li>
+            <li> <a href="{% url 'product-all' %}">Продукция</a></li>
+            <li> <a href="{{ group_product.get_absolute_url }}">{{ group_product.title }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aboutUs padding-lg bg-gray">
+    <div class="container">
+      <div class="row d-flex justify-content-between flex-row-reverse">
+        <div class="col-sm-12 col-lg-6 overflow-hidden">
+          <img class="wow slideInLeft" src="{% thumbnail group_product.img 540x360 crop %}" alt="img"></div>
+        <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer">
+          <h3 class="wow slideInDown">{{ group_product.title_full }}</h3>
+          <div class="wow-outer">
+            <div class="mt-30 wow slideInDown">
+              {{ group_product.description }}
+            </div>
+          </div>
+          <div class="wow-outer">
+            <button class="button button-winona mt-3 wow slideInDown"
+              href="#">Сформировать запрос</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services padding-lg">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12">
+          <div class="wow-outer">
+            <h3 class="text-center wow slideInDown">{{ group_product.title_product }}</h3>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div class="wow-outer">
+            <div class="text-center mt-3 wow slideInDown text-center">
+              {{ group_product.description_product }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row lists-row mt-3">
+        {% for product in products %}
+
+        <div class="col-sm-6 col-lg-3 wow-outer">
+          <div class="item wow fadeInLeft">
+     
+            <img src="{% thumbnail product.img 255x250 crop='center center' %}" width="255px" height="250px" alt="{{ product.title }}">
+     
+            <div class="solutions-caption">
+              <a class="solutions-caption-title" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+            </div>
+          </div>
+        </div>
+
+        {% empty %}
+        <h3>Нет продукции.</h3>
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about-us-img padding-xl"
+    style="background: url(https://livedemo00.template-help.com/wt_67881/images/call-to-action-2-1920x584.jpg)">
+    <div class="container">
+      <div class="col-sm-12 offset-lg-6 col-lg-5 text-justify">
+        <div class="wow-outer">
+          <h4 class="wow fadeInDown">Положить начало автоматизации</h4>
+        </div>
+        <div class="wow-outer">
+          <h3 class="wow fadeInDown">Вашего бизнеса</h3>
+        </div>
+        <div class="wow-outer">
+          <p class="wow fadeInDown">Сформируйте коммерческое предложение в несколько кликов для того, чтобы приобрести
+            контроллеры Inex</p>
+        </div>
+        <div class="wow-outer">
+          <button class="button button-winona mt-3 wow fadeInDown" href="#">Начать</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="recall-big padding-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 wow-outer">
+          <h3 class="text-center wow slideInUp">Отзывы</h3>
+        </div>
+      </div>
+      <div class="carousel slide wow-outer mt-45" id="slider-team" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner wow fadeInDown">
+          <div class="carousel-item active">
+            <div class="row d-flex justify-content-center">
+              <div class="col-12 col-lg-6">
+                <div class="team"><span class="quote"><i class="fas fa-quote-left"></i></span>
+                  <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem
+                    Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
+                  <div class="title d-flex">
+                    <div class="avatar"><img class="rounded-circle"
+                        src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-3-96x96.jpg"
+                        width="50" alt=""></div>
+                    <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
+                      <p class="dev">Региональный управляющий</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="team"><span class="quote"><i class="fas fa-quote-left"></i></span>
+                  <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem
+                    Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
+                  <div class="title d-flex">
+                    <div class="avatar"><img class="rounded-circle"
+                        src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-3-96x96.jpg"
+                        width="50" alt=""></div>
+                    <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
+                      <p class="dev">Региональный управляющий</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row d-flex justify-content-center">
+              <div class="col-12 col-lg-6">
+                <div class="team"><span class="quote"><i class="fas fa-quote-left"></i></span>
+                  <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem
+                    Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
+                  <div class="title d-flex">
+                    <div class="avatar"><img class="rounded-circle"
+                        src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-3-96x96.jpg"
+                        width="50" alt=""></div>
+                    <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
+                      <p class="dev">Региональный управляющий</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="team"><span class="quote"><i class="fas fa-quote-left"></i></span>
+                  <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem
+                    Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона.</p>
+                  <div class="title d-flex">
+                    <div class="avatar"><img class="rounded-circle"
+                        src="https://livedemo00.template-help.com/wt_67881/images/testimonials-person-3-96x96.jpg"
+                        width="50" alt=""></div>
+                    <div class="team_info ml-3"><span class="name">Гарольд Барнетт</span>
+                      <p class="dev">Региональный управляющий</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="carousel-indicators">
+          <li class="active" data-target="#slider-team" data-slide-to="0"></li>
+          <li data-target="#slider-team" data-slide-to="1"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {% endblock content %}
+
+  {% block js_link %}
+  <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+  {% endblock js_link %}

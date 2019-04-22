@@ -141,6 +141,7 @@ CMS_TEMPLATES = (
     ('sidebar_right.html', 'Sidebar Right'),
     ('index.html', 'Home page'),
     ('product.html', 'Product page'),
+    ('products.html', 'Products page'),
     ('products-group.html', 'Product-group page'),
     ('solution-list.html', 'Solution-List page'),
     ('solution.html', 'Solution page'),

@@ -23,10 +23,9 @@ urlpatterns += (
 
 urlpatterns += (
     url(r'^solutions/', include('solutions.urls')),
-    url(r'^services/', include('product.urls')),
+    url(r'^products/', include('product.urls')),
 )
-
-        
+      
 if settings.DEBUG:
     urlpatterns = [
         url(r'^media/(?P<path>.*)$', serve,

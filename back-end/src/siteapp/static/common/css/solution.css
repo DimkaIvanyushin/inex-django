@@ -1,3 +1,10 @@
+a.link-gray {
+  color: #74757f;
+  font-weight: 400;
+}
+a.link-gray:hover{
+  text-decoration: underline;
+}
 section.recall ul {
   display: flex;
   position: relative;
@@ -28,18 +35,25 @@ section.recall .team .team_info .dev {
 }
 section.breadcrumbs {
   position: relative;
-  top:70px;
-  margin-bottom: 70px;
   background-size: cover;
   background-position-x: center;
-  padding: 60px 0;
+  padding: 90px 0 60px 0px;
+}
+section.breadcrumbs::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#ffffff00, #00000096);
 }
 section.breadcrumbs .content {
   height: 250px;
   overflow: hidden;
 }
 section.breadcrumbs h1 {
-  font-size: 68px;
+  font-size: 60px;
   line-height: 1.17647;
   text-transform: uppercase;
   margin-top: 20px;
@@ -68,7 +82,7 @@ section.breadcrumbs ul li {
 }
 section.breadcrumbs ul li::after {
   margin-left: 25px;
-  content: '>';
+  content: '-';
 }
 section.breadcrumbs ul li:last-child::after {
   content: '';
@@ -76,6 +90,7 @@ section.breadcrumbs ul li:last-child::after {
 section.breadcrumbs ul li a {
   font-weight: 400;
   color: #aeb1be;
+  white-space: nowrap;
 }
 section.breadcrumbs ul li a:hover {
   color: #fff;

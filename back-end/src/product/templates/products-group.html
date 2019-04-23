@@ -7,13 +7,14 @@
 
 {% block content %}
 
-<body>
+
   <header>
     {% static_placeholder "NavBar" %}
   </header>
 
-  <section class="breadcrumbs"
-    style="background-image: url({% thumbnail group_product.img 1920x395 crop='center center' %} )">
+  <section class="breadcrumbs">
+    <div class="bg_blur" style="background-image: url({% thumbnail group_product.img 1920x395 crop='center center' %} )" ></div>
+
     <div class="container">
       <div class="row content d-flex align-items-center">
         <div class="col-12">
@@ -58,6 +59,7 @@
     </div>
   </section>
 
+  {% if products %}
   <section class="services padding-lg">
     <div class="container">
       <div class="row d-flex justify-content-center">
@@ -74,28 +76,21 @@
           </div>
         </div>
       </div>
-
       <div class="row lists-row mt-3">
         {% for product in products %}
-
         <div class="col-sm-6 col-lg-3 wow-outer">
-          <div class="item wow fadeInLeft">
-     
-            <img src="{% thumbnail product.img 255x250 crop='center center' %}" width="255px" height="250px" alt="{{ product.title }}">
-     
+          <div class="item wow fadeInLeft"> 
+            <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %}" width="255px" height="250px" alt="{{ product.title }}">
             <div class="solutions-caption">
               <a class="solutions-caption-title" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
             </div>
           </div>
         </div>
-
-        {% empty %}
-        <h3>Нет продукции.</h3>
         {% endfor %}
-
       </div>
     </div>
   </section>
+  {% endif %}
 
   <section class="about-us-img padding-xl"
     style="background: url(https://livedemo00.template-help.com/wt_67881/images/call-to-action-2-1920x584.jpg)">

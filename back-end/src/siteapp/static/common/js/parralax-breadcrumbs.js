@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var $breadcrumbs = $('section.breadcrumbs');
+    var $breadcrumbs = $('section.breadcrumbs .bg_blur');
 
     var $navbar = $('.navbar');
 

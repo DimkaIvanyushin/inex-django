@@ -11,8 +11,10 @@
     {% static_placeholder "NavBar" %}
   </header>
 
-  <section class="breadcrumbs"
-    style="background-image: url({% thumbnail solution.img 1920x395 crop='center center' %})">
+  <section class="breadcrumbs">
+
+    <div class="bg_blur" style="background-image: url({% thumbnail solution.img 1920x395 crop='center center' %})" ></div>
+
     <div class="container">
       <div class="row content d-flex align-items-center">
         <div class="col-12">
@@ -51,7 +53,6 @@
           <div class="wow fadeInDown" data-wow-delay="0.5s">
             <h4>Продукты:</h4>
             <p>
-
               <ul>
                 {% for product in products %}
                   <li>
@@ -117,7 +118,7 @@
 
         {% for product in products %}
         <div class="col-6 composition-box wow-outer">
-          <img class="wow fadeInLeft" src="{% thumbnail product.img 174x174 crop='center center' %}" width="174px"
+          <img class="wow fadeInLeft" src="{% thumbnail product.images.first.image 174x174 crop='center center' %}" width="174px"
             height="174px" alt="{{ product.title }}">
           <div class="desc wow fadeInRight">
             <h5>

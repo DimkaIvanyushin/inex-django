@@ -2,7 +2,7 @@ from django.db import models
 from cms.models import CMSPlugin
 from django.urls import reverse
 from djangocms_text_ckeditor.fields import HTMLField
-
+ 
 class GroupProduct(models.Model):
     title = models.CharField(max_length=255, verbose_name="Наименование", null=True, blank=True)
     img = models.ImageField(upload_to = 'images/product', verbose_name="Изображение", default = 'images/def/def.jpg', null=True, blank=True)
@@ -20,20 +20,24 @@ class GroupProduct(models.Model):
 
 class Product(models.Model):
     group = models.ForeignKey(GroupProduct, on_delete = models.CASCADE)
-    title = models.CharField(max_length=100)
-    series = models.CharField(max_length=100)
-    description = models.TextField(null=True, blank=True)
-    description_specification = HTMLField( null=True, blank=True)
-    spec_specification = HTMLField( null=True, blank=True)
-    legend_specification = HTMLField( null=True, blank=True)
+    title = models.CharField(max_length=100, verbose_name="Наименование")
+    series = models.CharField(max_length=100, verbose_name="Серия")
+    description = models.TextField(null=True, blank=True, verbose_name="Краткое описание")
+    description_specification = HTMLField(null=True, blank=True, verbose_name="Полное описание")
+    spec_specification = HTMLField(null=True, blank=True, verbose_name="Технические характеристики")
+    legend_specification = HTMLField(null=True, blank=True, verbose_name="Условные обозначения")
 
-    img = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
+    # img = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
     
     def __str__(self):
         return str(self.title)
 
     def get_absolute_url(self):
         return reverse('product-detail', args=[str(self.id)])
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, related_name='images')
+    image = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
 
 class Specifications(models.Model):
     icon = models.FileField(upload_to= 'images/product/icon', default = 'images/def/def.jpg')

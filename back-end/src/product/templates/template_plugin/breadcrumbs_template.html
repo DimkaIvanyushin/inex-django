@@ -1,5 +1,8 @@
 {% load thumbnail %}
-<section class="breadcrumbs" style="background-image: url({% thumbnail instance.img 1920x395 crop='center center' %})">
+<section class="breadcrumbs">
+
+    <div class="bg_blur" style="background-image: url({% thumbnail instance.img 1920x395 crop='center center' %})" ></div>
+
     <div class="container">
         <div class="row content d-flex align-items-center">
             <div class="col-12">

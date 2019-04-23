@@ -1,9 +1,10 @@
 a.link-gray {
   color: #74757f;
-  font-weight: 400;
+  translate: color 0.8 ease;
 }
 a.link-gray:hover{
-  text-decoration: underline;
+ color: #0095d9;
+ translate: color 0.8 ease;
 }
 section.recall ul {
   display: flex;
@@ -38,6 +39,7 @@ section.breadcrumbs {
   background-size: cover;
   background-position-x: center;
   padding: 90px 0 60px 0px;
+  overflow: hidden;
 }
 section.breadcrumbs::before{
   content: '';
@@ -53,8 +55,8 @@ section.breadcrumbs .content {
   overflow: hidden;
 }
 section.breadcrumbs h1 {
-  font-size: 60px;
-  line-height: 1.17647;
+  font-size: 54px;
+  line-height: 1em;
   text-transform: uppercase;
   margin-top: 20px;
   margin-bottom: 0;
@@ -78,11 +80,17 @@ section.breadcrumbs ul {
   display: flex;
 }
 section.breadcrumbs ul li {
+  max-width: 200px;
   margin-right: 25px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 section.breadcrumbs ul li::after {
   margin-left: 25px;
   content: '-';
+  text-shadow: 1px 1px 1px #0000004f;
 }
 section.breadcrumbs ul li:last-child::after {
   content: '';
@@ -95,6 +103,11 @@ section.breadcrumbs ul li a {
 section.breadcrumbs ul li a:hover {
   color: #fff;
 }
+.description-solution ul li {
+  list-style: inside;
+  line-height: 1.1em;
+  margin-bottom: 10px;
+}
 @media only screen and (max-width: 760px) {
   section.breadcrumbs ul li {
     margin-bottom: 5px;
@@ -102,135 +115,6 @@ section.breadcrumbs ul li a:hover {
   }
   section.breadcrumbs ul li::after {
     margin-left: 3px;
-  }
-}
-body {
-  background-color: #fff;
-  color: #74757f;
-  font-family: "Exo 2", sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.03em;
-  line-height: 1.5;
-  font-weight: 300;
-}
-a:hover,
-a:focus,
-a:active {
-  text-decoration: none;
-  transition: color 0.5s ease;
-}
-ul,
-li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #2d3742;
-}
-.mt-75 {
-  margin-top: 75px;
-}
-.mt-45 {
-  margin-top: 45px;
-}
-.mt-30 {
-  margin-top: 30px;
-}
-.bg-gray {
-  background-color: #f5f6fa;
-}
-.bg-primary-darker {
-  background-color: #12394b;
-}
-.button {
-  font-family: "Exo 2";
-  overflow: hidden;
-  padding: 13px 35px;
-  font-size: 14px;
-  line-height: 1.25;
-  border: 2px solid;
-  border-radius: 0;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  cursor: pointer;
-}
-.button-primar {
-  color: #2d3742;
-  background-color: transparent;
-  border-color: #0095d9;
-  transition: background 0.5s ease, color 0.5s ease, border 0.5s ease;
-}
-.button-primar:hover {
-  color: #fff;
-  background-color: #0095d9;
-  border-color: #0095d9;
-  transition: background 0.5s ease, color 0.5s ease, border 0.5s ease;
-}
-.button-winona {
-  color: #fff;
-  background-color: #0095d9;
-  border-color: #0095d9;
-  transition: background 0.5s ease, color 0.5s ease, border 0.5s ease;
-}
-.button-winona:hover {
-  color: #fff !important;
-  background-color: #00537b;
-  border-color: #00537b;
-  transition: background 0.5s ease, color 0.5s ease, border 0.5s ease;
-}
-.link-default,
-.link-default:active,
-.link-default:focus {
-  color: #74757f;
-  outline: none;
-  transition: color 0.5s ease;
-}
-.icon-md {
-  color: #0095d9;
-  font-size: 1.3em;
-}
-.padding-lg {
-  padding: 80px 0;
-}
-.padding-xs {
-  padding: 40px 0;
-}
-.padding-xl {
-  padding: 120px 0;
-}
-.text-main {
-  color: #0095d9;
-}
-section h3 {
-  font-size: 36px;
-  font-weight: 300;
-}
-section h4 {
-  font-weight: 300;
-}
-.wow-outer {
-  position: relative;
-  overflow: hidden;
-}
-@media only screen and (max-width: 760px) {
-  .padding-lg {
-    padding: 30px 0;
-  }
-  .padding-xs {
-    padding: 20px 0;
-  }
-  .button {
-    padding: 10px 17px;
-    font-size: 13px;
   }
 }
 section.composition .composition-box {
@@ -247,6 +131,11 @@ section.composition .composition-box .desc {
 }
 section.composition .composition-box .desc a {
   color: #0095d9;
+  transition: color 0.7s ease;
+}
+section.composition .composition-box .desc a:hover{
+  color: #2d3742;
+  transition: color 0.7s ease;
 }
 section.composition .composition-box .desc span {
   text-transform: uppercase;

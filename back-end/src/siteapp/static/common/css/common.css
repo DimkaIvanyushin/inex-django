@@ -4384,6 +4384,61 @@ header .navbar.main-menu ul.navbar-nav li.nav-item a.nav-link:hover::before {
   transform: scale(1);
   transition: transform 0.5s ease;
 }
+
+header .navbar .search-container {
+  position: absolute;
+  right: -10px;
+  top: -5px;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+}
+header .navbar .search-container .resoult{
+  background: white;
+  position: relative;
+  top: -12px;
+  z-index: -1;
+  padding: 30px 10px 10px 10px;
+  box-shadow: 0px 3px 4px #0000000a;
+  border: 1px solid #e6e6e6;
+}
+
+header .navbar .search-container .resoult .box-resoult {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+header .navbar .search-container .resoult span {
+  color: #74757f;
+}
+header .navbar .search-container .resoult .box-resoult a.title {
+  display: block;
+  color: #2d3742;
+  font-weight: 400;
+  line-height: 1em;
+  font-size: 16px;
+}
+header .navbar .search-container .resoult .box-resoult a.title:hover,
+header .navbar .search-container .resoult .box-resoult a.category:hover{
+  color: #0095d9;
+}
+header .navbar .search-container .resoult .box-resoult a.category {
+  color: #74757f;
+  font-size: 15px;
+}
+
+header .navbar .search-container input {
+  border: none;
+  border-radius: 20px;
+  height: 35px;
+  width: 240px;
+  padding-left: 15px;
+  padding-right: 35px;
+  outline: none;
+  color: #6C757E;
+  font-weight: 100;
+}
 section.breadcrumbs .bg_blur{
     position: absolute;
     top: 0;

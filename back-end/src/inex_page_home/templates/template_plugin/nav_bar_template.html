@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <button class="button button-primar">Заказать звонок</button>
+                            <a href="#contact-us" class="button button-primar">Заказать звонок</a>
                         </div>
                     </div>
                 </div>
@@ -53,28 +53,24 @@
                             <div class="container">
                                 <div class="row">
                                     {% for groupProduct in groupProducts %}
-                                    <div class="col-12 col-md-3">
-                                        <div class="mega-menu-box">
-                                            <h5> <a
-                                                    href="{{ groupProduct.get_absolute_url }}">{{ groupProduct.title }}</a>
-                                            </h5>
-                                            <ul>
-                                                {% for product in groupProduct.product_set.all %}
-                                                <li>
-                                                    <!-- <span class="icon">
-                                                        <i class="far fa-dot-circle"></i>
-                                                    </span> -->
-                                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-                                                </li>
-                                                {% empty %}
-                                                <span>Пусто!</span>
-                                                {% endfor %}
-
-                                            </ul>
-                                        </div>
-                                    </div>
+                                        {% if groupProduct.product_set.all %}
+                                            <div class="col-12 col-md-3">
+                                                <div class="mega-menu-box">
+                                                    <h5> 
+                                                        <a href="{{ groupProduct.get_absolute_url }}">{{ groupProduct.title }}</a>
+                                                    </h5>
+                                                    <ul>
+                                                        {% for product in groupProduct.product_set.all %}
+                                                            <li>
+                                                                <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        {% endif %}
                                     {% empty %}
-                                    <span>Пусто!</span>
+                                        <span>Пусто!</span>
                                     {% endfor %}
                                 </div>
                             </div>
@@ -83,7 +79,38 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#">О бренде</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
-            </ul><span class="nav-item search d-none d-md-block"><i class="fas fa-search"></i></span>
+            </ul>
+            <span class="nav-item search d-none d-md-block position-relative">
+                <i class="fas fa-search"></i>
+
+                <div class="search-container">
+                    <input id="search-input" type="text">
+                    <div class="resoult">
+                        <div class="box-resoult">
+                            <img src="http://localhost:8080/media/images/solutions/ant-rozetsky-272965-unsplash_vDzNOU4.jpg.255x300_q85_crop-center.jpg "  class="mr-3 mt-1" width="50px" height="50px" alt="#">
+                            <div>
+                                <a class="title" href="#">Контроллер для средних сетей автоматизации ULC-03</a>
+                                <a class="category" href="#">Контроллеры</a>
+                            </div>
+                        </div>
+                        <div class="box-resoult">
+                                <img src="http://localhost:8080/media/images/solutions/ant-rozetsky-272965-unsplash_vDzNOU4.jpg.255x300_q85_crop-center.jpg "  class="mr-3 mt-1" width="50px" height="50px" alt="#">
+                                <div>
+                                    <a class="title" href="#">Контроллер для средних сетей автоматизации ULC-03</a>
+                                    <a class="category" href="#">Контроллеры</a>
+                                </div>
+                            </div>
+                            <div class="box-resoult">
+                                    <img src="http://localhost:8080/media/images/solutions/ant-rozetsky-272965-unsplash_vDzNOU4.jpg.255x300_q85_crop-center.jpg "  class="mr-3 mt-1" width="50px" height="50px" alt="#">
+                                    <div>
+                                        <a class="title" href="#">Контроллер для средних сетей автоматизации ULC-03</a>
+                                        <a class="category" href="#">Контроллеры</a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+
+            </span>
         </div>
     </div>
 </div>

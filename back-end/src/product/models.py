@@ -39,6 +39,12 @@ class ProductImage(models.Model):
     product = models.ForeignKey(Product, related_name='images')
     image = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
 
+    def image_tag(self):
+        return u'<img src="%s" height="100px" />' % self.image.url
+
+    image_tag.short_description = 'Изображение'
+    image_tag.allow_tags = True
+
 class Specifications(models.Model):
     icon = models.FileField(upload_to= 'images/product/icon', default = 'images/def/def.jpg')
     title = models.CharField(max_length=100)

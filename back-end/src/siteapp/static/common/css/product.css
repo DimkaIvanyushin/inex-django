@@ -241,7 +241,7 @@ section.breadcrumbs .content {
   overflow: hidden;
 }
 section.breadcrumbs h1 {
-  font-size: 50px;
+  font-size: 40px;
   line-height: 1em;
   text-transform: uppercase;
   margin-top: 20px;
@@ -292,10 +292,24 @@ section.breadcrumbs ul li a:hover {
 @media only screen and (max-width: 760px) {
   section.breadcrumbs ul li {
     margin-bottom: 5px;
-    margin-right: 3px;
+    margin-right: 10px;
   }
   section.breadcrumbs ul li::after {
-    margin-left: 3px;
+    margin-left: 10px;
+  }
+  section.breadcrumbs h1 {
+    font-size: 26px;
+    line-height: 1.1em;
+  }
+  section.breadcrumbs ul {
+    flex-wrap: wrap;
+  }
+  section.service-info h3 {
+    text-align: center;
+    font-size: 25px;
+  }
+  section.breadcrumbs {
+    padding: 60px 0 15px 0px;
   }
 }
 section.per-char h3,
@@ -304,19 +318,23 @@ section.solutions  h3{
   font-size: 30px;
 }
 section.per-char .title p {
-  margin: 20px 0;
-  font-size: 23px;
+  font-size: 20px;
+  margin-top: 5px;
+  line-height: 1.1em;
 }
 section.per-char .box-light {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 10px 25px;
-  margin: 15px 10px;
+  margin: 15px 0px;
   text-align: center;
+}
+section.per-char .box-light p {
+  line-height: 1.2em;
 }
 section.per-char .box-light h4.box-light-title {
   color: #0095d9;
   margin-top: 10px;
+  font-size: 19px;
 }

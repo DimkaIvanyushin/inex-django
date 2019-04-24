@@ -8,6 +8,7 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
+from inex_page_home import views
 
 admin.autodiscover()
 
@@ -19,6 +20,7 @@ urlpatterns = [
 urlpatterns += (
     url(r'^admin/', admin.site.urls), 
     url(r'^', include('cms.urls')),
+    url(r'^api/search/all', views.search)
 )
 
 urlpatterns += (

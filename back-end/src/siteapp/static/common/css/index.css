@@ -141,6 +141,21 @@ section.services .item a.blackout:hover:before {
   section.services .item {
     margin-bottom: 30px;
   }
+  section.services .item a.blackout {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+  }
+  section.services .item a.blackout::before {
+    display: none;
+  }
+  section.services .item img {
+    width: auto;
+  }
+  section.services .item h5 a {
+    width: 100%;
+    text-align: center;
+  }
 }
 section.prices .box-price {
   padding: 35px 30px;
@@ -243,6 +258,10 @@ section.last-blog .post ul li:first-child {
 section.last-blog .post ul li:last-child {
   border: none;
   padding-right: 0;
+}
+section.contact-us #contact-us {
+  position: relative;
+  top: -193px;
 }
 section.contact-us .group-form {
   display: flex;

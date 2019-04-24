@@ -5,7 +5,9 @@
 {% block title %} Продукция {% endblock title %}
 
 {% block style_link %}
-<link href="{{ BASE_DIR }}/static/common/css/product.css" rel="stylesheet"> {% endblock style_link %}
+<link href="{{ BASE_DIR }}/static/common/css/product.css" rel="stylesheet"> 
+<link href="{{ BASE_DIR }}/static/node_modules/lightbox/ekko-lightbox.css" rel="stylesheet"> 
+{% endblock style_link %}
 
 {% block content %}
 
@@ -45,7 +47,7 @@
   <div class="container">
     <div class="row d-flex justify-content-between">
       <div class="col-sm-12 col-lg-6 wow-outer d-flex align-items-center">
-        <div class="carousel overflow-hidden slide wow fadeInRight" id="service-view" data-ride="carousel"
+        <div class="carousel overflow-hidden slide wow fadeInRight" data-wow-duration="2s" id="service-view" data-ride="carousel"
           data-interval="false">
           <div class="carousel-indicators">
             {% for product_img in product.images.all %}
@@ -63,7 +65,7 @@
               {% else %}
                 <div class="carousel-item ">
               {% endif%}
-              <div class="h-100 d-flex justify-content-center">
+              <div class="h-100 d-flex justify-content-center" href="{{ product_img.image.url}}" data-max-width="900" data-gallery="gallery-{{ product.title }}" data-toggle="lightbox">
                 <img width="540px" height="350px" src="{% thumbnail product_img.image 540x350 crop='center center' %}" alt="{{ product.title }}">
               </div>
             </div>
@@ -73,17 +75,17 @@
       </div>
 
       <div class="col-sm-12 col-lg-5 wow-outer description">
-        <h3 class="wow slideInDown" data-wow-duration="1.5s">{{ product.title }}</h3>
+        <h3 class="wow slideInDown" data-wow-duration="1.5s" >{{ product.title }}</h3>
         <div class="wow-outer mt-3">
-          <h5 class="wow slideInDown" data-wow-duration="1.5s"> Серия {{ product.series }}</h5>
+          <h5 class="wow slideInDown" data-wow-duration="1s" data-wow-delay="0.5s"> Серия {{ product.series }}</h5>
         </div>
         <div class="wow-outer mt-3">
-          <div class="wow slideInDown" data-wow-duration="1.5s">
+          <div class="wow slideInDown" data-wow-duration="1.5s" data-wow-delay="1s">
             {{ product.description }}
           </div>
         </div>
         <div class="wow-outer mt-3">
-          <button class="button button-winona mt-3 wow slideInDown" href="#" data-wow-duration="1.5s">Где купить
+          <button class="button button-winona mt-3 wow slideInLeft" data-wow-duration="1.5s" href="#" data-wow-duration="1.5s" data-wow-delay="1.5s">Где купить
             ?</button>
         </div>
       </div>
@@ -92,28 +94,27 @@
 </section>
 
 {% if specifications %}
-<section class="per-char padding-lg bg-gray">
+<section class="per-char padding-xs bg-gray">
   <div class="container">
 
-    <div class="row title d-flex justify-content-center">
+    <div class="row title d-flex justify-content-center mb-5">
       <div class="col-12">
         <div class="wow-outer">
-          <h3 class="text-center wow slideInDown">Технические характеристики </h3>
+          <h3 class="text-center wow slideInDown" data-wow-duration="1.5s">Технические характеристики </h3>
         </div>
       </div>
       <div class="col-12 col-lg-8">
         <div class="wow-outer">
-          <p class="text-center wow slideInDown">{{ product.title }}</p>
+          <p class="text-center wow slideInDown" data-wow-duration="1.5s">{{ product.title }}</p>
         </div>
       </div>
     </div>
 
     <div class="row d-flex justify-content-center">
-
       {% for specification in specifications %}
-      <div class="col-12 col-lg-4 wow-outer">
-        <div class="box-light wow fadeInLeft" data-wow-duration="0.8s">
-          <img src="{{ specification.icon.url }}" width="70px"  height="70px" alt="#">
+      <div class="col-12 col-lg-3 wow-outer">
+        <div class="box-light wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.{{ forloop.counter }}s">
+          <img src="{{ specification.icon.url }}" width="80px"  height="80px" alt="{{ specification.title }}">
           <h4 class="box-light-title">{{ specification.title }}</h4>
           <p>{{ specification.description }}</p>
         </div>
@@ -166,7 +167,7 @@
 </section>
 
 {% if solutions %}
-<section class="solutions padding-lg bg-gray">
+<section class="solutions padding-xs bg-gray">
   <div class="container">
     <div class="row">
       <div class="col-12 wow-outer">
@@ -177,8 +178,8 @@
 
       {% for solution in solutions %}
       <div class="col-12 col-md-4 wow-outer">
-        <div class="solutions-box wow fadeInLeft"><img src="{% thumbnail solution.img 350x256 crop='center center' %}"
-            alt="{{ solution.industry }}">
+        <div class="solutions-box wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.{{ forloop.counter }}s">
+          <img src="{% thumbnail solution.img 350x256 crop='center center' %}" alt="{{ solution.industry }}">
           <div class="solutions-caption">
             <a href="{{ solution.get_absolute_url }}">
               <span class="solutions-caption-title">{{ solution.industry }}</span>
@@ -196,5 +197,15 @@
 {% endblock content %}
 
 {% block js_link %}
-<script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+  <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+  <script type="text/javascript" src="{{ BASE_DIR }}/static/node_modules/lightbox/ekko-lightbox.min.js"></script>
+
+  <script type="text/javascript">
+  
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+
+  </script>
 {% endblock js_link %}

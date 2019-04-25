@@ -4238,6 +4238,10 @@ header .navbar.main-menu .search:hover {
   color: #0095d9;
   transition: color 0.5s ease;
 }
+header .navbar.main-menu .search i {
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
 header .navbar.main-menu ul.navbar-nav {
   width: 100%;
   display: flex;
@@ -4384,7 +4388,6 @@ header .navbar.main-menu ul.navbar-nav li.nav-item a.nav-link:hover::before {
   transform: scale(1);
   transition: transform 0.5s ease;
 }
-
 header .navbar .search-container {
   position: absolute;
   right: -10px;
@@ -4392,32 +4395,44 @@ header .navbar .search-container {
   display: flex;
   flex-direction: column;
   z-index: -1;
+  width: 220px;
+  overflow: hidden;
 }
 header .navbar .search-container .resoult{
+  visibility: hidden;
   background: white;
   position: relative;
-  top: -12px;
+  top: -30px;
   z-index: -1;
-  padding: 30px 10px 10px 10px;
   box-shadow: 0px 3px 4px #0000000a;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #f0f0f0;
+  border-top: 0;
+  transition: top 0.4s ease;
 }
-
 header .navbar .search-container .resoult .box-resoult {
   display: flex;
   flex-direction: row;
-  margin-bottom: 5px;
+  background-color: #fff;
+  padding: 7px;
+  border-bottom: 1px solid #f5f6fa;
+  transition: background-color 0.5s ease;
 }
-
+header .navbar .search-container .resoult .box-resoult:hover {
+  background-color: #f5f6fa;
+  transition: background-color 0.5s ease;
+}
+header .navbar .search-container .resoult .box-resoult img {
+  flex-shrink: 0;
+}
 header .navbar .search-container .resoult span {
   color: #74757f;
 }
 header .navbar .search-container .resoult .box-resoult a.title {
   display: block;
   color: #2d3742;
-  font-weight: 400;
   line-height: 1em;
   font-size: 16px;
+  text-transform: lowercase;
 }
 header .navbar .search-container .resoult .box-resoult a.title:hover,
 header .navbar .search-container .resoult .box-resoult a.category:hover{
@@ -4429,15 +4444,17 @@ header .navbar .search-container .resoult .box-resoult a.category {
 }
 
 header .navbar .search-container input {
-  border: none;
-  border-radius: 20px;
+  border: 1px solid #f0f0f0;
+  border-radius: 0px;
   height: 35px;
-  width: 240px;
   padding-left: 15px;
   padding-right: 35px;
   outline: none;
   color: #6C757E;
   font-weight: 100;
+  position: relative;
+  right: -100%;
+  transition: right 0.8s ease;
 }
 section.breadcrumbs .bg_blur{
     position: absolute;

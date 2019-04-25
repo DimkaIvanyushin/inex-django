@@ -7,12 +7,12 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12">
                 <div class="wow-outer">
-                    <h3 class="text-center wow slideInDown">{{ instance.title }}</h3>
+                    <h3 class="text-center">{{ instance.title }}</h3>
                 </div>
             </div>
             <div class="col-12 col-lg-8">
                 <div class="wow-outer">
-                    <p class="text-center mt-3 wow slideInDown">{{ instance.text }}</p>
+                    <p class="text-center mt-3 ">{{ instance.text }}</p>
                 </div>
             </div>
         </div>
@@ -22,9 +22,9 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="item">
                         <a class="blackout wow-outer" href="{{ product.get_absolute_url }}">
-                            <img class="wow slideInLeft" width="255" height="300" src="{% thumbnail product.img 255x300 crop='center' %} " alt="{{ product.title }}">
+                            <img class="" width="255" height="300" src="{% thumbnail product.img 255x300 crop='center' %} " alt="{{ product.title }}">
                         </a>
-                        <h5 class="d-flex wow-outer"><a class="wow slideInLeft" href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
+                        <h5 class="d-flex wow-outer"><a class="" href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                     </div>
                 </div>
             {% empty %}

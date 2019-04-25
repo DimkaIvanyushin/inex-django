@@ -18,13 +18,13 @@
             {% for solution in solutions %}
 
             <div class="col-sm-6 col-lg-3 wow-outer">
-                <div class="g-box wow fadeInLeft">
+                <div class="g-box">
                     <a class="g-box-href" href="{{ solution.get_absolute_url }}">
-                        <img class="wow slideInLeft" width="255px" height="300px" src="{% thumbnail solution.img 255x300 crop='center' %} " alt="{{ solution.industry }}">
+                        <img width="255px" height="300px" src="{% thumbnail solution.img 255x300 crop='center' %} " alt="{{ solution.industry }}">
                     </a>
 
                     <h5 class="d-flex wow-outer mt-3 ">
-                        <a class="wow slideInLeft w-100 text-center" href="{{ solution.get_absolute_url }}">{{ solution.industry }}</a>
+                        <a class= w-100 text-center" href="{{ solution.get_absolute_url }}">{{ solution.industry }}</a>
                     </h5>
                 </div>
             </div>

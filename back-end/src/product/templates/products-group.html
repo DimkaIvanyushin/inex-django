@@ -41,7 +41,7 @@
   <section class="aboutUs padding-lg bg-gray">
     <div class="container">
       <div class="row d-flex justify-content-between flex-row-reverse">
-        <div class="col-sm-12 col-lg-6 overflow-hidden d-none d-md-block">
+        <div class="col-sm-12 col-lg-6 overflow-hidden d-none d-md-flex align-items-center">
           <img class="wow slideInLeft" src="{% thumbnail group_product.img 540x360 crop %}" alt="img"></div>
         <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer">
           <h3 class="wow slideInDown">{{ group_product.title_full }}</h3>
@@ -65,12 +65,12 @@
       <div class="row d-flex justify-content-center">
         <div class="col-12">
           <div class="wow-outer">
-            <h3 class="text-center wow slideInDown">{{ group_product.title_product }}</h3>
+            <h3 class="text-center ">{{ group_product.title_product }}</h3>
           </div>
         </div>
         <div class="col-12 col-lg-8">
           <div class="wow-outer">
-            <div class="text-center mt-3 wow slideInDown text-center">
+            <div class="text-center mt-3  text-center">
               {{ group_product.description_product }}
             </div>
           </div>
@@ -79,7 +79,7 @@
       <div class="row lists-row mt-3">
         {% for product in products %}
         <div class="col-sm-6 col-lg-3 wow-outer">
-          <div class="item wow fadeInLeft"> 
+          <div class="item "> 
             <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %}" width="255px" height="250px" alt="{{ product.title }}">
             <div class="solutions-caption">
               <a class="solutions-caption-title" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
@@ -97,17 +97,17 @@
     <div class="container">
       <div class="col-sm-12 offset-lg-6 col-lg-5 text-justify">
         <div class="wow-outer">
-          <h4 class="wow fadeInDown">Положить начало автоматизации</h4>
+          <h4>Положить начало автоматизации</h4>
         </div>
         <div class="wow-outer">
-          <h3 class="wow fadeInDown">Вашего бизнеса</h3>
+          <h3>Вашего бизнеса</h3>
         </div>
         <div class="wow-outer">
-          <p class="wow fadeInDown">Сформируйте коммерческое предложение в несколько кликов для того, чтобы приобрести
+          <p>Сформируйте коммерческое предложение в несколько кликов для того, чтобы приобрести
             контроллеры Inex</p>
         </div>
         <div class="wow-outer">
-          <button class="button button-winona mt-3 wow fadeInDown" href="#">Начать</button>
+          <button class="button button-winona mt-3" href="#">Начать</button>
         </div>
       </div>
     </div>
@@ -117,11 +117,11 @@
     <div class="container">
       <div class="row">
         <div class="col-12 wow-outer">
-          <h3 class="text-center wow slideInUp">Отзывы</h3>
+          <h3 class="text-center ">Отзывы</h3>
         </div>
       </div>
       <div class="carousel slide wow-outer mt-45" id="slider-team" data-ride="carousel" data-interval="false">
-        <div class="carousel-inner wow fadeInDown">
+        <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row d-flex justify-content-center">
               <div class="col-12 col-lg-6">

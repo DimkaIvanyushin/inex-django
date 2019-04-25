@@ -4267,14 +4267,14 @@ header .navbar.main-menu ul.navbar-nav li.nav-item a span.chevron {
   color: #454e58;
   margin-left: 10px;
 }
-header .navbar.main-menu ul.navbar-nav li.nav-item a span.chevron svg {
+header .navbar.main-menu ul.navbar-nav li.nav-item a span.chevron i {
   transform: rotate(0);
   transition: color 0.5s ease, transform 0.5s ease;
 }
 header .navbar.main-menu ul.navbar-nav li.nav-item.dropdown .dropdown-toggle::after {
   display: none;
 }
-header .navbar.main-menu ul.navbar-nav li.nav-item:hover span.chevron svg {
+header .navbar.main-menu ul.navbar-nav li.nav-item:hover span.chevron i {
   color: #0095d9;
   transform: rotate(180deg);
   transition: color 0.5s ease, transform 0.5s ease;
@@ -4365,6 +4365,7 @@ header .navbar.main-menu ul.navbar-nav li.nav-item a.nav-link {
   position: relative;
   color: #2d3742;
   padding: 25px 0px;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border-bottom: 2px solid transparent;
@@ -4413,7 +4414,7 @@ header .navbar .search-container .resoult .box-resoult {
   display: flex;
   flex-direction: row;
   background-color: #fff;
-  padding: 7px;
+  padding: 10px 5px;
   border-bottom: 1px solid #f5f6fa;
   transition: background-color 0.5s ease;
 }

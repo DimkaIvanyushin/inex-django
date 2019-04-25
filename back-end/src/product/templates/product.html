@@ -100,12 +100,12 @@
     <div class="row title d-flex justify-content-center mb-5">
       <div class="col-12">
         <div class="wow-outer">
-          <h3 class="text-center wow slideInDown" data-wow-duration="1.5s">Технические характеристики </h3>
+          <h3 class="text-center" data-wow-duration="1.5s">Технические характеристики </h3>
         </div>
       </div>
       <div class="col-12 col-lg-8">
         <div class="wow-outer">
-          <p class="text-center wow slideInDown" data-wow-duration="1.5s">{{ product.title }}</p>
+          <p class="text-center" data-wow-duration="1.5s">{{ product.title }}</p>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@
     <div class="row d-flex justify-content-center">
       {% for specification in specifications %}
       <div class="col-12 col-lg-3 wow-outer">
-        <div class="box-light wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.{{ forloop.counter }}s">
+        <div class="box-light" data-wow-duration="1.5s" data-wow-delay="0.{{ forloop.counter }}s">
           <img src="{{ specification.icon.url }}" width="80px"  height="80px" alt="{{ specification.title }}">
           <h4 class="box-light-title">{{ specification.title }}</h4>
           <p>{{ specification.description }}</p>
@@ -131,13 +131,13 @@
   <div class="container">
     <div class="row">
       <div class="col-12 wow-outer">
-        <h3 class="text-center wow slideInDown">Технические характеристики</h3>
+        <h3 class="text-center">Технические характеристики</h3>
       </div>
     </div>
 
     <div class="row mt-5">
       <div class="col-12 wow-outer">
-        <ul class="nav nav-tabs wow fadeInDown" data-wow-duration="1.5s">
+        <ul class="nav nav-tabs" data-wow-duration="1.5s">
           {% if product.description_specification %}
           <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Описание</a></li>
           {% endif %}
@@ -171,14 +171,14 @@
   <div class="container">
     <div class="row">
       <div class="col-12 wow-outer">
-        <h3 class="text-center wow slideInDown">Решения на основе изделия</h3>
+        <h3 class="text-center">Решения на основе изделия</h3>
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
 
       {% for solution in solutions %}
       <div class="col-12 col-md-4 wow-outer">
-        <div class="solutions-box wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.{{ forloop.counter }}s">
+        <div class="solutions-box" data-wow-duration="1.5s" data-wow-delay="0.{{ forloop.counter }}s">
           <img src="{% thumbnail solution.img 350x256 crop='center center' %}" alt="{{ solution.industry }}">
           <div class="solutions-caption">
             <a href="{{ solution.get_absolute_url }}">

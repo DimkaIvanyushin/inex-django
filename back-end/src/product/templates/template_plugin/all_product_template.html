@@ -1,47 +1,14 @@
-{% load thumbnail %}
-
-<section class="services padding-lg">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12">
-                <div class="wow-outer">
-                    <h3 class="text-center wow slideInDown">{{ instance.title }}</h3>
-                </div>
-            </div>
-            <div class="col-12 col-lg-8">
-                <div class="wow-outer">
-                    <div class="mt-3 wow slideInDown text-center">
-                        {{ instance.text }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row lists-row">
-            {% for groupProduct in group_products %}
-
-                {% if groupProduct.product_set.all %}
-                    <div class="col-12 wow-outer text-center">
-                        <h4 class="title ">
-                            <a href="{{ groupProduct.get_absolute_url }}" class="">
-                                {{ groupProduct.title }}
-                            </a>
-                        </h4>
-                    </div>
-                    {% for product in groupProduct.product_set.all %}
-                        <div class="col-sm-6 col-lg-3 wow-outer">
-                            <div class="item-old">
-                                <div class="box-images">
-                                    <a class="box-images-hf" href="{{ product.get_absolute_url }}">
-                                        <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %} " alt="{{ product.title }}">
-                                    </a>
-                                </div>
-                                <a class="w-100 text-center" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
+<div class="row d-flex justify-content-center">
+    <div class="col-12">
+        <div class="wow-outer">
+            <h3 class="text-center wow slideInDown">{{ instance.title }}</h3>
         </div>
     </div>
-</section>
+    <div class="col-12 col-lg-8">
+        <div class="wow-outer">
+            <div class="mt-3 wow slideInDown text-center">
+                {{ instance.text }}
+            </div>
+        </div>
+    </div>
+</div>

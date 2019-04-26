@@ -24,7 +24,7 @@
                         <a class="blackout wow-outer" href="{{ product.get_absolute_url }}">
                             <img class="" width="255" height="300" src="{% thumbnail product.img 255x300 crop='center' %} " alt="{{ product.title }}">
                         </a>
-                        <h5 class="d-flex wow-outer"><a class="" href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
+                        <h5 class="d-flex wow-outer"><a class="w-100 text-center" href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                     </div>
                 </div>
             {% empty %}

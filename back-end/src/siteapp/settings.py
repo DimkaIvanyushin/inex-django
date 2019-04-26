@@ -112,6 +112,7 @@ INSTALLED_APPS = [
     'inex_page_home',
     'product',
     'solutions',
+    'offer'
 ]
 
 LANGUAGES = (

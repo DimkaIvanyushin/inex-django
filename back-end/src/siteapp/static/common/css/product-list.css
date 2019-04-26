@@ -152,31 +152,40 @@ section.services .lists-row .item-old {
 }
 section.services .lists-row .item-old .box-images {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 250px;
   overflow: hidden;
 }
-section.services .lists-row .item-old a.box-images-hf {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-section.services .lists-row .item-old a.box-images-hf::after {
-  content: '';
+section.services .lists-row .item-old .box-images .box-icon {
   position: absolute;
-  top: 0;
-  left: 0;
+  background-color: transparent;
   width: 100%;
   height: 100%;
-  background: transparent;
-  transition: background 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  transition: background-color 0.8s ease;
 }
-section.services .lists-row .item-old a.box-images-hf:hover::after {
-  background: rgba(45,55,66,0.3);
-  transition: background 0.5s ease;
+section.services .lists-row .item-old .box-images .box-icon i{
+  color: white;
+  position: relative;
+  left: -100%;
+  opacity: 0;
+  transition: left 0.8s ease, opacity 0.8s ease;
 }
-section.services .lists-row .item-old a.box-images-hf img {
+section.services .lists-row .item-old .box-images:hover .box-icon {
+  background-color: #0000008f;
+  transition: background-color 0.8s ease;
+}
+section.services .lists-row .item-old .box-images:hover .box-icon i{
+  left: 0;
+  opacity: 1;
+  transition: left 0.8s ease, opacity 0.8s ease;
+}
+section.services .lists-row .item-old .box-images-hf img {
   height: 100%;
 }
 section.services .lists-row .item-old a {

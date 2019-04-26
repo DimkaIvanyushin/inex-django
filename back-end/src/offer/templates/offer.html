@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load thumbnail %}
+
+{% block title %} Продукция {% endblock title %}
+
+{% block style_link %}
+<link href="{{ BASE_DIR }}/static/common/css/offer.css" rel="stylesheet"> {% endblock style_link %}
+
+{% block content %}
+
+<header>
+    {% static_placeholder "NavBar" %}
+</header>
+
+<section class="breadcrumbs">
+    <div class="bg_blur"
+        style="background-image: url('https://images.unsplash.com/photo-1495887633121-f1156ca7f6a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+    </div>
+
+    <div class="container">
+        <div class="row content d-flex align-items-center">
+            <div class="col-12">
+                <div class="wow-outer">
+                    <h6 class="wow fadeInDown">Получить</h6>
+                </div>
+                <div class="wow-outer">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.4s">Коммерческое предложение</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 wow-outer">
+                <ul class="wow fadeInDown" data-wow-delay="0.8s">
+                    <li> <a href="/">Главная</a></li>
+                    <li> <a href="{% url 'offer-show' %}">Коммерческое предложение</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="padding-lg">
+    <div class="container">
+        {% if products %}
+        <div class="row border border-top-0 border-left-0 border-right-0 mb-3">
+            <div class="col-2">
+                <h5>Изображение</h5>
+            </div>
+            <div class="col-6">
+                <h5>Описание</h5>
+            </div>
+            <div class="col-2">
+                <h5>Решения</h5>
+            </div>
+            <div class="col-2">
+                <h5>Функ.</h5>
+            </div>
+        </div>
+
+        {% for product in products %}
+        <div class="row border border-top-0 border-left-0 border-right-0 mb-3">
+            <div class="col-2">
+                <img src=" {% thumbnail product.images.first.image 150x150 crop='center center' %}" width="150px"
+                    height="150px" alt="{{ product.title }}">
+            </div>
+            <div class="col-6">
+                <a class="d-block" href="{{ product.get_absolute_url }}"><h4>{{ product.title }}</h4></a>
+                <div class="mt-2">Серия: <b>{{ product.series }}</b></div>
+                <div class="mb-2">Группа: <a href="{{ product.group.get_absolute_url }}">{{ product.group.title }}</a>
+                </div>
+                <p>{{ product.description }}</p>
+            </div>
+            <div class="col-2">
+
+                {% for solution in product.solutions_set.all %}
+                    <a href="{{ solution.get_absolute_url }}">{{ solution.industry }}, </a>
+                {% endfor %}
+ 
+            </div>
+            <div class="col-2">
+                <a href="{% url 'offer-remove-item' product.id %}" class="text-danger">
+                    <i class="far fa-times-circle "></i> Отказаться
+                </a>
+            </div>
+        </div>
+       
+        {% endfor %}
+
+        <div class="row d-flex justify-content-center">
+            <button class="button button-winona" href="#">Получить </button>
+        </div>
+
+        {% else %}
+        <h4>Список пуст!</h4>
+        {% endif %}
+    </div>
+    
+</section>
+
+{% endblock content %}
+
+{% block js_link %}
+<script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+{% endblock js_link %}

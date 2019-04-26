@@ -258,5 +258,9 @@ class NavBarPlugin(CMSPluginBase):
 
         groupProducts = GroupProduct.objects.all()
 
-        context.update({'instance': instance, 'groupProducts': groupProducts })
+        # if context['request'].session.get('products', False):
+        # count_product = len(context['request'].session['products'])
+        # print(count_product)
+
+        context.update({'instance': instance, 'groupProducts': groupProducts})
         return context

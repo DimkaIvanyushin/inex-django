@@ -7,6 +7,7 @@ ADD /src/siteapp /iNex/src/siteapp
 ADD /src/inex_page_home /iNex/src/inex_page_home
 ADD /src/product /iNex/src/product
 ADD /src/solutions /iNex/src/solutions
+ADD /src/offer /iNex/src/offer
 
 ADD src/manage.py /iNex/src
 

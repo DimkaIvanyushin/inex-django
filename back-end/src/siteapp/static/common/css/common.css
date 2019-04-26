@@ -4649,3 +4649,22 @@ footer button:hover{
 section.breadcrumbs {
   position: relative;
 }
+header .navbar a.offer_icon {
+  color: #2d3742;
+  translate: color 0.7 ease;
+}
+header .navbar a.offer_icon:hover {
+  color: #0095d9;
+  translate: color 0.7 ease;
+}
+header .navbar .span_check {
+  position: absolute;
+  bottom: 0px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  background-color: #0095d9;
+  border: 2px solid;
+  border-color: #f5f6fa;
+  border-radius: 50%;
+}

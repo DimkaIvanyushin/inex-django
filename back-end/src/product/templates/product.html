@@ -5,8 +5,8 @@
 {% block title %} Продукция {% endblock title %}
 
 {% block style_link %}
-<link href="{{ BASE_DIR }}/static/common/css/product.css" rel="stylesheet"> 
-<link href="{{ BASE_DIR }}/static/node_modules/lightbox/ekko-lightbox.css" rel="stylesheet"> 
+<link href="{{ BASE_DIR }}/static/common/css/product.css" rel="stylesheet">
+<link href="{{ BASE_DIR }}/static/node_modules/lightbox/ekko-lightbox.css" rel="stylesheet">
 {% endblock style_link %}
 
 {% block content %}
@@ -47,50 +47,73 @@
   <div class="container">
     <div class="row d-flex justify-content-between">
       <div class="col-sm-12 col-lg-6 wow-outer d-flex align-items-center">
-        <div class="carousel overflow-hidden slide wow fadeInRight" data-wow-duration="2s" id="service-view" data-ride="carousel"
-          data-interval="false">
+        <div class="carousel overflow-hidden slide wow fadeInRight" data-wow-duration="2s" id="service-view"
+          data-ride="carousel" data-interval="false">
           <div class="carousel-indicators">
             {% for product_img in product.images.all %}
-              {% if forloop.first %}
-                <span class="active" data-target="#service-view" data-slide-to="{{ forloop.counter0 }}"> 0{{ forloop.counter }}</span>
-              {% else %}
-                <span data-target="#service-view" data-slide-to="{{ forloop.counter0 }}"> 0{{ forloop.counter }}</span>
-              {% endif%}
+            {% if forloop.first %}
+            <span class="active" data-target="#service-view" data-slide-to="{{ forloop.counter0 }}">
+              0{{ forloop.counter }}</span>
+            {% else %}
+            <span data-target="#service-view" data-slide-to="{{ forloop.counter0 }}"> 0{{ forloop.counter }}</span>
+            {% endif%}
             {% endfor %}
           </div>
           <div class="carousel-inner">
             {% for product_img in product.images.all %}
-              {% if forloop.first %}
-                <div class="carousel-item active">
+            {% if forloop.first %}
+            <div class="carousel-item active">
               {% else %}
-                <div class="carousel-item ">
-              {% endif%}
-              <div class="h-100 d-flex justify-content-center" href="{{ product_img.image.url}}" data-max-width="900" data-gallery="gallery-{{ product.title }}" data-toggle="lightbox">
-                <img width="540px" height="350px" src="{% thumbnail product_img.image 540x350 crop='center center' %}" alt="{{ product.title }}">
+              <div class="carousel-item ">
+                {% endif%}
+                <div class="h-100 d-flex justify-content-center" href="{{ product_img.image.url}}" data-max-width="900"
+                  data-gallery="gallery-{{ product.title }}" data-toggle="lightbox">
+                  <img width="540px" height="350px" src="{% thumbnail product_img.image 540x350 crop='center center' %}"
+                    alt="{{ product.title }}">
+                </div>
               </div>
+              {% endfor %}
             </div>
-            {% endfor %}
           </div>
         </div>
-      </div>
 
-      <div class="col-sm-12 col-lg-5 wow-outer description">
-        <h3 class="wow slideInDown" data-wow-duration="1.5s" >{{ product.title }}</h3>
-        <div class="wow-outer mt-3">
-          <h5 class="wow slideInDown" data-wow-duration="1s" data-wow-delay="0.5s"> Серия {{ product.series }}</h5>
-        </div>
-        <div class="wow-outer mt-3">
-          <div class="wow slideInDown" data-wow-duration="1.5s" data-wow-delay="1s">
-            {{ product.description }}
+        <div class="col-sm-12 col-lg-5 wow-outer description">
+          <h3 class="wow slideInDown" data-wow-duration="1.5s">{{ product.title }}</h3>
+          <div class="wow-outer mt-3">
+
+            <h5 class="wow slideInDown" data-wow-duration="1s" data-wow-delay="0.5s"> Серия {{ product.series }}</h5>
           </div>
-        </div>
-        <div class="wow-outer mt-3">
-          <button class="button button-winona mt-3 wow slideInLeft" data-wow-duration="1.5s" href="#" data-wow-duration="1.5s" data-wow-delay="1.5s">Где купить
-            ?</button>
+          <div class="wow-outer mt-3">
+            <div class="wow slideInDown" data-wow-duration="1.5s" data-wow-delay="1s">
+              {{ product.description }}
+            </div>
+          </div>
+          <div class="wow-outer mt-3">
+            <div class="wow slideInDown" data-wow-duration="1.5s" data-wow-delay="1s">
+              {% if product.added %}
+                
+                <form action="{% url 'product-detail' product.id %}" method="GET">
+                    {% csrf_token %}
+                    <input type="hidden" name="remove" value="{{ product.id }}">
+                    <button class="button button-winona mt-3" type="submit" >
+                        <i class="fas fa-times-circle"></i>
+                        Отказаться
+                    </button>
+                  </form>
+              {% else %}
+              <form action="{% url 'product-detail' product.id %}" method="POST">
+                {% csrf_token %}
+                <button class="button button-winona mt-3" type="submit" >
+                  <i class="fas fa-plus-circle"></i>
+                    Добавить
+                </button>
+              </form>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </section>
 
 {% if specifications %}
@@ -114,7 +137,7 @@
       {% for specification in specifications %}
       <div class="col-12 col-lg-3 wow-outer">
         <div class="box-light" data-wow-duration="1.5s" data-wow-delay="0.{{ forloop.counter }}s">
-          <img src="{{ specification.icon.url }}" width="80px"  height="80px" alt="{{ specification.title }}">
+          <img src="{{ specification.icon.url }}" width="80px" height="80px" alt="{{ specification.title }}">
           <h4 class="box-light-title">{{ specification.title }}</h4>
           <p>{{ specification.description }}</p>
         </div>
@@ -197,15 +220,15 @@
 {% endblock content %}
 
 {% block js_link %}
-  <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
-  <script type="text/javascript" src="{{ BASE_DIR }}/static/node_modules/lightbox/ekko-lightbox.min.js"></script>
+<script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+<script type="text/javascript" src="{{ BASE_DIR }}/static/node_modules/lightbox/ekko-lightbox.min.js"></script>
 
-  <script type="text/javascript">
-  
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox();
-    });
+<script type="text/javascript">
 
-  </script>
+  $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+  });
+
+</script>
 {% endblock js_link %}

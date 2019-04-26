@@ -24,7 +24,8 @@
                         <img width="255" height="300" src="{% thumbnail solution.img 255x300 crop='center' %} "
                             alt="{{ solution.industry }}">
                     </a>
-                    <h5 class="d-flex wow-outer"><a href="{{ solution.get_absolute_url }}">{{ solution.industry }}</a>
+                    <h5 class="d-flex wow-outer">
+                        <a class="w-100 text-center" href="{{ solution.get_absolute_url }}">{{ solution.industry }}</a>
                     </h5>
                 </div>
             </div>

@@ -26,6 +26,7 @@ urlpatterns += (
 urlpatterns += (
     url(r'^solutions/', include('solutions.urls')),
     url(r'^products/', include('product.urls')),
+    url(r'^offer/', include('offer.urls'))
 )
       
 if settings.DEBUG:

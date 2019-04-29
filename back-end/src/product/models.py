@@ -6,6 +6,7 @@ from djangocms_text_ckeditor.fields import HTMLField
 class GroupProduct(models.Model):
     title = models.CharField(max_length=255, verbose_name="Наименование", null=True, blank=True)
     img = models.ImageField(upload_to = 'images/product', verbose_name="Изображение", default = 'images/def/def.jpg', null=True, blank=True)
+    background_img = models.ImageField(upload_to = 'images/product', verbose_name="Фон", default = 'images/def/def.jpg', null=True, blank=True)
     title_full = models.CharField(max_length=255, verbose_name="Полное наименование", null=True, blank=True)
     description = HTMLField(verbose_name="Описание", null=True, blank=True)
 

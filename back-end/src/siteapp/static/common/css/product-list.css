@@ -44,7 +44,7 @@ section.breadcrumbs ul {
   display: flex;
 }
 section.breadcrumbs ul li {
-  max-width: 200px;
+  max-width: 400px;
   margin-right: 25px;
   position: relative;
   overflow: hidden;
@@ -166,24 +166,26 @@ section.services .lists-row .item-old .box-images .box-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 60px;
+  font-size: 40px;
   transition: background-color 0.8s ease;
 }
 section.services .lists-row .item-old .box-images .box-icon i{
   color: white;
   position: relative;
-  left: -100%;
+  left: 0;
   opacity: 0;
-  transition: left 0.8s ease, opacity 0.8s ease;
+  transform: scale(0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 section.services .lists-row .item-old .box-images:hover .box-icon {
   background-color: #0000008f;
   transition: background-color 0.8s ease;
 }
 section.services .lists-row .item-old .box-images:hover .box-icon i{
-  left: 0;
+  /* left: 0; */
   opacity: 1;
-  transition: left 0.8s ease, opacity 0.8s ease;
+  transform: scale(1);
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 section.services .lists-row .item-old .box-images-hf img {
   height: 100%;

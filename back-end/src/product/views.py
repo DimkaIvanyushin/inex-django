@@ -8,17 +8,13 @@ import json
 def showProducts(request):
 
     group_products = GroupProduct.objects.all()
-
-    test = []
-
-    # TODO (говно код) пометка добавленных продуктов
+    
     # if request.session.get('products', False):
-    #     for inx,products in enumerate(group_products):
-    #         for product in products.product_set.all():
+    #     for lt in list_products:
+    #         for product in lt:
     #             for session_product in request.session['products']:
     #                 if (product.id == session_product['product']):
     #                     product.added = True
-                        
 
     return render(
         request,
@@ -41,7 +37,18 @@ def addProduct(request, id):
         request.session['products'] = products_list
 
     return redirect('product-all')
-    
+
+def removeProduct(request, id):
+    product = Product.objects.get(pk=id)
+
+    if request.session.get('products', False):
+        for index, session_product in enumerate(request.session['products']):
+            if (product.id == session_product['product']):
+                del request.session['products'][index]
+                request.session.modified = True
+                
+    return redirect('product-all')
+
 
 def showProduct(request, id):
 

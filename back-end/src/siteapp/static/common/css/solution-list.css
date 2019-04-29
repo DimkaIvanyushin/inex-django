@@ -44,7 +44,7 @@ section.breadcrumbs ul {
   display: flex;
 }
 section.breadcrumbs ul li {
-  max-width: 200px;
+  max-width: 400px;
   margin-right: 25px;
   position: relative;
   overflow: hidden;
@@ -75,6 +75,9 @@ section.breadcrumbs ul li a:hover {
   section.breadcrumbs ul li::after {
     margin-left: 3px;
   }
+  section.breadcrumbs h1 {
+    font-size: 40px;
+  }
 }
 
 .g-box a{
@@ -83,6 +86,7 @@ section.breadcrumbs ul li a:hover {
   font-weight: 300;
   margin-bottom: 15px;
   overflow: hidden;
+  text-align: center;
 }
 .g-box a:hover{
   color: #0095d9;

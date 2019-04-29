@@ -266,7 +266,7 @@ section.breadcrumbs ul {
   display: flex;
 }
 section.breadcrumbs ul li {
-  max-width: 200px;
+  max-width: 400px;
   margin-right: 25px;
   position: relative;
   overflow: hidden;

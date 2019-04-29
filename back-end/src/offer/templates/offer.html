@@ -53,8 +53,8 @@
             <div class="col-2">
                 <h5>Решения</h5>
             </div>
-            <div class="col-2">
-                <h5>Функ.</h5>
+            <div class="col-2 text-center">
+                <h5>Удалить</h5>
             </div>
         </div>
 
@@ -75,12 +75,15 @@
 
                 {% for solution in product.solutions_set.all %}
                     <a href="{{ solution.get_absolute_url }}">{{ solution.industry }}, </a>
+
+                {% empty %}
+                    <span>Нет решений</span>
                 {% endfor %}
  
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
                 <a href="{% url 'offer-remove-item' product.id %}" class="text-danger">
-                    <i class="far fa-times-circle "></i> Отказаться
+                    <i class="far fa-times-circle "></i>
                 </a>
             </div>
         </div>
@@ -88,11 +91,14 @@
         {% endfor %}
 
         <div class="row d-flex justify-content-center">
-            <button class="button button-winona" href="#">Получить </button>
+            <a href="{% url 'offer-generate-pdf' %}" class="button button-winona" >
+                    <i class="far fa-file-alt"></i>
+                    Получить </a>
         </div>
 
         {% else %}
         <h4>Список пуст!</h4>
+        <a href="{% url 'product-all' %}">Посмотреть продукцию</a>
         {% endif %}
     </div>
     

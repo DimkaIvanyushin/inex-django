@@ -10,6 +10,7 @@ class Solutions(models.Model):
     description = HTMLField(verbose_name="Полное описание")
     implement_period = models.CharField(max_length=255, verbose_name="Срок реализации")
     img = models.ImageField(verbose_name="Изображение", upload_to = 'images/solutions', default = 'images/def/def.jpg')
+    background_img = models.ImageField(upload_to = 'images/product', verbose_name="Фон", default = 'images/def/def.jpg', null=True, blank=True)
 
     products = models.ManyToManyField(Product)
 

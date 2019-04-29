@@ -1,14 +1,16 @@
+{% load thumbnail %}
 <div class="col-sm-12 col-lg-4">
-    <div class="box d-flex">
-        <div class="icon wow slideInLeft pt-2">
-            <i class="{{ instance.icon_code }}"></i>
+    <div class="box d-flex overflow-hidden">
+        <div class="icon wow slideInLeft pt-2" data-wow-delay="0.4s" >
+            <img src="{% thumbnail instance.icon_image 50x50 crop='center center' %} " width="50px" height="50px" alt="{{ instance.title }}">         
+            <!-- <i class="{{ instance.icon_code }}"></i> -->
         </div>
         <div class="main ml-3 pt-2">
             <div class="wow-outer">
                 <h4 class="wow slideInDown">{{ instance.title }}</h4>
             </div>
             <div class="wow-outer">
-                <p class="wow slideInDown">{{ instance.description }}</p>
+                <p class="wow slideInDown" data-wow-delay="0.2s">{{ instance.description }}</p>
             </div>
         </div>
     </div>

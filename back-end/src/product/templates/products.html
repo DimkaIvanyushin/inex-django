@@ -17,6 +17,7 @@
 <section class="services padding-lg">
     <div class="container">
         {% static_placeholder "All products" %}
+
         <div class="row lists-row">
             {% for groupProduct in group_products %}
             {% if groupProduct.product_set.all %}
@@ -30,12 +31,24 @@
             {% for product in groupProduct.product_set.all %}
             <div class="col-sm-6 col-lg-3 wow-outer">
                 <div class="item-old">
+                    {% if product.added %}
+                    <a class="box-images" href="{% url 'product-remove' product.id %}">
+                        <div class="box-icon">
+                            <i class="far fa-trash-alt"></i>
+                        </div>
+                        <div class="box-images-hf">
+                            <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %} "
+                                alt="{{ product.title }}">
+                        </div>
+                    </a>
+                    <a class="w-100 text-center" href="{{ product.get_absolute_url }}">
+                        <i class="far fa-check-circle text-success"></i>
+                        {{ product.title }}
+                    </a>
+                    {% else %}
                     <a class="box-images" href="{% url 'product-add' product.id %}">
                         <div class="box-icon">
                             <i class="fas fa-plus"></i>
-                            {% if product.added %}
-                               <h1>NONE</h1> 
-                            {% endif %}
                         </div>
                         <div class="box-images-hf">
                             <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %} "
@@ -43,6 +56,9 @@
                         </div>
                     </a>
                     <a class="w-100 text-center" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                    {% endif%}
+
+                    
                 </div>
             </div>
             {% endfor %}

@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8 d-flex justify-content-end align-items-center overflow-hidden">
-                <div class="wow slideInRight"> 
+                <div class="wow slideInRight text-center"> 
                     {{ instance.text }}
                 </div>
             </div>
-            <div class="col-12 col-lg-4 d-flex justify-content-start align-items-center mr-t-20 overflow-hidden">
-                <button class="button button-winona wow slideInLeft" href="#">{{ instance.text_button }}</button>
+            <div class="button_view col-12 col-lg-4 d-flex align-items-center mr-t-20 overflow-hidden">
+                <a class="button button-winona wow slideInLeft" href="{% url 'product-all' %}">{{ instance.text_button }}</a>
             </div>
         </div>
     </div>

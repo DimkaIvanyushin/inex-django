@@ -34,6 +34,7 @@ class SliderItem(CMSPlugin):
 
 class SmallFeaturesModel(CMSPlugin):
     icon_code = models.CharField(max_length=30, default="far fa-user")
+    icon_image = models.ImageField(upload_to = 'images/smallFeatures', verbose_name="Изображение", default = 'images/def/def.jpg', null=True, blank=True)
     title = models.CharField(max_length=30, default="default.")
     description = models.TextField(default="default.")
     bg_color = models.CharField(max_length=30, choices=BG_CHOICES, default = BG_CHOICES[0])

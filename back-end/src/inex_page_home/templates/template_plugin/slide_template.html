@@ -6,19 +6,19 @@
         <div class="container">
             <div class="row description">
                 <div class="col-12">
-                    <h1>
-                        <div class="wow-outer">
-                            <span class="font-weight-bold d-flex wow fadeInDown"
-                            data-wow-duration ="1s" data-wow-delay="0.1s">{{ instance.text_bold }}
-                            </span>
-                        </div>
-                        <div class="wow-outer"><span class="font-weight-light d-flex wow fadeInDown"
-                            data-wow-duration ="1s"  data-wow-delay="0.4s">{{ instance.text }}</span>
-                        </div>
-                    </h1>
-                    <div class="wow-outer mt-3">
-                        <button class="button button-winona wow fadeInDown" data-wow-duration ="1s" data-wow-delay="0.7s"
-                            href="#">{{ instance.text_button }}</button>
+                    <div class="overflow-hidden">
+                        <h1 class="font-weight-bold  wow fadeInDown" >
+                            {{ instance.text_bold }}
+                        </h1>
+                    </div>
+                    <div class="overflow-hidden">
+                        <h2 class="font-weight-light  wow fadeInDown" >
+                            {{ instance.text }}
+                        </h2>
+                    </div>
+                    <div class="overflow-hidden">
+                        <button class="button button-winona wow fadeInDown mt-3"
+                        href="{% url 'product-all' %}">{{ instance.text_button }}</button>
                     </div>
                 </div>
             </div>

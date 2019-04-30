@@ -2,31 +2,36 @@ from .models import *
 from django.shortcuts import render, redirect
 from django.core.serializers import serialize
 from django.core import serializers
+from django.http import HttpResponse
 from django.core.serializers.json import DjangoJSONEncoder
 import json
 
 def showProducts(request):
 
     group_products = GroupProduct.objects.all()
-    
-    # if request.session.get('products', False):
-    #     for lt in list_products:
-    #         for product in lt:
-    #             for session_product in request.session['products']:
-    #                 if (product.id == session_product['product']):
-    #                     product.added = True
+    list_products = dict()
+
+    for group in group_products:
+        list_products[group] = group.product_set.all()
+
+    if request.session.get('products', False):
+        for lt in list_products:
+            for product in list_products[lt]:
+                for session_product in request.session['products']:
+                    if (product.id == session_product['product']):
+                        product.added = True
 
     return render(
         request,
         'products.html',
         context={
-            'group_products': group_products
+            'group_products': group_products,
+            'list_products': list_products
         }
     )
 
 def addProduct(request, id):
     product = Product.objects.get(pk=id)
-
     products_list = []
 
     if not 'products' in request.session or not request.session['products']:
@@ -36,7 +41,7 @@ def addProduct(request, id):
         products_list.append({ 'product': product.id })
         request.session['products'] = products_list
 
-    return redirect('product-all')
+    return HttpResponse(status=201)
 
 def removeProduct(request, id):
     product = Product.objects.get(pk=id)
@@ -46,9 +51,8 @@ def removeProduct(request, id):
             if (product.id == session_product['product']):
                 del request.session['products'][index]
                 request.session.modified = True
-                
-    return redirect('product-all')
 
+    return HttpResponse(status=201)    
 
 def showProduct(request, id):
 

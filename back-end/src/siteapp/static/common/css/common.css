@@ -4526,6 +4526,19 @@ section.breadcrumbs .bg_blur::after{
   header .navbar.main-menu li.nav-item.active a {
     border-bottom: none !important;
   }
+  header .navbar.main-menu ul.navbar-nav li.nav-item a.nav-link {
+    padding: 10px 0px;
+  }
+  section.aboutUs img {
+    width: 100%;
+    height: auto;
+  }
+  section.aboutUs h3 {
+    margin-top: 20px;
+  }
+  section.alert-cta .button_view  {
+    justify-content: center;
+  }
 }
 footer {
   color: #aeb1be;
@@ -4546,7 +4559,7 @@ footer ul li {
   font-size: 16px;
 }
 footer ul li a {
-  color: #74757f;
+  color: #fff;
 }
 footer ul li a:hover {
   color: #fff;
@@ -4623,6 +4636,26 @@ footer ul.social-icon li a {
   footer ul.social-icon {
     display: none !important;
   }
+  .m-text-center{
+    text-align: center;
+  }
+  footer .input-group {
+    margin-top: 30px;
+    justify-content: center;
+  }
+  footer h4 {
+    color: #aeb1be;
+    font-weight: 500;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-advanced a{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }
 footer input {
   padding: 11px 19px;
@@ -4651,11 +4684,11 @@ section.breadcrumbs {
 }
 header .navbar a.offer_icon {
   color: #2d3742;
-  translate: color 0.7 ease;
+  transition: color 0.s7 ease;
 }
 header .navbar a.offer_icon:hover {
   color: #0095d9;
-  translate: color 0.7 ease;
+  transition: color 0.2s ease;
 }
 header .navbar .span_check {
   position: absolute;

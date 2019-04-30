@@ -19,50 +19,41 @@
         {% static_placeholder "All products" %}
 
         <div class="row lists-row">
-            {% for groupProduct in group_products %}
-            {% if groupProduct.product_set.all %}
-            <div class="col-12 wow-outer text-center">
-                <h4 class="title ">
-                    <a href="{{ groupProduct.get_absolute_url }}" class="">
-                        {{ groupProduct.title }}
-                    </a>
-                </h4>
-            </div>
-            {% for product in groupProduct.product_set.all %}
-            <div class="col-sm-6 col-lg-3 wow-outer">
-                <div class="item-old">
-                    {% if product.added %}
-                    <a class="box-images" href="{% url 'product-remove' product.id %}">
-                        <div class="box-icon">
-                            <i class="far fa-trash-alt"></i>
-                        </div>
-                        <div class="box-images-hf">
-                            <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %} "
-                                alt="{{ product.title }}">
-                        </div>
-                    </a>
-                    <a class="w-100 text-center" href="{{ product.get_absolute_url }}">
-                        <i class="far fa-check-circle text-success"></i>
-                        {{ product.title }}
-                    </a>
-                    {% else %}
-                    <a class="box-images" href="{% url 'product-add' product.id %}">
-                        <div class="box-icon">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="box-images-hf">
-                            <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %} "
-                                alt="{{ product.title }}">
-                        </div>
-                    </a>
-                    <a class="w-100 text-center" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-                    {% endif%}
+            {% for key, groupProduct in list_products.items %}
+                {% if groupProduct%}
+                    <div class="col-12 wow-outer text-center">
+                        <h4 class="title ">
+                            <a href="#" class="">
+                                {{ key }}
+                            </a>
+                        </h4>
+                    </div>
 
-                    
-                </div>
-            </div>
-            {% endfor %}
-            {% endif %}
+                    {% for product in groupProduct %}
+                    <div class="col-sm-6 col-lg-3 wow-outer">
+                        <div class="item-old">
+                            {% if product.added %}
+                                <div class="box-images" clicked="true" id="{{ product.id }}">
+                            {% else %}
+                                <div class="box-images" clicked="false" id="{{ product.id }}">
+                            {% endif%}
+
+                                <div class="box-icon">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="box-images-hf">
+                                    <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %} "
+                                        alt="{{ product.title }}">
+                                </div>
+                            </div>
+                            <a class="w-100 text-center" href="{{ product.get_absolute_url }}">
+                                {{ product.title }}
+                            </a>
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -72,4 +63,5 @@
 
 {% block js_link %}
 <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+<script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/products.js"></script>
 {% endblock js_link %}

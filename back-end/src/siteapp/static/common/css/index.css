@@ -31,6 +31,7 @@ section.slider .item .container {
 section.slider .item .container .description h1 {
   font-size: 55px;
   line-height: 1.17647;
+  margin: 0;
 }
 
 section.slider .carousel-indicators {
@@ -95,18 +96,19 @@ section.slider .pagination ul li:hover, section.slider .pagination ul li.active 
 
 @media only screen and (max-width: 760px) {
   section.slider .item {
-    height: 100vh;
+    height: 400px;
   }
   section.slider .item .container .description h1 {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1;
   }
   section.slider .item .container .description h1 span.font-weight-light {
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 20px;
   }
   section.slider .carousel-indicators {
-    top: -130px;
+    top: -57px;
+    justify-content: center;
   }
 }
 
@@ -385,6 +387,7 @@ section.contact ul.items li .icon {
 }
 
 section.alert-cta .button_view {
+  margin-top: 20px;
   justify-content: flex-start;
 }
 

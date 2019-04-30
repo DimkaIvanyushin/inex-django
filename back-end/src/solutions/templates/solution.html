@@ -92,14 +92,14 @@
           <img class="wow slideInRight" src="{% thumbnail solution.img 540x360 crop %} " width="540" height="360"
             alt="img">
         </div>
-        <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer">
-          <h3 class="wow slideInDown" data-wow-duration="1.2s">О решении</h3>
+        <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer m-text-center">
+          <h3 class="wow slideInDown " data-wow-duration="1.2s">О решении</h3>
           <div class="mt-3 wow-outer">
             <div class="wow slideInLeft">
               {{ solution.description }}
             </div>
           </div>
-          <div class="wow-outer">
+          <div class="wow-outer ">
             <button class="button button-winona mt-3 wow slideInLeft" href="#">Решения</button>
           </div>
         </div>
@@ -117,7 +117,7 @@
       <div class="row mt-5">
 
         {% for product in products %}
-        <div class="col-12 col-md-6 composition-box wow-outer">
+        <div class="col-12 col-md-6 composition-box m-text-center wow-outer">
           <img class="wow fadeInLeft" src="{% thumbnail product.images.first.image 174x174 crop='center center' %}" width="174px"
             height="174px" alt="{{ product.title }}">
           <div class="desc wow fadeInRight">

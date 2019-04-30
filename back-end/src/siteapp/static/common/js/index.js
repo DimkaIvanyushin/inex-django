@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     function parallaxScroll() {
         var scrolled = $(window).scrollTop();
-        $slide.css('background-position-y', (0 + (scrolled * .50)) + 'px');
+        $slide.css('background-position-y', (-130 + (scrolled * .70)) + 'px');
     }
 
     function animateContactUs() {
@@ -25,7 +25,12 @@ $(document).ready(function () {
         if ($(window).scrollTop() > menuOffsetTop) {
             if (!check) {
 
-                $section_slider.css("top", "77px");
+                if ($(document).width() > 480) {
+                    $section_slider.css("top", "77px");
+                } else {
+                    $section_slider.css("top", "56px");
+                }
+
                 $mainMenu.addClass('fixed-top');
 
                 $mainMenu.find('#navbarSupportedContent')
@@ -62,8 +67,11 @@ $(document).ready(function () {
         }
     }
 
+    
     animateContactUs();
     mainMenu();
     $(window).bind('scroll', mainMenu);
+
+   
     // $(window).bind('scroll', parallaxScroll);
 });

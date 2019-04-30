@@ -275,8 +275,11 @@ section.breadcrumbs ul li {
 }
 section.breadcrumbs ul li::after {
   margin-left: 25px;
-  content: '-';
-  text-shadow: 1px 1px 1px #0000004f;
+  color: white;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f054";
+  font-size: 10px;
 }
 section.breadcrumbs ul li:last-child::after {
   content: '';

@@ -82,3 +82,15 @@ $input.autocomplete({
         }
     }
 });
+
+var line_content = $('.line_content');
+
+var left_li = $('.mega-menu-container .left ul li.navigation a');
+
+left_li.hover(function(e){
+    var pos_x = $(this).attr('in');
+    left_li.removeClass('active');
+    $(this).addClass('active');
+
+    line_content.css('top', '-' + pos_x + 'px');
+});

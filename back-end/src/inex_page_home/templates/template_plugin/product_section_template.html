@@ -19,10 +19,10 @@
 
         <div class="row d-flex justify-content-center mt-45">
             {% for product in groupProduct %}
-                <div class="col-sm-6 col-lg-3">
+                <div class="col-sm-6 col-lg-3 mb-5">
                     <div class="item">
                         <a class="blackout wow-outer" href="{{ product.get_absolute_url }}">
-                            <img class="" width="255" height="300" src="{% thumbnail product.img 255x300 crop='center' %} " alt="{{ product.title }}">
+                            <img class="" width="200" height="200" src="{% thumbnail product.img 200x200 crop='center' %} " alt="{{ product.title }}">
                         </a>
                         <h5 class="d-flex wow-outer"><a class="w-100 text-center" href="{{ product.get_absolute_url }}">{{ product.title }}</a></h5>
                     </div>

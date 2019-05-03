@@ -9,3 +9,7 @@ def inc(value):
 @register.filter
 def cut(value):
     return value[:200] + "..."
+
+@register.filter
+def mult(value):
+    return 364 * value

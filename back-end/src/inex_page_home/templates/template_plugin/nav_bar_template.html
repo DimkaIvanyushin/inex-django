@@ -1,3 +1,5 @@
+{% load main_filter_extras %}
+{% load thumbnail %}
 <div class="navbar navbar-expand-md main-menu">
     <div class="container">
         <div class="container-mobile-menu">
@@ -53,58 +55,51 @@
                         <div class="mega-menu-container">
                             <div class="container">
                                 <div class="row">
-
-                                    <div class="col-3 left">
+                                    <div class="col-3 pr-0 left">
                                         <ul class="">
                                             {% for groupProduct in groupProducts %}
-                                                <li>
-                                                    <a href="{{ groupProduct.get_absolute_url }}">{{ groupProduct.title }}</a>
+                                                <li class="navigation">
+                                                    {% if forloop.first %}
+                                                        <a class="active" href="{{ groupProduct.get_absolute_url }}" in="{{ forloop.counter0|mult }}" >{{ groupProduct.title }}</a>
+                                                    {% else %}
+                                                        <a href="{{ groupProduct.get_absolute_url }}" in="{{ forloop.counter0|mult }}" >{{ groupProduct.title }}</a>
+                                                    {% endif %}
                                                 </li>
                                             {% endfor %}
                                         </ul>
                                     </div>
 
-                                    <div class="col-9 right">
-                                        <div class="content" style="background: url('{{ groupProducts.first.img.url }}')">
-                                            <h3>{{ groupProducts.first.title }}</h3>
-                                            <ul>
-                                                {% for product in groupProducts.first.product_set.all %}
-                                                    <li class="d-flex">
-                                                        <div class="img">
-                                                            <img src="{{ product.images.first.image.url }}" width="50px" height="50px" alt="#">
-                                                        </div>
-                                                        <div class="desc">
-                                                            <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-                                                        </div>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <!-- {% for groupProduct in groupProducts %}
-                                        {% if groupProduct.product_set.all %}
-                                            <div class="col-12 col-md-3">
-                                                <div class="mega-menu-box">
-                                                    <h5> 
-                                                        <a href="{{ groupProduct.get_absolute_url }}">{{ groupProduct.title }}</a>
-                                                    </h5>
+                                    <div class="col-9 pr-0 right overflow-hidden" style="height: 364px;">
+                                        <div class="line_content">
+                                            {% for groupProduct in groupProducts %}
+                                                <div class="content" style="background-image: url('{{ groupProduct.img.url }}')">
+                                                    <h3>{{ groupProduct.title }}</h3>
                                                     <ul>
                                                         {% for product in groupProduct.product_set.all %}
-                                                            <li>
-                                                                <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                                            <li class="d-flex">
+                                                                <div class="img">
+                                                                    <img src="{% thumbnail product.images.first.image 30x30 crop %}" class="" width="30px" height="30px" alt="#">
+                                                                </div>
+                                                                <div class="desc">
+                                                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                                                    <!-- <span>{{ product.series }}</span> -->
+                                                                </div>
                                                             </li>
                                                         {% endfor %}
                                                     </ul>
                                                 </div>
-                                            </div>
-                                        {% endif %}
-                                    {% empty %}
-                                        <span>Пусто!</span>
-                                    {% endfor %} -->
-
-
-
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid p-0">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="bottom_drop_menu">
+                                            <a href="{% url 'product-all' %}">Вся продукция</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

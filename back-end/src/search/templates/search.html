@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load thumbnail %}
+
+{% block title %} Поиск {% endblock title %}
+
+{% block style_link %}
+<link href="{{ BASE_DIR }}/static/common/css/search.css" rel="stylesheet"> {% endblock style_link %}
+
+{% block content %}
+
+<header>
+    {% static_placeholder "NavBar" %}
+</header>
+
+<section class="breadcrumbs">
+    <div class="bg_blur" style="background-image: url(/static/images/search-bg.jpg)">
+    </div>
+
+    <div class="container">
+        <div class="row content d-flex align-items-center">
+            <div class="col-12">
+                <div class="wow-outer">
+                    <h6 class="wow fadeInDown">Поиск</h6>
+                </div>
+                <div class="wow-outer">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.4s">Поиск</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 wow-outer">
+                <ul class="wow fadeInDown" data-wow-delay="0.8s">
+                    <li> <a href="/">Главная</a></li>
+                    <li> <a href="{% url 'search-show' %}">Поиск</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="search padding-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="{% url 'search-show' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input_group">
+                        <input type="text" name="search_string" placeholder="Строка поиска">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 mt-4">
+               
+                {% if not test %}
+                    <h3>Результат поиска:</h3>
+                    {% if products|length == 0  %}
+                        <span class="text-muted">Ничего не найдено</span>
+                    {% endif %}
+                {% endif %}
+
+            </div>
+            <div class="col-12 ">
+
+                {% for product in products %}
+                    <div class="box_result mb-4 mt-4 pt-3 pb-3 d-flex border border-top-0 border-left-0 border-right-0">
+
+                        <div class="img mr-3">
+                            <img src="{% thumbnail product.images.first.image 100x100 crop='center center' %}" class="" alt="{{ product.title }}">
+                        </div>
+
+                        <div class="description">
+                            <a href="{{ product.get_absolute_url }}" class="d-block">{{ product.title }}</a>
+                            <span class="d-block">Серия: {{ product.series }}</span>
+                            <span class="d-block">Группа:  <a href="{{ product.group.get_absolute_url }}"> {{ product.group.title }} </a> </span>
+                        </div>
+
+                    </div>
+                   
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block js_link %}
+<script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+{% endblock js_link %}

@@ -23,8 +23,8 @@
                 {% if groupProduct%}
                     <div class="col-12 wow-outer text-center">
                         <h4 class="title ">
-                            <a href="#" class="">
-                                {{ key }}
+                            <a href="{{ groupProduct.0.group.get_absolute_url }}" class="">
+                                {{ groupProduct.0.group.title }}
                             </a>
                         </h4>
                     </div>
@@ -33,23 +33,28 @@
                     <div class="col-sm-6 col-lg-3 wow-outer">
                         <div class="item-old">
                             {% if product.added %}
+                                <i class="fas fa-check check-product"></i>
+
                                 <div class="box-images" clicked="true" id="{{ product.id }}">
                             {% else %}
+                                <i class="check-product"></i>
                                 <div class="box-images" clicked="false" id="{{ product.id }}">
                             {% endif%}
-
+                              
                                 <div class="box-icon">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="fas fa-cart-plus v-check-product"></i>
                                 </div>
+
                                 <div class="box-images-hf">
                                     <img src="{% thumbnail product.images.first.image 255x250 crop='center center' %} "
                                         alt="{{ product.title }}">
                                 </div>
                             </div>
+        
                             <a class="w-100 text-center" href="{{ product.get_absolute_url }}">
                                 {{ product.title }}
                             </a>
-                            
+                          
                         </div>
                     </div>
                     {% endfor %}

@@ -15,7 +15,7 @@
 
 <section class="breadcrumbs">
     <div class="bg_blur"
-        style="background-image: url('https://images.unsplash.com/photo-1495887633121-f1156ca7f6a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+        style="background-image: url('/static/images/offer-bg.jpg')">
     </div>
 
     <div class="container">
@@ -54,7 +54,7 @@
                 <h5>Решения</h5>
             </div>
             <div class="d-none d-md-block col-md-2 text-center">
-                <h5>Удалить</h5>
+                <h5 class="d-inline">Удалить</h5><a href="{% url 'offer-remove-item-all' %}" class="text-danger small"> (всё)</a>
             </div>
         </div>
 
@@ -90,14 +90,14 @@
         {% endfor %}
 
         <div class="row d-flex justify-content-center">
-            <a href="{% url 'offer-generate-pdf' %}" class="button button-winona" >
-                    <i class="far fa-file-alt"></i>
-                    Получить </a>
+            <a href="{% url 'offer-generate-pdf' %}" id="pdf_generate" class="button button-winona" >
+                <i class="far fa-file-alt"></i> Получить     
+            </a>
         </div>
 
         {% else %}
         <h4>Список пуст!</h4>
-        <a href="{% url 'product-all' %}">Посмотреть продукцию</a>
+            <a href="{% url 'product-all' %}"  >Посмотреть продукцию</a>
         {% endif %}
     </div>
     
@@ -107,4 +107,5 @@
 
 {% block js_link %}
 <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+<script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/offer.js"></script>
 {% endblock js_link %}

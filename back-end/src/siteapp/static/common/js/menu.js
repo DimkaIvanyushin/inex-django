@@ -53,7 +53,9 @@ $input.autocomplete({
                     if (data.length == 0) {
                         var $box = $("<div>").addClass('box-resoult');
                         $box.append('<span class="ml-2">Продукция не найдена.</span>');
+                       
                         $search_container.prepend($box);
+
                     } else {
                         data.forEach(function (element) {
                             var $box = $("<div>").addClass('box-resoult');
@@ -65,9 +67,12 @@ $input.autocomplete({
 
                             $box.append($div)
                             $search_container.prepend($box);
-
                         });
                     }
+                    $box = $("<div>").addClass('box-resoult');
+                    $box.append('<a class="ml-2 small text-muted " href="/search/show"> Расширенный поиск </a>');
+                    $search_container.append($box);
+
                 }
             });
         } else {

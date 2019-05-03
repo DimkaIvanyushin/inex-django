@@ -133,6 +133,15 @@ section.recall-big .team .team_info .dev {
   margin: 0;
 }
 
+section.services i.check-product {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  color: #28a745;
+  font-size: 25px;
+}
+
 section.services .lists-row {
   display: flex;
   justify-content: center;
@@ -179,6 +188,7 @@ section.services .lists-row .item-old .box-images .box-icon i{
 }
 section.services .lists-row .item-old .box-images:hover .box-icon {
   background-color: #0000008f;
+  z-index: 2;
   transition: background-color 0.8s ease;
 }
 section.services .lists-row .item-old .box-images:hover .box-icon i{

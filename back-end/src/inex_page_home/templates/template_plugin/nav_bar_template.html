@@ -48,11 +48,41 @@
                 <li class="nav-item dropdown position-static">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'product-all' %}"> Продукция
                         <span class="chevron"> <i class="fas fa-chevron-down"></i></span></a>
+
                     <div class="dropdown-menu">
                         <div class="mega-menu-container">
                             <div class="container">
                                 <div class="row">
-                                    {% for groupProduct in groupProducts %}
+
+                                    <div class="col-3 left">
+                                        <ul class="">
+                                            {% for groupProduct in groupProducts %}
+                                                <li>
+                                                    <a href="{{ groupProduct.get_absolute_url }}">{{ groupProduct.title }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-9 right">
+                                        <div class="content" style="background: url('{{ groupProducts.first.img.url }}')">
+                                            <h3>{{ groupProducts.first.title }}</h3>
+                                            <ul>
+                                                {% for product in groupProducts.first.product_set.all %}
+                                                    <li class="d-flex">
+                                                        <div class="img">
+                                                            <img src="{{ product.images.first.image.url }}" width="50px" height="50px" alt="#">
+                                                        </div>
+                                                        <div class="desc">
+                                                            <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- {% for groupProduct in groupProducts %}
                                         {% if groupProduct.product_set.all %}
                                             <div class="col-12 col-md-3">
                                                 <div class="mega-menu-box">
@@ -71,14 +101,18 @@
                                         {% endif %}
                                     {% empty %}
                                         <span>Пусто!</span>
-                                    {% endfor %}
+                                    {% endfor %} -->
+
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#">О бренде</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact-show' %}">Контакты</a></li>
             </ul>
             <span class="nav-item search d-none d-md-block position-relative">
                 <i class="fas fa-search"></i>
@@ -86,13 +120,7 @@
                 <div class="search-container">
                     <input id="search-input" type="text" placeholder="Поиск">
                     <div class="resoult">
-                        <!-- <div class="box-resoult">
-                            <img src="http://localhost:8080/media/images/solutions/ant-rozetsky-272965-unsplash_vDzNOU4.jpg.255x300_q85_crop-center.jpg "  class="mr-3 mt-1" width="50px" height="50px" alt="#">
-                            <div>
-                                <a class="title" href="#">Контроллер для средних сетей автоматизации ULC-03</a>
-                                <a class="category" href="#">Контроллеры</a>
-                            </div>
-                        </div> -->
+
                     </div>
                 </div>
 
@@ -100,7 +128,7 @@
 
             <span class="nav-item ml-3 d-none d-md-block position-relative">
                 <a class="offer_icon" href="{% url 'offer-show' %}">
-                    <i class="fas fa-briefcase"></i> 
+                    <i class="fas fa-shopping-cart"></i> 
                     
                     <span class="span_check"></span>
                 </a>

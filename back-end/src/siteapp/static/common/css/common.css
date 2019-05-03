@@ -4062,6 +4062,9 @@ body {
   line-height: 1.5;
   font-weight: 300;
 }
+a {
+  color: #0095d9;
+}
 a:hover,
 a:focus,
 a:active {
@@ -4293,7 +4296,8 @@ header .navbar.main-menu ul.navbar-nav li.nav-item:hover .dropdown-menu .mega-me
 }
 header .navbar.main-menu ul.navbar-nav li.nav-item .dropdown-menu {
   display: block;
-  visibility: hidden;
+  /* visibility: hidden; */
+  visibility: visible;
   position: absolute;
   margin: 0;
   padding: 0;
@@ -4301,14 +4305,16 @@ header .navbar.main-menu ul.navbar-nav li.nav-item .dropdown-menu {
   border-radius: 0;
   border: none;
   overflow: hidden;
-  opacity: 0;
+  /* opacity: 0; */
+  opacity: 1;
   background: transparent;
   height: fit-content;
   transition: visibility 0.2s ease, opacity 0.2s ease 0.1s;
 }
 header .navbar.main-menu ul.navbar-nav li.nav-item .dropdown-menu .mega-menu-container {
   position: relative;
-  top: -100%;
+  /* top: -100%; */
+  top: 0;
   background: #fff;
   border-bottom: 1px solid #cbced0;
   transition: top 0.5s ease;

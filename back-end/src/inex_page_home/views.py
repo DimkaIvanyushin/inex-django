@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from product.models import Product
 from solutions.models import Solutions
+from django.db.models import Q 
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+
 import json
 
 def search(request):
@@ -11,7 +12,7 @@ def search(request):
 
     if search_query: 
 
-        products = Product.objects.filter(title__icontains = search_query)
+        products = Product.objects.filter(Q(title__icontains=search_query) | Q(series__icontains=search_query))
         solutions = Solutions.objects.filter(industry__icontains = search_query)
 
         results = []

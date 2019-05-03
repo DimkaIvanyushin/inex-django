@@ -137,7 +137,6 @@ section.services .item img {
 }
 
 section.services .item h5 a {
-  margin-top: 15px;
   color: #2d3742;
   font-weight: 300;
   transition: color 0.7s ease;
@@ -387,12 +386,12 @@ section.contact ul.items li .icon {
 }
 
 section.alert-cta .button_view {
-  margin-top: 20px;
   justify-content: flex-start;
 }
 
 @media only screen and (max-width: 760px) {
   section.alert-cta .button_view {
+    margin-top: 20px; 
     justify-content: center;
   }
 }

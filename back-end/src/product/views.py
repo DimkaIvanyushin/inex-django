@@ -2,7 +2,7 @@ from .models import *
 from django.shortcuts import render, redirect
 from django.core.serializers import serialize
 from django.core import serializers
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.core.serializers.json import DjangoJSONEncoder
 import json
 
@@ -56,7 +56,11 @@ def removeProduct(request, id):
 
 def showProduct(request, id):
 
-    product = Product.objects.get(pk=id)
+    try:
+        product = Product.objects.get(pk=id)
+    except Product.DoesNotExist:
+        raise Http404
+   
     solutions = product.solutions_set.all()
     specifications = product.specifications_set.all()
 

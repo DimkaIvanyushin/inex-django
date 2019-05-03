@@ -8,6 +8,9 @@ ADD /src/inex_page_home /iNex/src/inex_page_home
 ADD /src/product /iNex/src/product
 ADD /src/solutions /iNex/src/solutions
 ADD /src/offer /iNex/src/offer
+ADD /src/search /iNex/src/search
+ADD /src/contact /iNex/src/contact
+ADD /src/about /iNex/src/about
 
 ADD src/manage.py /iNex/src
 

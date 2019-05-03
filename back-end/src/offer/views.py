@@ -86,3 +86,8 @@ def removeItem(request, id):
                 request.session.modified = True
 
     return redirect('offer-show')
+
+def removeItemAll(request):
+    del request.session['products']
+    
+    return redirect('offer-show')

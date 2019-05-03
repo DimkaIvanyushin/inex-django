@@ -3,13 +3,9 @@ $(document).ready(function () {
     var $box = $('.box-images');
     var offer_icon = $('a.offer_icon i');
 
-    function addItem(th) {
-        var id = th.attr("id");
-        var url = '/products/item/add/' + id;
-        var icon =  th.find('i');
+    function addItem(id, icon, url) {
 
         icon.css('transform', 'scale(0)');
-
         $.get(url, function (data) { 
         }).done(function () {
 
@@ -17,7 +13,7 @@ $(document).ready(function () {
           
             setTimeout(function(){    
                 icon.css('transform', 'scale(1)');
-                icon.removeClass('fa-plus').addClass('far fa-check-circle')
+                icon.removeClass('fa-cart-plus').addClass('far fas fa-trash-alt')
                 offer_icon.removeClass('animated').removeClass('rubberBand');
             },600)
             
@@ -26,11 +22,7 @@ $(document).ready(function () {
         });
     }
 
-    function removeItem(th) {
-
-        var id = th.attr("id");
-        var url = '/products/item/remove/' + id;
-        var icon =  th.find('i');
+    function removeItem(id, icon, url) {
 
         icon.css('transform', 'scale(0)');
 
@@ -41,7 +33,7 @@ $(document).ready(function () {
 
             setTimeout(function(){
                 icon.css('transform', 'scale(1)');
-                icon.removeClass('far fa-check-circle').addClass('fa-plus');
+                icon.removeClass('fas fa-trash-alt').addClass('fas fa-cart-plus');
                 offer_icon.removeClass('animated').removeClass('rubberBand');
             },600)
                 
@@ -56,7 +48,7 @@ $(document).ready(function () {
             var icon =  $(this).find('i');
 
             if (clicked == 'true'){
-                icon.removeClass('fa-plus').addClass('far fa-check-circle')
+                icon.removeClass('fas fa-cart-plus').addClass('fas fa-trash-alt')
             }
         });
     }
@@ -64,12 +56,21 @@ $(document).ready(function () {
     $box.click(function () {
 
         var clicked = $(this).attr('clicked');
+        var id = $(this).attr("id");
+        var icon =  $(this).find('i');
+        var url = '';
 
         if (clicked == 'false'){
-            addItem($(this));
+            url = '/products/item/add/' + id;
+            addItem(id, icon, url);
+
+            $(this).parent().find('i.check-product').addClass('fas fa-check');
             $(this).attr('clicked','true')
         } else {
-            removeItem($(this));
+            url = '/products/item/remove/' + id;
+            removeItem(id, icon, url);
+
+            $(this).parent().find('i.check-product').removeClass('fas fa-check');
             $(this).attr('clicked','false')
         }
 

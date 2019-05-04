@@ -3,14 +3,15 @@
 <div class="navbar navbar-expand-md main-menu">
     <div class="container">
         <div class="container-mobile-menu">
-            <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" data-toggle="collapse" aria-expanded="false"
-                aria-label="Toggle navigation"><i class="fas fa-bars icon-md"></i></button>
-                <img class="d-md-none" src="/static/images/logo.svg" height="23" alt="logo">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-top-mobile"
-                aria-controls="menu-top-mobile" aria-expanded="false" aria-label="Toggle navigation 2"><i
-                    class="fas fa-ellipsis-v icon-md"></i></button>
+            <button class="navbar-toggler left_icon_menu" type="button" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars icon-sm"></i>
+            </button>
+            <img class="d-md-none" src="/static/images/logo.svg" height="23" alt="logo">
+            <button class="navbar-toggler right_icon_menu" type="button" data-toggle="collapse" data-target="#menu-top-mobile" aria-controls="menu-top-mobile" aria-expanded="false" aria-label="Toggle navigation 2">
+                <i class="fas fa-ellipsis-v icon-sm"></i>
+            </button>
         </div>
+
         <div class="d-md-none d-xs-none">
             <div class="collapse navbar-collapse" id="menu-top-mobile">
                 <div class="container pb-3">
@@ -43,13 +44,57 @@
                 </div>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"><a class="logo-box" href="/"><img
-                    class="logo-dt d-none d-md-block hide" src="/static/images/logo.svg" height="20" alt="logo"></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="logo-box" href="/">
+                <img class="logo-dt d-none d-md-block hide" src="/static/images/logo.svg" height="20" alt="logo">
+            </a>
+
             <ul class="navbar-nav mr-auto hide">
-                <li class="nav-item"><a class="nav-link" href="{% url 'solutions' %}">Решения</a></li>
-                <li class="nav-item dropdown position-static">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'product-all' %}"> Продукция
-                        <span class="chevron"> <i class="fas fa-chevron-down"></i></span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'solutions' %}">Решения</a>
+                </li>
+
+                <!-- Мега-меню под телефон -->
+                <li class="nav-item mobile-dropdown d-md-none d-xs-none">
+                    <a class="nav-link"> Продукция 
+                        <span><i class="fas fa-sort-down"></i> </span> 
+                    </a>
+                    <div class="dropdown-menu-mobile">
+                        <div class="container">
+                            <div class="row pt-2">
+                                {% for groupProduct in groupProducts %}
+                                    <div class="col-12 group-product ">
+                                        <img src="{% thumbnail groupProduct.img 30x30 crop %}" width="30px" height="30px" alt="{{ groupProduct.title }}">
+                                        <span> {{ groupProduct.title }} <i class="fas fa-sort-down"></i> </span>
+                                        
+                                        <div class="items pt-2">
+                                            <div class="container">
+                                                <div class="row">
+                                                    {% for product in groupProduct.product_set.all %}
+                                                        <div class="col-12 mb-2 d-flex align-items-center ">
+                                                            <img src="{% thumbnail product.images.first.image 30x30 crop %}" class="" width="30px" height="30px" alt="#">
+                                                            <a href="{{ product.get_absolute_url }}" class="ml-2">{{ product.title }}</a>
+                                                        </div>
+                                                    {% endfor %}                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Мега-меню под PC -->
+                <li class="nav-item dropdown position-static d-none d-md-block">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'product-all' %}">
+                        <span>Продукция</span>
+                        <span class="chevron"> 
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </a>
 
                     <div class="dropdown-menu">
                         <div class="mega-menu-container">
@@ -82,7 +127,6 @@
                                                                 </div>
                                                                 <div class="desc">
                                                                     <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-                                                                    <!-- <span>{{ product.series }}</span> -->
                                                                 </div>
                                                             </li>
                                                         {% endfor %}
@@ -104,30 +148,32 @@
                             </div>
                         </div>
                     </div>
-
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">О бренде</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'contact-show' %}">Контакты</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about-show' %}">О бренде</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact-show' %}">Контакты</a>
+                </li>
             </ul>
+
             <span class="nav-item search d-none d-md-block position-relative">
                 <i class="fas fa-search"></i>
-
                 <div class="search-container">
                     <input id="search-input" type="text" placeholder="Поиск">
-                    <div class="resoult">
-
-                    </div>
+                    <div class="resoult"></div>
                 </div>
-
             </span>
 
             <span class="nav-item ml-3 d-none d-md-block position-relative">
                 <a class="offer_icon" href="{% url 'offer-show' %}">
                     <i class="fas fa-shopping-cart"></i> 
-                    
                     <span class="span_check"></span>
                 </a>
             </span>
+
         </div>
     </div>
 </div>

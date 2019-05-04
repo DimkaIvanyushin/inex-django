@@ -27,8 +27,7 @@ class Product(models.Model):
     description_specification = HTMLField(null=True, blank=True, verbose_name="Полное описание")
     spec_specification = HTMLField(null=True, blank=True, verbose_name="Технические характеристики")
     legend_specification = HTMLField(null=True, blank=True, verbose_name="Условные обозначения")
-
-    # img = models.ImageField(upload_to = 'images/product', default = 'images/def/def.jpg')
+    price = models.FloatField(default=0, verbose_name="Цена")
     
     def __str__(self):
         return str(self.title)

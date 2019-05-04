@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load thumbnail %}
+
+{% block title %} Контакты {% endblock title %}
+
+{% block style_link %}
+<link href="{{ BASE_DIR }}/static/common/css/contact.css" rel="stylesheet"> {% endblock style_link %}
+
+{% block content %}
+
+<header>
+    {% static_placeholder "NavBar" %}
+</header>
+
+<section class="breadcrumbs">
+    <div class="bg_blur" style="background-image: url(/static/images/about.jpg)">
+    </div>
+    <div class="container">
+        <div class="row content d-flex align-items-center">
+            <div class="col-12">
+                <div class="wow-outer">
+                    <h6 class="wow fadeInDown">Страница</h6>
+                </div>
+                <div class="wow-outer">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.4s">О бренде</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 wow-outer">
+                <ul class="wow fadeInDown" data-wow-delay="0.8s">
+                    <li> <a href="/">Главная</a></li>
+                    <li> <a href="{% url 'about-show' %}">О бренде</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% static_placeholder "About Us" %}
+
+{% endblock content %}
+
+{% block js_link %}
+<script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+{% endblock js_link %}

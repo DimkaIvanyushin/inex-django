@@ -29,6 +29,7 @@ urlpatterns += (
     url(r'^offer/', include('offer.urls')),
     url(r'^contact/', include('contact.urls')),
     url(r'^search/', include('search.urls')),
+    url(r'^about/', include('about.urls')),
 )
       
 if settings.DEBUG:

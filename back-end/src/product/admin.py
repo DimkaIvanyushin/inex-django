@@ -18,7 +18,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Описание', {
-            'fields': ('group',('title', 'series'), 'description')
+            'fields': ('group',('title', 'series'), 'description', 'price')
         }),
         ('Технические характеристики', {
             'fields': ('description_specification', 'spec_specification', 'legend_specification')

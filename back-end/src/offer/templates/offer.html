@@ -40,7 +40,7 @@
     </div>
 </section>
 
-<section class="padding-lg">
+<section class="offer padding-lg">
     <div class="container">
         {% if products %}
         <div class="row border border-top-0 border-left-0 border-right-0 mb-3">
@@ -53,7 +53,10 @@
             <div class="d-none d-md-block col-md-2">
                 <h5>Решения</h5>
             </div>
-            <div class="d-none d-md-block col-md-2 text-center">
+            <div class="d-none d-md-block col-md-1 text-center">
+                <h5 class="d-inline">Кол.</h5>
+            </div>
+            <div class="d-none d-md-block col-md-1 text-center">
                 <h5 class="d-inline">Удалить</h5><a href="{% url 'offer-remove-item-all' %}" class="text-danger small"> (всё)</a>
             </div>
         </div>
@@ -74,13 +77,18 @@
             <div class="col-12 col-md-2">
                 {% for solution in product.solutions_set.all %}
                     <a href="{{ solution.get_absolute_url }}">{{ solution.industry }}, </a>
-
                 {% empty %}
                     <span>Нет решений</span>
                 {% endfor %}
- 
             </div>
-            <div class="col-12 col-md-2 text-center mb-3 mt-3">
+            <div class="col-12 col-md-1 text-center mb-3">
+                <a href="{% url 'offer-inc-item' product.id %}"><i class="fas fa-caret-up"></i></a>
+                <input type="text" class="count" name="" id="" value="{{ product.count }}">
+                {% if product.count > 1 %}
+                    <a href="{% url 'offer-dec-item' product.id %}"><i class="fas fa-caret-down"></i></a>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-1 text-center mb-3 mt-4">
                 <a href="{% url 'offer-remove-item' product.id %}" class="text-danger">
                     <i class="far fa-times-circle "></i>
                 </a>

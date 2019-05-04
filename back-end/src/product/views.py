@@ -35,10 +35,10 @@ def addProduct(request, id):
     products_list = []
 
     if not 'products' in request.session or not request.session['products']:
-        request.session['products'] = [{ 'product': product.id }]
+        request.session['products'] = [{ 'product': product.id, 'count': 1}]
     else:
         products_list = request.session['products']
-        products_list.append({ 'product': product.id })
+        products_list.append({ 'product': product.id, 'count': 1 })
         request.session['products'] = products_list
 
     return HttpResponse(status=201)

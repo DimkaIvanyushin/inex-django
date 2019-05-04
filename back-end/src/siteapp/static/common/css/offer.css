@@ -82,7 +82,14 @@ section.breadcrumbs ul li a:hover {
     color: #fff;
 }
 
-
+section.offer input.count {
+    width: 100%;
+    outline: none;
+    text-align: center;
+    color: #74757f;
+    border: 1px solid;
+    border-color: #dee2e6;
+}
 @media only screen and (max-width: 760px) {
    
     section.breadcrumbs ul li {

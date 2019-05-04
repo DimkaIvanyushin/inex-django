@@ -149,6 +149,8 @@ CMS_TEMPLATES = (
     ('products-group.html', 'Product-group page'),
     ('solution-list.html', 'Solution-List page'),
     ('solution.html', 'Solution page'),
+    ('about.html', 'About page'),
+    ('contact.html', 'Contact page'),
 )
 
 CMS_PERMISSION = True

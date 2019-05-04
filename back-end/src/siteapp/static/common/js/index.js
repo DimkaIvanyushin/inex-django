@@ -25,10 +25,10 @@ $(document).ready(function () {
         if ($(window).scrollTop() > menuOffsetTop) {
             if (!check) {
 
-                if ($(document).width() > 480) {
+                if ($(document).width() > 670) {
                     $section_slider.css("top", "77px");
                 } else {
-                    $section_slider.css("top", "56px");
+                    $section_slider.css("top", "51px");
                 }
 
                 $mainMenu.addClass('fixed-top');

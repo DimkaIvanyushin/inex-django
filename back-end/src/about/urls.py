@@ -3,5 +3,5 @@ from django.conf.urls import include
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.show,  name='contact-show'),
+    url(r'^$', views.show,  name='about-show'),
 ]

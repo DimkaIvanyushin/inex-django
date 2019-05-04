@@ -53,7 +53,7 @@ $input.autocomplete({
                     if (data.length == 0) {
                         var $box = $("<div>").addClass('box-resoult');
                         $box.append('<span class="ml-2">Продукция не найдена.</span>');
-                       
+
                         $search_container.prepend($box);
 
                     } else {
@@ -84,13 +84,34 @@ $input.autocomplete({
 });
 
 var line_content = $('.line_content');
-
 var left_li = $('.mega-menu-container .left ul li.navigation a');
 
-left_li.hover(function(e){
+left_li.hover(function (e) {
     var pos_x = $(this).attr('in');
     left_li.removeClass('active');
     $(this).addClass('active');
 
     line_content.css('top', '-' + pos_x + 'px');
+});
+
+$('.left_icon_menu').click(function(){
+
+    $(this).toggleClass('open');
+
+    if($(this).hasClass('open')){
+        $(this).find('i').removeClass('fa-bars').addClass('fa-times');
+    } else {
+        $(this).find('i').removeClass('fa-times').addClass('fa-bars');
+    }
+
+});
+
+
+$('li.nav-item.mobile-dropdown a').click(function () {
+    $(this).parent().find('.dropdown-menu-mobile').toggle();
+});
+
+$('.dropdown-menu-mobile .group-product').click(function () {
+    $(this).find('.items').toggle();
+    
 });

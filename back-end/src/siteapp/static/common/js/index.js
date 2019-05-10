@@ -26,9 +26,9 @@ $(document).ready(function () {
             if (!check) {
 
                 if ($(document).width() > 670) {
-                    $section_slider.css("top", "77px");
+                    $section_slider.css("margin-top", "83px");
                 } else {
-                    $section_slider.css("top", "51px");
+                    $section_slider.css("margin-top", "51px");
                 }
 
                 $mainMenu.addClass('fixed-top');
@@ -48,7 +48,7 @@ $(document).ready(function () {
             }
         } else {
             if (check) {
-                $section_slider.css("top", "0");
+                $section_slider.css("margin-top", "0");
                 $mainMenu.removeClass('fixed-top');
 
                 $mainMenu.find('#navbarSupportedContent')

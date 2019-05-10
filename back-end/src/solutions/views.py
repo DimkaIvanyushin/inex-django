@@ -21,6 +21,6 @@ def showSolutionId(request, id):
         'solution.html',
         context={
           'solution': solution,
-          'products': products
+          'products': products[:3]
         }
     )

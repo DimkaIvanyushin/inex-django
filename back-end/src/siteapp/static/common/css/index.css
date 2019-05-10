@@ -36,9 +36,10 @@ section.slider .item .container .description h1 {
 
 section.slider .carousel-indicators {
   display: flex;
-  position: relative;
+  position: absolute;
   justify-content: start;
   top: -100px;
+  left: 15px;
   margin: 0;
 }
 
@@ -161,7 +162,7 @@ section.services .item a.blackout img {
 }
 
 section.services .item a.blackout:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: transform 0.5s ease;
 }
 

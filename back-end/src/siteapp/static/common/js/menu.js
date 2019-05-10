@@ -12,6 +12,7 @@ $button_search.click(function () {
         setTimeout(function () {
             $button_search.addClass('fa-times');
             $button_search.css('transform', 'scale(1)');
+            $input.focus();
         }, 300);
 
         $('input#search-input').css('right', '0');

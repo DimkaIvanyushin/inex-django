@@ -88,9 +88,8 @@
   <section class="aboutUs padding-lg ">
     <div class="container">
       <div class="row d-flex justify-content-between">
-        <div class="col-sm-12 col-lg-6 overflow-hidden d-flex align-items-center">
-          <img class="wow slideInRight" src="{% thumbnail solution.img 540x360 crop %} " width="540" height="360"
-            alt="img">
+        <div class="col-sm-12 col-lg-6 overflow-hidden d-flex align-items-center justify-content-center">
+          <img class="wow slideInRight" src="{{ solution.img.url }} " max-width="540" max-height="360" alt="img">
         </div>
         <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer m-text-center">
           <h3 class="wow slideInDown " data-wow-duration="1.2s">О решении</h3>

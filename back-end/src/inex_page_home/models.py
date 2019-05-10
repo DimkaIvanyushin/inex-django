@@ -16,8 +16,8 @@ class MenuBarModel(CMSPlugin):
     button_text = models.CharField(max_length=30, default="default")
 
 class AboutUsModel(CMSPlugin):
-    title = models.CharField(max_length=30, default="default")
-    description = HTMLField( default="default")
+    title = models.CharField(max_length=30, default="default", null=True, blank=True)
+    description = HTMLField(default="default")
     text_button = models.CharField(max_length=30, default="default")
     img = models.ImageField(upload_to = 'images/about-us', default = 'images/def/def.jpg')
     

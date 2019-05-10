@@ -46,7 +46,7 @@
                 <form action="{% url 'search-show' %}" method="post">
                     {% csrf_token %}
                     <div class="input_group">
-                        <input type="text" name="search_string" placeholder="Строка поиска">
+                        <input type="text" name="search_string" placeholder="Строка поиска" autofocus>
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </form>

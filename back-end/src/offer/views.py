@@ -30,9 +30,6 @@ def show(request):
         }
     )
 
-def test():
-    print('HELLO')
-
 def getOfferPDF(request):
 
     products = []
@@ -94,6 +91,10 @@ def getOfferPDF(request):
     y -= 25
 
     res_sum = 0
+
+    # for inx,product in enumerate(products):
+    #     print(product.images.first().image)
+    #     # p.drawImage(product.images.first().image , 50, y, 40, 40)
 
     for inx,product in enumerate(products):
         p.drawString(50, y, str(inx + 1))

@@ -159,3 +159,25 @@ section.composition .composition-box .desc span {
   margin-bottom: 10px;
   display: block;
 }
+
+.slick-prev { 
+  position: absolute;
+  bottom: 0;
+  left: 49%;
+  z-index: 1;
+  transition: color 0.7s ease; 
+ }
+.slick-next {
+  position: absolute;
+  bottom: 0;
+  right: 48%;
+  z-index: 1;
+  transition: color 0.7s ease; 
+ }
+
+ .slick-prev:hover,
+ .slick-next:hover{
+    cursor: pointer;
+    color: #0095d9;
+    transition: color 0.7s ease; 
+ }

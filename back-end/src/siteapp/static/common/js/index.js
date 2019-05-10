@@ -72,6 +72,6 @@ $(document).ready(function () {
     mainMenu();
     $(window).bind('scroll', mainMenu);
 
-   
+    
     // $(window).bind('scroll', parallaxScroll);
 });

@@ -20,6 +20,13 @@ class Solutions(models.Model):
     def __str__(self):
         return str(self.industry)
 
+class Comment(models.Model):
+    solutions = models.ForeignKey(Solutions, on_delete = models.CASCADE)
+    avatar = models.ImageField(upload_to = 'images/recall', default = 'images/def/def.jpg')
+    name = models.CharField(max_length=30, default="default")
+    post = models.CharField(max_length=30, default="default")
+    text = models.TextField(default="default")
+
 class SolutionsPluginModel(CMSPlugin):
     title = models.CharField(max_length=30, default="default")
     descriptoin = models.TextField(default="default")

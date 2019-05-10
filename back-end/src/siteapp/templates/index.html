@@ -3,24 +3,25 @@
 
 {% block title %} Главная {% endblock title %}
 
-{% block style_link %} <link href="{{ BASE_DIR }}/static/common/css/index.css" rel="stylesheet"> {% endblock style_link %}
+{% block style_link %}
+<link href="{{ BASE_DIR }}/static/common/css/index.css" rel="stylesheet"> {% endblock style_link %}
 
 {% block content %}
-  <header>
-    {% placeholder "Menu Bar" %}
-    {% placeholder "NavBar" %}
-  </header>
-  {% placeholder "Slider header" %}
-  {% placeholder "About Us" %}
-  {% placeholder "Small Features" %}
-  {% placeholder "Alert Cta" %}
-  {% placeholder "Produc Section" %}
-  {% placeholder "Solution Section" %}
-  {% placeholder "Recall Section" %}
-  {% placeholder "Alert Mdl" %}
-  {% placeholder "Last Blog" %}
-  {% placeholder "Contact Us" %}
-  {% placeholder "Contact" %}
+<header>
+  {% placeholder "Menu Bar" %}
+  {% placeholder "NavBar" %}
+</header>
+{% placeholder "Slider header" %}
+{% placeholder "About Us" %}
+{% placeholder "Small Features" %}
+{% placeholder "Alert Cta" %}
+{% placeholder "Produc Section" %}
+{% placeholder "Solution Section" %}
+{% placeholder "Recall Section" %}
+{% placeholder "Alert Mdl" %}
+{% placeholder "Last Blog" %}
+{% placeholder "Contact Us" %}
+{% placeholder "Contact" %}
 {% endblock content %}
 
 {% block js_link %}

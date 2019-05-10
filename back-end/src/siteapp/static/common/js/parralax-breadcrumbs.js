@@ -15,5 +15,5 @@ $(document).ready(function () {
     function parallaxScroll() {
         var scrolled = $(window).scrollTop();
         $breadcrumbs.css('background-position-y', (0 + (scrolled * .70)) + 'px');
-    }
+    };
 });

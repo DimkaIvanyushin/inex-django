@@ -2,7 +2,9 @@
 
 {% block title %} Решения {% endblock title %}
 {% block style_link %}
-<link href="{{ BASE_DIR }}/static/common/css/solution.css" rel="stylesheet"> {% endblock style_link %}
+<link href="{{ BASE_DIR }}/static/common/css/solution.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+{% endblock style_link %}
 
 {% block content %}
 
@@ -13,7 +15,8 @@
 
   <section class="breadcrumbs">
 
-    <div class="bg_blur" style="background-image: url({% thumbnail solution.background_img 1920x395 crop='center center' %})" ></div>
+    <div class="bg_blur"
+      style="background-image: url({% thumbnail solution.background_img 1920x395 crop='center center' %})"></div>
 
     <div class="container">
       <div class="row content d-flex align-items-center">
@@ -55,11 +58,11 @@
             <p>
               <ul>
                 {% for product in products %}
-                  <li>
-                    <a class="link-gray" href="{{ product.get_absolute_url }}"> {{ product.title }}</a>
-                  </li>
+                <li>
+                  <a class="link-gray" href="{{ product.get_absolute_url }}"> {{ product.title }}</a>
+                </li>
                 {% empty %}
-                  <span>Пусто!</span>
+                <span>Пусто!</span>
                 {% endfor %}
               </ul>
             </p>
@@ -89,7 +92,8 @@
     <div class="container">
       <div class="row d-flex justify-content-between">
         <div class="col-sm-12 col-lg-6 overflow-hidden d-flex align-items-center justify-content-center">
-          <img class="wow slideInRight" src="{{ solution.img.url }} " max-width="540" max-height="360" alt="img">
+          <img class="wow slideInRight" src="{% thumbnail solution.img 300x300 crop='center center' %} "
+            max-width="300" max-height="300" alt="img">
         </div>
         <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer m-text-center">
           <h3 class="wow slideInDown " data-wow-duration="1.2s">О решении</h3>
@@ -117,8 +121,8 @@
 
         {% for product in products %}
         <div class="col-12 col-md-6 composition-box m-text-center wow-outer">
-          <img class="wow fadeInLeft" src="{% thumbnail product.images.first.image 174x174 crop='center center' %}" width="174px"
-            height="174px" alt="{{ product.title }}">
+          <img class="wow fadeInLeft" src="{% thumbnail product.images.first.image 174x174 crop='center center' %}"
+            width="174px" height="174px" alt="{{ product.title }}">
           <div class="desc wow fadeInRight">
             <h5>
               <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
@@ -136,7 +140,36 @@
     </div>
   </section>
 
-  {% static_placeholder "Recoll Solution" %}
+  {% if comments %}
+
+  <section class="recall padding-xs">
+    <div class="container text-center my-3">
+      <div class="row mb-5">
+        <div class="col-12 wow-outer">
+          <h3 class="text-center wow slideInUp">Отзывы</h3>
+        </div>
+      </div>
+
+      <div class="row carousel">
+        {% for comment in comments %}
+        <div class="col-12 col-lg-4">
+          <div class="team text-left">
+            <div class="title d-flex">
+              <div class="avatar">
+                <img class="rounded-circle" src="{% thumbnail comment.avatar 50x50 crop='center center' %}" width="50px"
+                  height="50px" alt="{{ instance.name }}"></div>
+              <div class="team_info ml-3"><span class="name">{{ comment.name }}</span>
+                <p class="dev">{{ comment.post }}</p>
+              </div>
+            </div>
+            <p>{{ comment.text }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+  </section>
+  {% endif %}
 
   {% static_placeholder "Alert CTA Solution" %}
 
@@ -144,4 +177,6 @@
 
   {% block js_link %}
   <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/parralax-breadcrumbs.js"></script>
+  <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/solution.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   {% endblock js_link %}

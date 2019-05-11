@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     function parallaxScroll() {
         var scrolled = $(window).scrollTop();
-        $slide.css('background-position-y', (-130 + (scrolled * .70)) + 'px');
+        $slide.css('background-position-y', (0 + (scrolled * .70)) + 'px');
     }
 
     function animateContactUs() {
@@ -72,6 +72,22 @@ $(document).ready(function () {
     mainMenu();
     $(window).bind('scroll', mainMenu);
 
-    
+    $('.carousel_recall').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        mobileFirst:true,
+        autoplaySpeed: 5000,
+        prevArrow: "<i class='fas fa-chevron-left prev slick-prev'></i>",
+        nextArrow: "<i class='fas fa-chevron-right next slick-next'></i>",
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 3
+              }
+            }
+          ]
+    });
     // $(window).bind('scroll', parallaxScroll);
 });

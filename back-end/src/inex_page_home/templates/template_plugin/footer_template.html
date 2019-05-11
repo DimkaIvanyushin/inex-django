@@ -36,9 +36,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="footer-advanced"><a class="mr-t-20" href="/"><img
-                        src="{{ BASE_DIR }}/static/images/logo_white.svg" height="39"></a><span class="">© 2019
-                    Все права защищены.</span></div>
+            <div class="col-12">
+                <div class="footer-advanced">
+                    <a class="mr-t-20" href="/">
+                        <img src="{{ BASE_DIR }}/static/images/logo_white.svg" height="39">
+                    </a>
+                    <span class="">© {% now "Y" %} Все права защищены</span>
+                </div>
+            </div>
         </div>
     </div>
 </footer>

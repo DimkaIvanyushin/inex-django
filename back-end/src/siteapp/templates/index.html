@@ -4,7 +4,9 @@
 {% block title %} Главная {% endblock title %}
 
 {% block style_link %}
-<link href="{{ BASE_DIR }}/static/common/css/index.css" rel="stylesheet"> {% endblock style_link %}
+<link href="{{ BASE_DIR }}/static/common/css/index.css" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />  
+{% endblock style_link %}
 
 {% block content %}
 <header>
@@ -17,7 +19,7 @@
 {% placeholder "Alert Cta" %}
 {% placeholder "Produc Section" %}
 {% placeholder "Solution Section" %}
-{% placeholder "Recall Section" %}
+{% placeholder "Recall" %}
 {% placeholder "Alert Mdl" %}
 {% placeholder "Last Blog" %}
 {% placeholder "Contact Us" %}
@@ -26,4 +28,5 @@
 
 {% block js_link %}
 <script type="text/javascript" src="{{ BASE_DIR }}/static/common/js/index.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 {% endblock js_link %}

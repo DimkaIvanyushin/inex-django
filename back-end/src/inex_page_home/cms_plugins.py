@@ -203,11 +203,8 @@ class RecallPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
 
-        len_slider = len(instance.child_plugin_instances)
-        slider_paginate = range(len_slider)
-        instance.child_plugin_instances[0].active = "active"
 
-        context.update({'instance': instance, 'slider_paginate': slider_paginate})
+        context.update({'instance': instance })
         return context
 
 @plugin_pool.register_plugin  
@@ -228,7 +225,7 @@ class RecallBoxPlugin(CMSPluginBase):
     module = _("Inex Plugin")
     name = _('Recall Box Plugin')
     render_template = 'template_plugin/recall_box_template.html'
-    parent_classes = ['RecallPagePlugin']
+    parent_classes = ['RecallPlugin']
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance})

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row d-flex justify-content-between">
             <div class="col-sm-12 col-lg-6 overflow-hidden d-flex align-items-center justify-content-center">
-                <img class="wow slideInLeft" src="{% thumbnail instance.img 540x360 crop %} "  height="360" alt="img">
+                <img class="wow slideInLeft" data-wow-duration="2s" src="{% thumbnail instance.img 540x360 crop %} "  height="360" alt="img">
             </div>
             <div class="col-sm-12 col-lg-5 mr-t-20 wow-outer m-text-center">
                 {% if instance.title %}
@@ -14,7 +14,7 @@
                     {{ instance.description }}
                 </div>
                 <div class="wow-outer ">
-                    <a href="{% url 'product-all' %}" class="d-inline-block button button-winona mt-3 wow slideInLeft" >{{ instance.text_button }}</a>
+                    <a href="{% url 'product-all' %}" data-wow-duration="2s" class="d-inline-block button button-winona mt-3 wow slideInLeft" >{{ instance.text_button }}</a>
                 </div>
             </div>
         </div>

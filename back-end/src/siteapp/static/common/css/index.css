@@ -21,6 +21,7 @@ section.slider {
 section.slider .item {
   height: 750px;
   background-size: cover;
+  background-position: 50% 50%;
 }
 
 section.slider .item .container {
@@ -374,23 +375,46 @@ section.contact ul.items li {
   padding-left: 30px;
   border-right: 1px solid #deef7f;
 }
-
 section.contact ul.items li:first-child {
   border-left: 1px solid #deef7f;
 }
-
 section.contact ul.items li .icon {
   color: #0095d9;
 }
-
 section.alert-cta .button_view {
   justify-content: flex-start;
 }
-
+.slick-prev { 
+  position: absolute;
+  bottom: -35px;
+  left: 48%;
+  z-index: 1;
+  transition: color 0.7s ease; 
+ }
+.slick-next {
+  position: absolute;
+  bottom: -35px;
+  right: 48%;
+  z-index: 1;
+  transition: color 0.7s ease; 
+ }
+ .slick-prev:hover,
+ .slick-next:hover{
+    cursor: pointer;
+    color: #0095d9;
+    transition: color 0.7s ease; 
+ }
 @media only screen and (max-width: 760px) {
   section.alert-cta .button_view {
     margin-top: 20px; 
     justify-content: center;
   }
+  .slick-prev { 
+    left: 47%;
+    bottom: -10px;
+   }
+  .slick-next {
+    right: 47%;
+    bottom: -10px;
+   }
 }
-

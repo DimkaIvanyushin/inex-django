@@ -7,28 +7,11 @@
                 <h3 class="text-center">{{ instance.title }}</h3>
             </div>
         </div>
-        <div class="carousel slide" id="slider-team" data-ride="carousel">
-            <div class="carousel-inner mt-75">
-                {% for plugin in instance.child_plugin_instances %}
-                    {% render_plugin plugin %}
-                {% empty %}
-                    <h3>Пусто!</h3>
-                {% endfor %}
-        
-            </div>
 
-            <h1>{{ len_slider }} </h1>
-            <ul class="carousel-indicators">
-
-                {% for x in slider_paginate %}
-                    {% if forloop.first %}
-                        <li class="active" data-target="#slider-team" data-slide-to="{{ x }}"></li>
-                    {% else %}
-                        <li data-target="#slider-team" data-slide-to="{{ x }}"></li>
-                    {% endif %}
-                {% endfor %}
-                
-            </ul>
+        <div class="row carousel_recall mt-5">
+            {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
         </div>
     </div>
 </section>

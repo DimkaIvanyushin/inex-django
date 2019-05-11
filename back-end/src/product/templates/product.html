@@ -46,9 +46,8 @@
 <section class="service-info padding-lg">
   <div class="container">
     <div class="row d-flex justify-content-between">
-      <div class="col-sm-12 col-lg-6 wow-outer d-flex align-items-center">
-        <div class="carousel overflow-hidden slide wow fadeInRight" data-wow-duration="2s" id="service-view"
-          data-ride="carousel" data-interval="false">
+      <div class="col-sm-12 col-lg-6 d-flex align-items-center">
+        <div class="carousel w-100 overflow-hidden slide"  id="service-view" data-ride="carousel" data-interval="false">
           <div class="carousel-indicators">
             {% for product_img in product.images.all %}
             {% if forloop.first %}
@@ -66,10 +65,8 @@
               {% else %}
               <div class="carousel-item ">
                 {% endif%}
-                <div class="h-100 d-flex justify-content-center" href="{{ product_img.image.url}}" data-max-width="900"
-                  data-gallery="gallery-{{ product.title }}" data-toggle="lightbox">
-                  <img width="540px" height="350px" src="{% thumbnail product_img.image 540x350 crop='center center' %}"
-                    alt="{{ product.title }}">
+                <div class="h-100 d-flex justify-content-center" href="{{ product_img.image.url}}" data-max-width="900" data-gallery="gallery-{{ product.title }}" data-toggle="lightbox">
+                  <img src="{{ product_img.image.url }}" height="350" alt="{{ product.title }}">
                 </div>
               </div>
               {% endfor %}

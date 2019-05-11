@@ -111,27 +111,7 @@ section.breadcrumbs ul li a:hover {
   line-height: 1.1em;
   margin-bottom: 10px;
 }
-@media only screen and (max-width: 760px) {
-  section.breadcrumbs ul li {
-    margin-bottom: 5px;
-    margin-right: 3px;
-  }
-  section.breadcrumbs ul li::after {
-    margin-left: 3px;
-  }
-  section.breadcrumbs h1 {
-    font-size: 40px;
-  }
-  section.composition .composition-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  section.composition .composition-box .desc {
-    padding: 0;
-    margin-top: 10px;
-  }
-}
+
 section.composition .composition-box {
   display: flex;
   padding: 30px;
@@ -162,14 +142,14 @@ section.composition .composition-box .desc span {
 
 .slick-prev { 
   position: absolute;
-  bottom: 0;
-  left: 49%;
+  bottom: -15px;
+  left: 48%;
   z-index: 1;
   transition: color 0.7s ease; 
  }
 .slick-next {
   position: absolute;
-  bottom: 0;
+  bottom: -15px;
   right: 48%;
   z-index: 1;
   transition: color 0.7s ease; 
@@ -181,3 +161,32 @@ section.composition .composition-box .desc span {
     color: #0095d9;
     transition: color 0.7s ease; 
  }
+
+ @media only screen and (max-width: 760px) {
+  section.breadcrumbs ul li {
+    margin-bottom: 5px;
+    margin-right: 3px;
+  }
+  section.breadcrumbs ul li::after {
+    margin-left: 3px;
+  }
+  section.breadcrumbs h1 {
+    font-size: 40px;
+  }
+  section.composition .composition-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section.composition .composition-box .desc {
+    padding: 0;
+    margin-top: 10px;
+  }
+  .slick-prev { 
+    left: 47%;
+   }
+  .slick-next {
+    right: 47%;
+   }
+  
+}
